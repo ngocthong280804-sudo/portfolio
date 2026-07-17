@@ -4,7 +4,7 @@
    ═══════════════════════════════════════════════ */
 
 :root {
-  --pearl:   #150f2d;   /* nền tối — tím than galaxy */
+  --pearl:   #0e0b22;   /* nền tối — navy đen sâu */
   --ink:     #f3eeff;   /* chữ chính — trắng tím nhạt */
   --muted:   #a89ecf;   /* chữ phụ — lavender xám */
   --violet:  #241850;   /* khối đậm hơn nền */
@@ -33,16 +33,36 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--pearl); }
 
 body {
-  background: var(--pearl);
+  background: transparent;
   color: var(--ink);
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* AURORA — nhiều màu trộn, trôi chậm khắp trang */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -25%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(42% 38% at 18% 22%, rgba(255, 62, 154, .22), transparent 70%),
+    radial-gradient(46% 42% at 82% 16%, rgba(88, 101, 255, .26), transparent 70%),
+    radial-gradient(40% 36% at 80% 84%, rgba(62, 230, 216, .18), transparent 70%),
+    radial-gradient(44% 40% at 18% 82%, rgba(167, 139, 250, .24), transparent 70%),
+    radial-gradient(28% 24% at 55% 50%, rgba(255, 170, 90, .10), transparent 70%);
+  animation: aurora-drift 26s ease-in-out infinite alternate;
+}
+@keyframes aurora-drift {
+  from { transform: translate(0, 0) rotate(0deg) scale(1); }
+  to   { transform: translate(4%, -3%) rotate(7deg) scale(1.15); }
 }
 
 .container { width: var(--container); margin-inline: auto; }
@@ -200,7 +220,7 @@ ul, ol { list-style: none; }
   transition: background .4s, padding .4s, box-shadow .4s;
 }
 .nav.scrolled {
-  background: rgba(21, 15, 45, .8);
+  background: rgba(14, 11, 34, .82);
   backdrop-filter: blur(16px);
   padding: .9rem 4vw;
   box-shadow: 0 1px 0 var(--hairline), 0 12px 32px -20px rgba(0, 0, 0, .5);
@@ -256,7 +276,7 @@ ul, ol { list-style: none; }
 
 .mobile-menu {
   position: fixed; inset: 0; z-index: 49;
-  background: rgba(21, 15, 45, .97);
+  background: rgba(14, 11, 34, .97);
   backdrop-filter: blur(10px);
   display: flex; flex-direction: column;
   justify-content: center; align-items: center; gap: 2rem;
@@ -275,11 +295,7 @@ ul, ol { list-style: none; }
   display: flex; align-items: center;
   position: relative;
   padding: 8rem 0 5rem;
-  background:
-    radial-gradient(55vw 55vw at 88% 8%, rgba(167, 139, 250, .28), transparent 62%),
-    radial-gradient(45vw 45vw at 4% 92%, rgba(62, 230, 216, .16), transparent 60%),
-    radial-gradient(40vw 40vw at 60% 100%, rgba(255, 62, 154, .14), transparent 60%),
-    linear-gradient(180deg, #1e1444 0%, var(--pearl) 100%);
+  /* nền trong suốt — để lộ aurora nhiều màu phía sau */
 }
 .hero__canvas {
   position: absolute; inset: 0;
@@ -519,9 +535,9 @@ section { position: relative; z-index: 2; }
 /* ═══════════ SKILLS — khối tối kinetic ═══════════ */
 .skills {
   background:
-    radial-gradient(50vw 40vw at 92% 4%, rgba(167, 139, 250, .3), transparent 60%),
-    radial-gradient(40vw 30vw at 4% 96%, rgba(255, 62, 154, .18), transparent 60%),
-    linear-gradient(165deg, var(--violet), var(--violet-2));
+    radial-gradient(50vw 40vw at 92% 4%, rgba(167, 139, 250, .25), transparent 60%),
+    radial-gradient(40vw 30vw at 4% 96%, rgba(255, 62, 154, .15), transparent 60%),
+    linear-gradient(165deg, rgba(30, 22, 72, .72), rgba(14, 11, 34, .85));
   color: #fff;
   padding: 6.5rem 0;
 }
@@ -686,7 +702,7 @@ section { position: relative; z-index: 2; }
 
 /* ═══════════ QUOTE — khối tối ═══════════ */
 .quote {
-  background: linear-gradient(150deg, var(--violet), var(--violet-2));
+  background: linear-gradient(150deg, rgba(30, 22, 72, .72), rgba(14, 11, 34, .85));
   color: #fff;
   padding: 5.5rem 0;
   text-align: center;
@@ -805,9 +821,9 @@ section { position: relative; z-index: 2; }
 .contact {
   padding: 7.5rem 0;
   background:
-    radial-gradient(50vw 40vw at 88% 0%, rgba(167, 139, 250, .35), transparent 60%),
-    radial-gradient(40vw 34vw at 8% 100%, rgba(255, 62, 154, .22), transparent 60%),
-    linear-gradient(160deg, var(--violet-2), var(--violet) 70%);
+    radial-gradient(50vw 40vw at 88% 0%, rgba(167, 139, 250, .3), transparent 60%),
+    radial-gradient(40vw 34vw at 8% 100%, rgba(255, 62, 154, .2), transparent 60%),
+    linear-gradient(160deg, rgba(14, 11, 34, .85), rgba(30, 22, 72, .72) 70%);
   color: #fff;
   text-align: center;
   position: relative;
@@ -907,6 +923,15 @@ a:focus-visible, button:focus-visible {
   object-fit: cover;
   display: block;
 }
+
+/* ảnh phụ thứ 2 — nghiêng ngược, chồng góc trên trái cho cân xứng */
+.portrait-mini--2 {
+  right: auto; bottom: auto;
+  left: -9%; top: -7%;
+  width: 40%;
+  transform: rotate(-7deg);
+}
+.portrait-mini--2:hover { transform: rotate(-3deg) scale(1.04); }
 
 .card__img {
   position: absolute; inset: 0;
