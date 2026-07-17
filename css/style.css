@@ -4,20 +4,20 @@
    ═══════════════════════════════════════════════ */
 
 :root {
-  --pearl:   #142a5c;   /* nền — xanh dương biển sâu (sáng hơn) */
-  --ink:     #eef4ff;   /* chữ chính — trắng xanh nhạt */
-  --muted:   #9fb6e2;   /* chữ phụ — xanh xám nhạt */
-  --violet:  #16295e;   /* khối đậm hơn nền */
-  --violet-2:#0f1d45;
+  --pearl:   #122d6e;   /* nền — xanh dương neon đậm */
+  --ink:     #eef5ff;   /* chữ chính — trắng xanh nhạt */
+  --muted:   #a4c0f0;   /* chữ phụ — xanh xám sáng */
+  --violet:  #173573;   /* khối đậm hơn nền */
+  --violet-2:#0d1f52;
   --pink:    #ff3e9a;   /* hồng neon (điểm nhấn ấm) */
-  --aqua:    #3ee6d8;   /* xanh ngọc */
-  --lilac:   #6f9bff;   /* xanh periwinkle (thay tím) */
-  --hairline: rgba(111, 155, 255, .3);
+  --aqua:    #2ee6ff;   /* cyan neon */
+  --lilac:   #4d8dff;   /* xanh dương neon */
+  --hairline: rgba(77, 141, 255, .38);
   --card-shadow: 0 24px 60px -24px rgba(0, 0, 0, .55);
 
   --chrome-grad: linear-gradient(180deg,
-      #ffffff 0%, #e8f2ff 14%, #b7d3ff 28%, #6f9bff 40%,
-      #f8fbff 48%, #ffffff 53%, #8fe8ff 62%, #a9c4ff 74%,
+      #ffffff 0%, #dcecff 14%, #9cc4ff 28%, #3f7dff 40%,
+      #f4faff 48%, #ffffff 53%, #6fe4ff 62%, #8fb4ff 74%,
       #ff9ad5 86%, #ffffff 100%);
 
   --font-chrome:  "New Rocker", cursive;
@@ -53,11 +53,11 @@ body::after {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(46% 42% at 20% 20%, rgba(90, 160, 255, .32), transparent 70%),
-    radial-gradient(44% 40% at 82% 16%, rgba(62, 200, 255, .26), transparent 70%),
-    radial-gradient(40% 36% at 80% 84%, rgba(62, 230, 216, .22), transparent 70%),
-    radial-gradient(40% 36% at 16% 84%, rgba(255, 100, 180, .16), transparent 70%),
-    radial-gradient(30% 26% at 55% 48%, rgba(180, 220, 255, .12), transparent 70%);
+    radial-gradient(46% 42% at 20% 20%, rgba(45, 125, 255, .5), transparent 70%),
+    radial-gradient(44% 40% at 82% 16%, rgba(0, 190, 255, .38), transparent 70%),
+    radial-gradient(40% 36% at 80% 84%, rgba(0, 230, 210, .28), transparent 70%),
+    radial-gradient(40% 36% at 16% 84%, rgba(255, 100, 190, .2), transparent 70%),
+    radial-gradient(30% 26% at 55% 48%, rgba(190, 225, 255, .16), transparent 70%);
   animation: aurora-drift 26s ease-in-out infinite alternate;
 }
 @keyframes aurora-drift {
@@ -85,8 +85,8 @@ ul, ol { list-style: none; }
   color: transparent;
   filter:
     drop-shadow(0 1px 0 rgba(255, 255, 255, .9))
-    drop-shadow(0 6px 18px rgba(143, 126, 240, .55))
-    drop-shadow(0 0 34px rgba(255, 154, 213, .45));
+    drop-shadow(0 6px 18px rgba(64, 140, 255, .65))
+    drop-shadow(0 0 34px rgba(0, 200, 255, .5));
   animation: chrome-sheen 6s ease-in-out infinite alternate;
 }
 @keyframes chrome-sheen {
@@ -141,7 +141,7 @@ ul, ol { list-style: none; }
   background: var(--chrome-grad);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 12px rgba(167, 139, 250, .8));
+  filter: drop-shadow(0 0 12px rgba(77, 160, 255, .9));
   animation: spark-twinkle 2.6s ease-in-out infinite;
   pointer-events: none;
   z-index: 3;
@@ -333,9 +333,9 @@ ul, ol { list-style: none; }
 .hero-chrome {
   filter:
     drop-shadow(0 1px 0 rgba(255, 255, 255, .95))
-    drop-shadow(0 8px 22px rgba(143, 126, 240, .6))
-    drop-shadow(0 0 30px rgba(255, 154, 213, .5))
-    drop-shadow(0 0 70px rgba(167, 139, 250, .55));
+    drop-shadow(0 8px 22px rgba(64, 140, 255, .7))
+    drop-shadow(0 0 30px rgba(0, 200, 255, .55))
+    drop-shadow(0 0 70px rgba(77, 141, 255, .6));
 }
 
 /* vòng quỹ đạo bao quanh chữ, chữ nằm chính giữa */
@@ -537,7 +537,7 @@ section { position: relative; z-index: 2; }
   background:
     radial-gradient(50vw 40vw at 92% 4%, rgba(90, 160, 255, .22), transparent 60%),
     radial-gradient(40vw 30vw at 4% 96%, rgba(255, 62, 154, .12), transparent 60%),
-    linear-gradient(165deg, rgba(20, 45, 105, .7), rgba(11, 22, 52, .85));
+    linear-gradient(165deg, rgba(24, 58, 135, .68), rgba(10, 24, 62, .85));
   color: #fff;
   padding: 6.5rem 0;
 }
@@ -620,9 +620,9 @@ section { position: relative; z-index: 2; }
   gap: 2.4rem;
 }
 .card {
-  background: linear-gradient(170deg, #1d3a7e, #152a5f);
+  background: linear-gradient(170deg, #1f4494, #16306b);
   border-radius: 22px;
-  border: 1px solid rgba(111, 155, 255, .32);
+  border: 1px solid rgba(77, 141, 255, .4);
   box-shadow: var(--card-shadow);
   overflow: hidden;
   transform-style: preserve-3d;
@@ -702,7 +702,7 @@ section { position: relative; z-index: 2; }
 
 /* ═══════════ QUOTE — khối tối ═══════════ */
 .quote {
-  background: linear-gradient(150deg, rgba(20, 45, 105, .7), rgba(11, 22, 52, .85));
+  background: linear-gradient(150deg, rgba(24, 58, 135, .68), rgba(10, 24, 62, .85));
   color: #fff;
   padding: 5.5rem 0;
   text-align: center;
@@ -823,7 +823,7 @@ section { position: relative; z-index: 2; }
   background:
     radial-gradient(50vw 40vw at 88% 0%, rgba(90, 160, 255, .28), transparent 60%),
     radial-gradient(40vw 34vw at 8% 100%, rgba(255, 62, 154, .18), transparent 60%),
-    linear-gradient(160deg, rgba(11, 22, 52, .85), rgba(20, 45, 105, .7) 70%);
+    linear-gradient(160deg, rgba(10, 24, 62, .85), rgba(24, 58, 135, .68) 70%);
   color: #fff;
   text-align: center;
   position: relative;
