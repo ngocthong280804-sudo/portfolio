@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trần Ngọc Thông — Marketing Portfolio</title>
+  <meta name="description" content="Portfolio của Trần Ngọc Thông — Chuyên viên Marketing chiến lược. Brand, Growth & Creative Campaign.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Dancing+Script:wght@500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ═══════════ PRELOADER ═══════════ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <span class="preloader__monogram chrome">NT</span>
+      <span class="preloader__bar"><i></i></span>
+      <span class="preloader__text">portfolio // 2026</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ CURSOR ═══════════ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" data-hover>Ngọc&nbsp;Thông<span class="nav__logo-dot">✦</span></a>
+    <nav class="nav__links">
+      <a href="#duan" data-hover>Dự án</a>
+      <a href="#kynang" data-hover>Kỹ năng</a>
+      <a href="#vetoi" data-hover>Về tôi</a>
+      <a href="#lienhe" class="nav__cta" data-hover data-magnetic>Liên hệ</a>
+    </nav>
+    <button class="nav__burger" id="navBurger" aria-label="Mở menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#duan">Dự án</a>
+    <a href="#kynang">Kỹ năng</a>
+    <a href="#vetoi">Về tôi</a>
+    <a href="#lienhe">Liên hệ</a>
+  </div>
+
+  <main id="top">
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero">
+      <canvas id="scene" class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__frame container">
+        <!-- TÊN + LÁ CỜ — đầu trang, chính giữa -->
+        <div class="topmark anim-hero" style="--d:.05s">
+          <span class="flag" aria-hidden="true"><i class="flag__pole"></i><i class="flag__cloth">★</i></span>
+          <p class="hero__eyebrow">
+            <span class="type-caret" id="typewriter"></span>
+          </p>
+        </div>
+
+        <!-- WORDMARK: Portfolio chrome + vòng quỹ đạo -->
+        <div class="wordmark" aria-label="Portfolio">
+          <svg class="wordmark__ring wordmark__ring--back" viewBox="0 0 1000 420" aria-hidden="true" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"  stop-color="#ff9ad5"/>
+                <stop offset="45%" stop-color="#ffffff"/>
+                <stop offset="75%" stop-color="#a78bfa"/>
+                <stop offset="100%" stop-color="#3ee6d8"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="500" cy="210" rx="470" ry="150" fill="none"
+                     stroke="url(#ringGrad)" stroke-width="26" opacity=".35" class="ring-blur"/>
+            <ellipse cx="500" cy="210" rx="470" ry="150" fill="none"
+                     stroke="url(#ringGrad)" stroke-width="10"/>
+            <ellipse class="ring-comet" cx="500" cy="210" rx="470" ry="150" fill="none"
+                     stroke="#ffffff" stroke-width="14" stroke-linecap="round"
+                     stroke-dasharray="230 2740"/>
+          </svg>
+
+          <h1 class="wordmark__text">
+            <span class="chrome hero-chrome wordmark__line" data-letters data-offset="0" aria-hidden="true">Portfolio</span>
+          </h1>
+
+          <svg class="wordmark__ring wordmark__ring--front" viewBox="0 0 1000 420" aria-hidden="true" preserveAspectRatio="none">
+            <defs>
+              <clipPath id="ringLower"><rect x="0" y="210" width="1000" height="210"/></clipPath>
+            </defs>
+            <g clip-path="url(#ringLower)">
+              <ellipse cx="500" cy="210" rx="470" ry="150" fill="none"
+                       stroke="url(#ringGrad)" stroke-width="26" opacity=".4" class="ring-blur"/>
+              <ellipse cx="500" cy="210" rx="470" ry="150" fill="none"
+                       stroke="url(#ringGrad)" stroke-width="10"/>
+            </g>
+          </svg>
+
+        </div>
+
+        <h2 class="hero__title anim-hero" style="--d:1.15s">
+          Biến thương hiệu thành
+          <em class="script" id="rotator">câu chuyện</em>
+          đáng nhớ.
+        </h2>
+
+        <div class="hero__meta anim-hero" style="--d:1.35s">
+          <p class="hero__intro">
+            Tôi là <strong>Trần Ngọc Thông</strong> — 8 năm xây dựng chiến lược thương hiệu
+            và tăng trưởng cho các doanh nghiệp F&amp;B, mỹ phẩm và fintech tại Việt Nam.
+          </p>
+          <div class="hero__actions">
+            <a href="#duan" class="btn btn--pink" data-hover data-magnetic>Xem dự án</a>
+            <a href="#lienhe" class="btn btn--ghost" data-hover data-magnetic>Trò chuyện cùng tôi</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll anim-hero" style="--d:1.3s" aria-hidden="true">
+        <span>Cuộn xuống</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ═══════════ MARQUEE TAPE ═══════════ -->
+    <div class="tape" aria-hidden="true">
+      <div class="tape__track">
+        <span>Brand Strategy</span><i>✦</i><span>Creative Campaign</span><i>✦</i>
+        <span>Performance Marketing</span><i>✦</i><span>Content &amp; Social</span><i>✦</i>
+        <span>CRM &amp; Loyalty</span><i>✦</i><span>Event Activation</span><i>✦</i>
+        <span>Brand Strategy</span><i>✦</i><span>Creative Campaign</span><i>✦</i>
+        <span>Performance Marketing</span><i>✦</i><span>Content &amp; Social</span><i>✦</i>
+        <span>CRM &amp; Loyalty</span><i>✦</i><span>Event Activation</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ═══════════ SKILLS — dark block (kinetic bars) ═══════════ -->
+    <section class="skills" id="kynang">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow section-eyebrow--light"><span class="rule"></span>Kỹ năng &amp; <em class="script script--inline">công cụ</em></p>
+          <h2 class="chrome chrome--section" data-letters aria-label="My Skills">My Skills</h2>
+        </div>
+        <ul class="bars">
+          <li class="bar reveal">
+            <div class="bar__head"><span>Brand Strategy &amp; Positioning</span><span class="bar__pct" data-pct="95">0%</span></div>
+            <div class="bar__track"><i class="bar__fill" style="--pct:95%"></i></div>
+          </li>
+          <li class="bar reveal" style="--d:.1s">
+            <div class="bar__head"><span>Content &amp; Storytelling</span><span class="bar__pct" data-pct="92">0%</span></div>
+            <div class="bar__track"><i class="bar__fill" style="--pct:92%"></i></div>
+          </li>
+          <li class="bar reveal" style="--d:.2s">
+            <div class="bar__head"><span>Performance Ads (Meta · Google · TikTok)</span><span class="bar__pct" data-pct="88">0%</span></div>
+            <div class="bar__track"><i class="bar__fill" style="--pct:88%"></i></div>
+          </li>
+          <li class="bar reveal" style="--d:.3s">
+            <div class="bar__head"><span>Data &amp; Analytics (GA4 · Looker)</span><span class="bar__pct" data-pct="85">0%</span></div>
+            <div class="bar__track"><i class="bar__fill" style="--pct:85%"></i></div>
+          </li>
+        </ul>
+        <div class="skills__tools reveal">
+          <span class="pill">Meta Ads</span><span class="pill">Google Ads</span><span class="pill">TikTok Ads</span>
+          <span class="pill">GA4</span><span class="pill">Looker Studio</span><span class="pill">Figma</span>
+          <span class="pill">Notion</span><span class="pill">HubSpot</span><span class="pill">Klaviyo</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ LEDGER / SỐ LIỆU ═══════════ -->
+    <section class="ledger container reveal">
+      <p class="section-eyebrow"><span class="rule"></span>Hồ sơ năng lực</p>
+      <ul class="ledger__list">
+        <li class="ledger__row reveal" style="--d:.05s">
+          <span class="ledger__label">Năm kinh nghiệm</span>
+          <span class="ledger__dots"></span>
+          <span class="ledger__value"><span class="count" data-count="8">0</span></span>
+        </li>
+        <li class="ledger__row reveal" style="--d:.15s">
+          <span class="ledger__label">Chiến dịch đã triển khai</span>
+          <span class="ledger__dots"></span>
+          <span class="ledger__value"><span class="count" data-count="47">0</span>+</span>
+        </li>
+        <li class="ledger__row reveal" style="--d:.25s">
+          <span class="ledger__label">Ngân sách media đã quản lý</span>
+          <span class="ledger__dots"></span>
+          <span class="ledger__value">₫<span class="count" data-count="32">0</span> tỷ+</span>
+        </li>
+        <li class="ledger__row reveal" style="--d:.35s">
+          <span class="ledger__label">ROAS trung bình</span>
+          <span class="ledger__dots"></span>
+          <span class="ledger__value"><span class="count" data-count="3.4" data-decimal="1">0</span>x</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ═══════════ DỰ ÁN ═══════════ -->
+    <section class="projects container" id="duan">
+      <div class="section-head reveal">
+        <p class="section-eyebrow"><span class="rule"></span>Dự án <em class="script script--inline">tiêu biểu</em></p>
+        <h2 class="chrome chrome--section" data-letters aria-label="Projects">Projects</h2>
+      </div>
+
+      <div class="projects__grid">
+        <article class="card reveal" data-tilt data-hover>
+          <div class="card__visual card__visual--thuc">
+            <span class="card__index">№1</span>
+            <span class="card__badge">+214% nhận diện</span>
+          </div>
+          <div class="card__body">
+            <p class="card__tags">Brand Repositioning · F&amp;B · 2025</p>
+            <h3 class="card__name">Thức Coffee — Tái định vị thương hiệu</h3>
+            <p class="card__desc">
+              Tái định vị chuỗi 23 cửa hàng: nghiên cứu khách hàng, kiến trúc thương hiệu mới
+              và chiến dịch "Thức cùng thành phố" — nhận diện tăng 214% sau 6 tháng.
+            </p>
+            <span class="card__link">Xem case study <span class="arrow">→</span></span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tilt data-hover style="--d:.1s">
+          <div class="card__visual card__visual--lumen">
+            <span class="card__index">№2</span>
+            <span class="card__badge">ROAS 3.8x</span>
+          </div>
+          <div class="card__body">
+            <p class="card__tags">D2C Launch · Mỹ phẩm · 2024</p>
+            <h3 class="card__name">LUMEN Skincare — Ra mắt D2C</h3>
+            <p class="card__desc">
+              Phễu tăng trưởng full-funnel: KOC seeding, livestream commerce và performance ads —
+              12.000 đơn trong tháng đầu với ROAS 3.8x.
+            </p>
+            <span class="card__link">Xem case study <span class="arrow">→</span></span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tilt data-hover>
+          <div class="card__visual card__visual--tet">
+            <span class="card__index">№3</span>
+            <span class="card__badge">18M lượt tiếp cận</span>
+          </div>
+          <div class="card__body">
+            <p class="card__tags">Integrated Campaign · Thủ công mỹ nghệ · 2024</p>
+            <h3 class="card__name">Việt Craft — Chiến dịch Tết "Về Nhà"</h3>
+            <p class="card__desc">
+              Phim ngắn, OOH và social kể chuyện nghệ nhân làng nghề — 18 triệu lượt tiếp cận organic,
+              top 5 chiến dịch Tết được yêu thích (YouNet Media).
+            </p>
+            <span class="card__link">Xem case study <span class="arrow">→</span></span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tilt data-hover style="--d:.1s">
+          <div class="card__visual card__visual--fingo">
+            <span class="card__index">№4</span>
+            <span class="card__badge">−37% CAC</span>
+          </div>
+          <div class="card__body">
+            <p class="card__tags">Growth Marketing · Fintech · 2023</p>
+            <h3 class="card__name">FinGo — Tối ưu tăng trưởng người dùng</h3>
+            <p class="card__desc">
+              Hệ thống A/B test liên tục trên 4 kênh paid, tái cấu trúc onboarding và referral loop —
+              giảm 37% CAC, tăng 2.1x người dùng hoạt động tháng.
+            </p>
+            <span class="card__link">Xem case study <span class="arrow">→</span></span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════ QUOTE — dark block ═══════════ -->
+    <section class="quote reveal">
+      <div class="container">
+        <span class="quote__mark chrome" aria-hidden="true">“</span>
+        <blockquote>
+          <p>Ngọc Thông có tư duy chiến lược hiếm gặp — vừa hiểu con số,
+          vừa kể được câu chuyện khiến khách hàng <em class="script script--inline">tin và yêu</em> thương hiệu.</p>
+          <cite>— Lê Hoàng Nam, CEO Thức Coffee</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ═══════════ VỀ TÔI ═══════════ -->
+    <section class="about container" id="vetoi">
+      <div class="about__portrait reveal">
+        <div class="portrait-card" data-tilt>
+          <span class="portrait-card__spark" aria-hidden="true">✦</span>
+          <span class="portrait-card__monogram chrome">NT</span>
+          <span class="portrait-card__caption">Trần Ngọc Thông<br>Marketing Strategist</span>
+        </div>
+      </div>
+      <div class="about__content">
+        <p class="section-eyebrow reveal"><span class="rule"></span>Về tôi</p>
+        <h2 class="chrome chrome--section reveal" data-letters aria-label="About Me">About Me</h2>
+        <h3 class="about__lede reveal">Chiến lược có <em class="script script--inline">cảm xúc</em>, sáng tạo có số liệu.</h3>
+        <p class="about__text reveal">
+          Tôi bắt đầu sự nghiệp từ vị trí content writer, đi qua agency và client-side,
+          để hiểu marketing từ cả hai phía: ý tưởng lớn và hiệu quả kinh doanh.
+          Điều tôi theo đuổi là những chiến dịch vừa chạm được cảm xúc,
+          vừa chứng minh được bằng con số.
+        </p>
+        <div class="about__skills reveal">
+          <div class="skill-group">
+            <h4>Chuyên môn</h4>
+            <ul>
+              <li>Brand Strategy &amp; Positioning</li>
+              <li>Integrated Campaign Planning</li>
+              <li>Performance &amp; Growth</li>
+              <li>Content &amp; Storytelling</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Thành tích</h4>
+            <ul>
+              <li>Giải Đồng MMA Smarties 2019</li>
+              <li>Top 5 chiến dịch Tết 2024 (YouNet)</li>
+              <li>Quản lý ngân sách ₫15 tỷ/năm</li>
+              <li>Dẫn dắt đội ngũ 6 người</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ KINH NGHIỆM ═══════════ -->
+    <section class="timeline container" id="kinhnghiem">
+      <div class="section-head reveal">
+        <p class="section-eyebrow"><span class="rule"></span>Hành trình <em class="script script--inline">nghề nghiệp</em></p>
+        <h2 class="chrome chrome--section" data-letters aria-label="Journey">Journey</h2>
+      </div>
+      <ol class="timeline__list">
+        <li class="timeline__item reveal">
+          <span class="timeline__year">2022 — nay</span>
+          <div>
+            <h3>Senior Marketing Strategist</h3>
+            <p class="timeline__org">The Maison Agency · TP.HCM</p>
+            <p>Phụ trách chiến lược cho nhóm khách hàng F&amp;B và lifestyle; dẫn dắt đội ngũ 6 người, quản lý ngân sách ₫15 tỷ/năm.</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__year">2020 — 2022</span>
+          <div>
+            <h3>Growth Marketing Lead</h3>
+            <p class="timeline__org">FinGo (Fintech Startup) · TP.HCM</p>
+            <p>Xây dựng bộ phận growth từ con số 0; thiết lập văn hoá thử nghiệm với hơn 120 A/B test mỗi năm.</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__year">2018 — 2020</span>
+          <div>
+            <h3>Marketing Executive</h3>
+            <p class="timeline__org">Dentsu Redder · TP.HCM</p>
+            <p>Triển khai chiến dịch IMC cho các nhãn hàng FMCG; giải Đồng MMA Smarties 2019 hạng mục Brand Experience.</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__year">2017 — 2018</span>
+          <div>
+            <h3>Content Writer</h3>
+            <p class="timeline__org">Freelance</p>
+            <p>Viết cho hơn 20 thương hiệu địa phương — nơi tôi học cách lắng nghe khách hàng bằng ngôn từ.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ═══════════ LIÊN HỆ — dark block ═══════════ -->
+    <section class="contact" id="lienhe">
+      <div class="container">
+        <p class="section-eyebrow section-eyebrow--light reveal"><span class="rule"></span>Liên hệ</p>
+        <h2 class="chrome chrome--big reveal" data-letters aria-label="Thank You!">Thank You!</h2>
+        <span class="spark spark--c1" aria-hidden="true">✦</span>
+        <span class="spark spark--c2" aria-hidden="true">✦</span>
+        <p class="contact__sub reveal">Cùng tạo nên chiến dịch <em class="script script--inline">tiếp theo</em> của bạn?</p>
+        <a href="mailto:ngocthong280804@gmail.com" class="contact__email reveal" data-hover data-magnetic>
+          ngocthong280804@gmail.com <span class="arrow">→</span>
+        </a>
+        <div class="contact__socials reveal">
+          <a href="#" data-hover>LinkedIn</a>
+          <a href="#" data-hover>Behance</a>
+          <a href="#" data-hover>Instagram</a>
+          <a href="#" data-hover>Facebook</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer container">
+    <span>© 2026 Trần Ngọc Thông</span>
+    <span>Thiết kế &amp; xây dựng với ♥ tại Sài Gòn</span>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
