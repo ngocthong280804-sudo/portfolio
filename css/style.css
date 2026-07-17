@@ -4,16 +4,16 @@
    ═══════════════════════════════════════════════ */
 
 :root {
-  --pearl:   #fbf8ff;   /* nền sáng ngọc trai */
-  --ink:     #241640;   /* chữ chính — tím than */
-  --muted:   #6f6494;   /* chữ phụ */
-  --violet:  #2b1b5e;   /* khối tối */
-  --violet-2:#1d1245;
+  --pearl:   #150f2d;   /* nền tối — tím than galaxy */
+  --ink:     #f3eeff;   /* chữ chính — trắng tím nhạt */
+  --muted:   #a89ecf;   /* chữ phụ — lavender xám */
+  --violet:  #241850;   /* khối đậm hơn nền */
+  --violet-2:#1a1140;
   --pink:    #ff3e9a;   /* hồng neon */
   --aqua:    #3ee6d8;   /* xanh ngọc */
   --lilac:   #a78bfa;   /* tím lilac */
-  --hairline: rgba(167, 139, 250, .28);
-  --card-shadow: 0 24px 60px -24px rgba(43, 27, 94, .28);
+  --hairline: rgba(167, 139, 250, .25);
+  --card-shadow: 0 24px 60px -24px rgba(0, 0, 0, .6);
 
   --chrome-grad: linear-gradient(180deg,
       #ffffff 0%, #eee9ff 14%, #c9b8ff 28%, #8f7ef0 40%,
@@ -200,10 +200,10 @@ ul, ol { list-style: none; }
   transition: background .4s, padding .4s, box-shadow .4s;
 }
 .nav.scrolled {
-  background: rgba(251, 248, 255, .78);
+  background: rgba(21, 15, 45, .8);
   backdrop-filter: blur(16px);
   padding: .9rem 4vw;
-  box-shadow: 0 1px 0 var(--hairline), 0 12px 32px -20px rgba(43, 27, 94, .3);
+  box-shadow: 0 1px 0 var(--hairline), 0 12px 32px -20px rgba(0, 0, 0, .5);
 }
 .nav__logo {
   font-family: var(--font-display);
@@ -256,7 +256,7 @@ ul, ol { list-style: none; }
 
 .mobile-menu {
   position: fixed; inset: 0; z-index: 49;
-  background: rgba(251, 248, 255, .97);
+  background: rgba(21, 15, 45, .97);
   backdrop-filter: blur(10px);
   display: flex; flex-direction: column;
   justify-content: center; align-items: center; gap: 2rem;
@@ -276,10 +276,10 @@ ul, ol { list-style: none; }
   position: relative;
   padding: 8rem 0 5rem;
   background:
-    radial-gradient(55vw 55vw at 88% 8%, rgba(167, 139, 250, .22), transparent 62%),
-    radial-gradient(45vw 45vw at 4% 92%, rgba(62, 230, 216, .18), transparent 60%),
-    radial-gradient(35vw 35vw at 60% 100%, rgba(255, 62, 154, .1), transparent 60%),
-    linear-gradient(180deg, #ffffff 0%, var(--pearl) 100%);
+    radial-gradient(55vw 55vw at 88% 8%, rgba(167, 139, 250, .28), transparent 62%),
+    radial-gradient(45vw 45vw at 4% 92%, rgba(62, 230, 216, .16), transparent 60%),
+    radial-gradient(40vw 40vw at 60% 100%, rgba(255, 62, 154, .14), transparent 60%),
+    linear-gradient(180deg, #1e1444 0%, var(--pearl) 100%);
 }
 .hero__canvas {
   position: absolute; inset: 0;
@@ -453,8 +453,8 @@ ul, ol { list-style: none; }
 }
 .btn--pink:hover { filter: brightness(1.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 18px 38px -10px rgba(255, 62, 154, .75); }
 .btn--ghost {
-  border: 1.5px solid rgba(36, 22, 64, .18); color: var(--ink);
-  background: rgba(255, 255, 255, .65);
+  border: 1.5px solid rgba(243, 238, 255, .28); color: var(--ink);
+  background: rgba(255, 255, 255, .06);
   backdrop-filter: blur(6px);
 }
 .btn--ghost:hover { border-color: var(--pink); color: var(--pink); }
@@ -604,16 +604,16 @@ section { position: relative; z-index: 2; }
   gap: 2.4rem;
 }
 .card {
-  background: #fff;
+  background: linear-gradient(170deg, #251a52, #1c1342);
   border-radius: 22px;
-  border: 1px solid rgba(167, 139, 250, .18);
+  border: 1px solid rgba(167, 139, 250, .28);
   box-shadow: var(--card-shadow);
   overflow: hidden;
   transform-style: preserve-3d;
   will-change: transform;
   transition: box-shadow .5s var(--ease-out);
 }
-.card:hover { box-shadow: 0 40px 80px -28px rgba(43, 27, 94, .42); }
+.card:hover { box-shadow: 0 40px 80px -28px rgba(0, 0, 0, .7), 0 0 40px -10px rgba(167, 139, 250, .35); }
 
 .card__visual {
   position: relative;
@@ -720,9 +720,9 @@ section { position: relative; z-index: 2; }
 .portrait-card {
   aspect-ratio: 3 / 4;
   background:
-    radial-gradient(80% 60% at 70% 20%, rgba(167, 139, 250, .25), transparent 70%),
-    linear-gradient(160deg, #ffffff, #efe8ff 80%);
-  border: 1px solid rgba(167, 139, 250, .25);
+    radial-gradient(80% 60% at 70% 20%, rgba(167, 139, 250, .3), transparent 70%),
+    linear-gradient(160deg, #2a1d5c, #1c1342 80%);
+  border: 1px solid rgba(167, 139, 250, .35);
   border-radius: 22px;
   box-shadow: var(--card-shadow);
   display: flex; flex-direction: column;
@@ -869,6 +869,7 @@ a:focus-visible, button:focus-visible {
   .projects__grid { grid-template-columns: 1fr; }
 
   .about { grid-template-columns: 1fr; }
+  .about__portrait { max-width: 420px; }
   .portrait-card { position: static; max-width: 380px; }
 
   .timeline__item { grid-template-columns: 1fr; gap: .6rem; }
@@ -884,6 +885,29 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ═══════════ ẢNH TÙY CHỌN — thêm <img> là tự đẹp ═══════════ */
+.about__portrait { position: relative; }
+
+/* ảnh phụ kiểu polaroid nghiêng, chồng góc dưới phải */
+.portrait-mini {
+  position: absolute;
+  right: -8%; bottom: -9%;
+  width: 46%;
+  aspect-ratio: 3 / 4;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, .85);
+  box-shadow: 0 20px 50px -16px rgba(0, 0, 0, .65), 0 0 30px -6px rgba(167, 139, 250, .4);
+  transform: rotate(7deg);
+  transition: transform .5s var(--ease-pop);
+  z-index: 3;
+}
+.portrait-mini:hover { transform: rotate(3deg) scale(1.04); }
+.portrait-mini img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .card__img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
