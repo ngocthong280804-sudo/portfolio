@@ -1795,11 +1795,19 @@ a:focus-visible, button:focus-visible {
   height: 174%;
 }
 .hero-chrome {
+  background: none;
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: initial;
+  color: transparent;
+  filter: none;
+  animation: none;
+}
+.hero-chrome .ltr {
   filter:
     drop-shadow(0 1px 0 rgba(255, 255, 255, 1))
-    drop-shadow(0 10px 24px rgba(64, 140, 255, .78))
-    drop-shadow(0 0 34px rgba(0, 214, 255, .66))
-    drop-shadow(0 0 86px rgba(77, 141, 255, .7));
+    drop-shadow(0 8px 18px rgba(64, 140, 255, .76))
+    drop-shadow(0 0 20px rgba(0, 214, 255, .62));
 }
 @keyframes wordmark-aura { to { rotate: 360deg; } }
 @keyframes wordmark-breathe {
