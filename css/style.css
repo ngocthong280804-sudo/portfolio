@@ -543,25 +543,38 @@ body.is-loading { overflow: hidden; }
   min-height: 100svh;
   display: flex; align-items: center;
   position: relative;
-  padding: 8rem 0 5rem;
+  padding: 9.5rem 0 4.5rem;
   /* nền trong suốt — để lộ aurora nhiều màu phía sau */
 }
-.hero__frame { position: relative; z-index: 2; pointer-events: none; text-align: center; }
+.hero__frame {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+  text-align: left;
+  padding-right: min(39vw, 520px);
+}
 .hero__frame a { pointer-events: auto; }
 
 /* ═══ TOPMARK — lá cờ + tên, đầu trang chính giữa ═══ */
 .topmark {
+  position: absolute;
+  top: clamp(6.2rem, 11vh, 8rem);
+  left: 50%;
+  z-index: 5;
+  translate: -50% 0;
   display: flex; flex-direction: column; align-items: center;
   gap: .5rem;
-  margin-bottom: .6rem;
+  width: max-content;
+  margin: 0;
 }
 .topmark .hero__eyebrow { margin-bottom: 0; justify-content: center; }
 
-/* ═══ WORDMARK — Portfolio chính giữa + vòng quỹ đạo ═══ */
+/* ═══ WORDMARK — khối nội dung neo về bên trái ═══ */
 .wordmark {
   position: relative;
-  display: inline-block;
-  margin: 3.2rem auto 3.4rem;
+  display: block;
+  width: min(100%, 720px);
+  margin: 2.8rem 0 3.2rem;
 }
 .wordmark__text {
   position: relative; z-index: 1;
@@ -569,8 +582,9 @@ body.is-loading { overflow: hidden; }
 }
 .wordmark__line {
   display: block;
-  font-size: clamp(2.9rem, 8.2vw, 7.2rem);
+  font-size: clamp(3.1rem, 7vw, 6.8rem);
   letter-spacing: .02em;
+  text-align: center;
 }
 
 /* chrome hero: glow mạnh hơn các section */
@@ -586,7 +600,7 @@ body.is-loading { overflow: hidden; }
 .wordmark__ring {
   position: absolute;
   left: 50%; top: 50%;
-  width: 128%; height: 212%;
+  width: 118%; height: 196%;
   transform: translate(-50%, -50%);
   pointer-events: none;
   overflow: visible;
@@ -641,7 +655,7 @@ body.is-loading { overflow: hidden; }
 /* hero: giữ mono cho hiệu ứng typewriter */
 .hero__eyebrow {
   font-family: var(--font-mono);
-  font-size: .74rem; letter-spacing: .28em; text-transform: uppercase;
+  font-size: .78rem; letter-spacing: .34em; text-transform: uppercase;
   color: var(--muted);
 }
 /* eyebrow các section: chip khung HUD [ ] kiểu neon (như video) */
@@ -709,9 +723,9 @@ body.is-loading { overflow: hidden; }
 /* ═══ LINH VẬT HERO — to, lơ lửng, phản ứng theo chuột ═══ */
 .mascot-hero {
   position: absolute;
-  right: 3vw; bottom: 5vh;
-  width: clamp(260px, 34vw, 540px);
-  z-index: 2;
+  right: 1.5vw; bottom: 5.5vh;
+  width: clamp(300px, 36vw, 560px);
+  z-index: 3;
   opacity: 0;
   transform: translateY(60px) scale(.6);
 }
@@ -794,19 +808,19 @@ body.is-loading { overflow: hidden; }
   font-size: clamp(1.4rem, 3.4vw, 2.4rem);
   letter-spacing: -.01em;
   line-height: 1.25;
-  margin: 0 auto 2.4rem;
-  max-width: 22em;
+  margin: 0 0 1.8rem;
+  max-width: 19em;
 }
-#rotator { display: inline-block; min-width: 4.6em; text-align: center; }
+#rotator { display: inline-block; min-width: 4.6em; text-align: left; }
 
 .hero__meta {
-  display: flex; flex-direction: column; align-items: center;
-  gap: 1.8rem;
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: 1.55rem;
 }
-.hero__intro { max-width: 52ch; color: var(--muted); font-size: 1rem; }
+.hero__intro { max-width: 48ch; color: var(--muted); font-size: 1rem; }
 .hero__intro strong { color: var(--ink); font-weight: 600; }
 
-.hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-start; }
 .btn {
   display: inline-block;
   font-size: .82rem; font-weight: 600;
@@ -1237,6 +1251,14 @@ a:focus-visible, button:focus-visible {
   .nav__links { display: none; }
   .nav__burger { display: block; }
 
+  .hero { padding: 9rem 0 4rem; }
+  .topmark { top: 5.8rem; }
+  .hero__frame { padding-right: 27vw; }
+  .wordmark { margin: 3.2rem 0 2.8rem; }
+  .wordmark__line { font-size: clamp(3rem, 8.8vw, 5.4rem); }
+  .hero__title { max-width: 17em; }
+  .hero__intro { font-size: .92rem; }
+
   .projects__grid { grid-template-columns: 1fr; }
 
   .about { grid-template-columns: 1fr; }
@@ -1245,10 +1267,29 @@ a:focus-visible, button:focus-visible {
 
   .timeline__item { grid-template-columns: 1fr; gap: .6rem; }
   .hero__scroll { display: none; }
-  .mascot-hero { width: 190px; right: 2vw; bottom: 2vh; z-index: 1; }
+  .mascot-hero { width: clamp(210px, 29vw, 280px); right: -1vw; bottom: 5vh; z-index: 3; }
   .mascot-icon { width: 60px; height: 60px; }
 }
 @media (max-width: 560px) {
+  .hero {
+    min-height: 100svh;
+    align-items: flex-start;
+    padding: 9.5rem 0 5rem;
+  }
+  .topmark { top: 5.5rem; gap: .35rem; }
+  .topmark .flag { scale: .82; }
+  .hero__eyebrow { font-size: .64rem; letter-spacing: .26em; }
+  .hero__frame { padding-right: 0; }
+  .wordmark { width: 68%; margin: 4.8rem 0 2.6rem; }
+  .wordmark__line { font-size: clamp(2.7rem, 13vw, 4.1rem); }
+  .wordmark__ring { width: 116%; height: 185%; }
+  .hero__title { max-width: 72%; font-size: clamp(1.25rem, 6.4vw, 1.75rem); }
+  #rotator { min-width: 0; }
+  .hero__intro { max-width: 73%; font-size: .86rem; }
+  .hero__actions { max-width: 76%; gap: .75rem; }
+  .btn { padding: .9em 1.35em; font-size: .72rem; }
+  .mascot-hero { width: clamp(165px, 43vw, 210px); right: -6vw; bottom: 7vh; }
+
   .about__skills { grid-template-columns: 1fr; }
   .ledger__row { flex-wrap: wrap; }
   .ledger__dots { display: none; }
