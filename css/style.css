@@ -558,7 +558,7 @@ body.is-loading { overflow: hidden; }
 /* ═══ TOPMARK — lá cờ + tên, đầu trang chính giữa ═══ */
 .topmark {
   position: absolute;
-  top: clamp(6.2rem, 11vh, 8rem);
+  top: clamp(4.7rem, 8vh, 5.8rem);
   left: 50%;
   z-index: 5;
   translate: -50% 0;
@@ -654,9 +654,17 @@ body.is-loading { overflow: hidden; }
 }
 /* hero: giữ mono cho hiệu ứng typewriter */
 .hero__eyebrow {
-  font-family: var(--font-mono);
-  font-size: .78rem; letter-spacing: .34em; text-transform: uppercase;
-  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: clamp(.98rem, 1.55vw, 1.28rem);
+  font-weight: 700;
+  letter-spacing: .18em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #f4fbff;
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, .8),
+    0 0 20px rgba(77, 225, 255, .78),
+    0 0 42px rgba(46, 123, 255, .72);
 }
 /* eyebrow các section: chip khung HUD [ ] kiểu neon (như video) */
 .section-eyebrow {
@@ -791,7 +799,9 @@ body.is-loading { overflow: hidden; }
 
 .type-caret::after {
   content: "▌";
-  color: var(--pink);
+  color: var(--aqua);
+  margin-left: .16em;
+  text-shadow: 0 0 8px var(--aqua), 0 0 18px rgba(46, 123, 255, .9);
   animation: caret-blink 1s steps(2) infinite;
 }
 @keyframes caret-blink { 50% { opacity: 0; } }
@@ -1252,7 +1262,7 @@ a:focus-visible, button:focus-visible {
   .nav__burger { display: block; }
 
   .hero { padding: 9rem 0 4rem; }
-  .topmark { top: 5.8rem; }
+  .topmark { top: 4.7rem; }
   .hero__frame { padding-right: 27vw; }
   .wordmark { margin: 3.2rem 0 2.8rem; }
   .wordmark__line { font-size: clamp(3rem, 8.8vw, 5.4rem); }
@@ -1276,9 +1286,9 @@ a:focus-visible, button:focus-visible {
     align-items: flex-start;
     padding: 9.5rem 0 5rem;
   }
-  .topmark { top: 5.5rem; gap: .35rem; }
+  .topmark { top: 4.6rem; gap: .3rem; }
   .topmark .flag { scale: .82; }
-  .hero__eyebrow { font-size: .64rem; letter-spacing: .26em; }
+  .hero__eyebrow { font-size: .76rem; letter-spacing: .16em; }
   .hero__frame { padding-right: 0; }
   .wordmark { width: 68%; margin: 4.8rem 0 2.6rem; }
   .wordmark__line { font-size: clamp(2.7rem, 13vw, 4.1rem); }
