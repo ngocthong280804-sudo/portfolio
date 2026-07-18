@@ -743,9 +743,9 @@ body.is-loading { overflow: hidden; }
 }
 .mascot-hero > #mascotImg {
   position: absolute;
-  left: 50%; top: -15%;
+  left: 50%; top: -6%;
   z-index: 2;
-  width: 82%; height: auto; display: block;
+  width: 76%; height: auto; display: block;
   translate: -50% 0;
   will-change: transform;
   filter:
