@@ -2158,16 +2158,31 @@ a:focus-visible, button:focus-visible {
 .meteor-shower i:nth-child(10) { --meteor-left:84%;  --meteor-top:4%;   --meteor-size:188px; --meteor-thickness:3px; --meteor-speed:8.7s; --meteor-delay:-5.8s; --meteor-x:-41vw; --meteor-y:51vh; }
 .meteor-shower i:nth-child(11) { --meteor-left:101%; --meteor-top:13%;  --meteor-size:142px; --meteor-speed:9.9s; --meteor-delay:-8.9s; --meteor-x:-36vw; }
 .meteor-shower i:nth-child(12) { --meteor-left:116%; --meteor-top:1%;   --meteor-size:180px; --meteor-thickness:3px; --meteor-speed:8.5s; --meteor-delay:-3s; --meteor-x:-33vw; --meteor-y:55vh; }
+
+/* Bốn nhóm x ba tia: nhóm sau nối nhóm trước để mưa sao băng không bị ngắt. */
+.meteor-shower i:nth-child(n) { --meteor-speed: 8.8s; }
+.meteor-shower i:nth-child(1)  { --meteor-delay: 0s; }
+.meteor-shower i:nth-child(2)  { --meteor-delay: -.14s; }
+.meteor-shower i:nth-child(3)  { --meteor-delay: -.28s; }
+.meteor-shower i:nth-child(4)  { --meteor-delay: -2.2s; }
+.meteor-shower i:nth-child(5)  { --meteor-delay: -2.34s; }
+.meteor-shower i:nth-child(6)  { --meteor-delay: -2.48s; }
+.meteor-shower i:nth-child(7)  { --meteor-delay: -4.4s; }
+.meteor-shower i:nth-child(8)  { --meteor-delay: -4.54s; }
+.meteor-shower i:nth-child(9)  { --meteor-delay: -4.68s; }
+.meteor-shower i:nth-child(10) { --meteor-delay: -6.6s; }
+.meteor-shower i:nth-child(11) { --meteor-delay: -6.74s; }
+.meteor-shower i:nth-child(12) { --meteor-delay: -6.88s; }
 @keyframes meteor-fall {
   0%, 2% {
     opacity: 0;
     transform: translate3d(10vw, -18vh, 0) scaleX(.45);
   }
-  5%  { opacity: .16; }
-  9%  { opacity: .98; }
-  19% { opacity: .88; }
-  27% { opacity: .36; }
-  31%, 100% {
+  4%  { opacity: .18; }
+  8%  { opacity: .98; }
+  17% { opacity: .86; }
+  22% { opacity: .4; }
+  25%, 100% {
     opacity: 0;
     transform: translate3d(var(--meteor-x), var(--meteor-y), 0) scaleX(1.12);
   }
