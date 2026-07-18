@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Dancing+Script:wght@500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=hero-composition-v5">
+  <link rel="stylesheet" href="css/style.css?v=hero-stage-v6">
 </head>
 <body class="is-loading">
 
@@ -74,59 +74,58 @@
         </p>
       </div>
 
+      <!-- Chân dung: vệ tinh hologram bên trái -->
+      <div class="hero-portrait-stage" id="portraitStage" aria-hidden="true">
+        <span class="digital-orbit__path"></span>
+        <span class="holo-profile">
+          <img src="images/tran-ngoc-thong-portrait.png" alt="" decoding="async">
+          <i class="holo-profile__scan"></i>
+          <span class="holo-profile__badge">
+            <b>NGỌC THÔNG</b>
+            <small>Digital Marketer</small>
+          </span>
+        </span>
+
+        <span class="digital-icon digital-icon--data">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 19v-6m5 6V9m5 10V5m5 14v-9M2 19h20"/>
+            <path d="m3 9 5-4 4 3 7-6"/>
+          </svg>
+          <b>DATA</b>
+        </span>
+        <span class="digital-icon digital-icon--ads">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 10.5v3h3l9 4v-11l-9 4H4Z"/>
+            <path d="m7 13.5 1.5 6h3L10 15m9-6 2-1m-2 7 2 1"/>
+          </svg>
+          <b>ADS</b>
+        </span>
+        <i class="digital-star portrait-star portrait-star--1">✦</i>
+        <i class="digital-star portrait-star portrait-star--2">✦</i>
+        <i class="digital-star portrait-star portrait-star--3">✦</i>
+      </div>
+
+      <!-- Linh vật: vệ tinh tương tác bên phải -->
       <div class="mascot-hero" id="mascotHero" aria-hidden="true">
-        <div class="digital-orbit">
-          <span class="digital-orbit__path"></span>
-
-          <span class="holo-profile">
-            <img src="images/tran-ngoc-thong-portrait.png" alt="" decoding="async">
-            <i class="holo-profile__scan"></i>
-            <span class="holo-profile__badge">
-              <b>NGỌC THÔNG</b>
-              <small>Digital Marketer</small>
-            </span>
-          </span>
-
-          <span class="digital-icon digital-icon--data">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 19v-6m5 6V9m5 10V5m5 14v-9M2 19h20"/>
-              <path d="m3 9 5-4 4 3 7-6"/>
-            </svg>
-            <b>DATA</b>
-          </span>
-
-          <span class="digital-icon digital-icon--target">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="8"/>
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M12 4V1m0 22v-3M4 12H1m22 0h-3"/>
-            </svg>
-            <b>TARGET</b>
-          </span>
-
-          <span class="digital-icon digital-icon--ads">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 10.5v3h3l9 4v-11l-9 4H4Z"/>
-              <path d="m7 13.5 1.5 6h3L10 15m9-6 2-1m-2 7 2 1"/>
-            </svg>
-            <b>ADS</b>
-          </span>
-
-          <span class="digital-icon digital-icon--growth">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 19V5m0 14h16"/>
-              <path d="m7 15 4-4 3 2 5-6m-4 0h4v4"/>
-            </svg>
-            <b>GROWTH</b>
-          </span>
-
-          <i class="digital-star digital-star--1">✦</i>
-          <i class="digital-star digital-star--2">✦</i>
-          <i class="digital-star digital-star--3">✦</i>
-          <i class="digital-star digital-star--4">✦</i>
-          <i class="digital-star digital-star--5">✦</i>
-          <i class="digital-star digital-star--6">✦</i>
-        </div>
+        <span class="mascot-hero__orbit"></span>
+        <span class="digital-icon digital-icon--target">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="8"/>
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 4V1m0 22v-3M4 12H1m22 0h-3"/>
+          </svg>
+          <b>TARGET</b>
+        </span>
+        <span class="digital-icon digital-icon--growth">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 19V5m0 14h16"/>
+            <path d="m7 15 4-4 3 2 5-6m-4 0h4v4"/>
+          </svg>
+          <b>GROWTH</b>
+        </span>
+        <i class="digital-star mascot-star mascot-star--1">✦</i>
+        <i class="digital-star mascot-star mascot-star--2">✦</i>
+        <i class="digital-star mascot-star mascot-star--3">✦</i>
         <img src="images/linh-vat.png" alt="" id="mascotImg">
       </div>
       <div class="hero__frame container">
@@ -169,21 +168,29 @@
         </div>
       </div>
 
-      <!-- Đường năng lượng nối cổng Portfolio với chân dung hologram -->
-      <svg class="hero-bridge" viewBox="0 0 640 260" aria-hidden="true" preserveAspectRatio="none">
+      <!-- Hai luồng dữ liệu nối Portfolio với chân dung và linh vật -->
+      <svg class="hero-network" viewBox="0 0 1440 720" aria-hidden="true" preserveAspectRatio="none">
         <defs>
-          <linearGradient id="bridgeGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+          <linearGradient id="networkGrad" x1="50%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stop-color="#4de1ff" stop-opacity="0"/>
-            <stop offset="34%" stop-color="#4de1ff" stop-opacity=".72"/>
-            <stop offset="72%" stop-color="#6f9bff" stop-opacity=".62"/>
+            <stop offset="34%" stop-color="#ffffff" stop-opacity=".78"/>
+            <stop offset="72%" stop-color="#4de1ff" stop-opacity=".58"/>
             <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
           </linearGradient>
         </defs>
-        <path class="hero-bridge__trail" d="M12 210 C180 270 352 8 628 70"/>
-        <path class="hero-bridge__comet" d="M12 210 C180 270 352 8 628 70"/>
-        <circle class="hero-bridge__dot hero-bridge__dot--1" cx="188" cy="207" r="4"/>
-        <circle class="hero-bridge__dot hero-bridge__dot--2" cx="415" cy="71" r="3"/>
+        <path class="hero-network__trail" d="M720 260 C600 340 470 480 230 590"/>
+        <path class="hero-network__trail hero-network__trail--right" d="M720 260 C840 340 970 480 1210 590"/>
+        <path class="hero-network__comet" d="M720 260 C600 340 470 480 230 590"/>
+        <path class="hero-network__comet hero-network__comet--right" d="M720 260 C840 340 970 480 1210 590"/>
+        <circle class="hero-network__node hero-network__node--1" cx="500" cy="446" r="4"/>
+        <circle class="hero-network__node hero-network__node--2" cx="940" cy="446" r="4"/>
       </svg>
+
+      <!-- Trường sao tạo chiều sâu quanh sân khấu -->
+      <div class="hero-spark-field" aria-hidden="true">
+        <i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i>
+        <i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i>
+      </div>
 
       <div class="hero__scroll anim-hero" style="--d:1.3s" aria-hidden="true">
         <span>Cuộn xuống</span>
