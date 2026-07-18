@@ -10,14 +10,30 @@
   <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Dancing+Script:wght@500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="is-loading">
 
   <!-- ═══════════ PRELOADER ═══════════ -->
-  <div class="preloader" id="preloader">
+  <div class="preloader" id="preloader" role="status" aria-label="Đang mở portfolio của Ngọc Thông">
+    <div class="preloader__grid" aria-hidden="true"></div>
     <div class="preloader__inner">
-      <img class="preloader__mascot" src="images/linh-vat.png" alt="" aria-hidden="true">
-      <span class="preloader__name" id="preName" aria-label="Ngọc Thông">Ngọc Thông</span>
-      <span class="preloader__text">portfolio // 2026</span>
+      <div class="preloader__stage" id="preStage">
+        <span class="preloader__orbit" aria-hidden="true"></span>
+        <span class="preloader__spark preloader__spark--one" aria-hidden="true">✦</span>
+        <span class="preloader__spark preloader__spark--two" aria-hidden="true">✦</span>
+
+        <span class="preloader__mascot-runner" id="preMascot" aria-hidden="true">
+          <span class="preloader__mascot-face"></span>
+        </span>
+
+        <span class="preloader__name" id="preName" aria-label="Ngọc Thông">Ngọc Thông</span>
+        <span class="preloader__stroke" aria-hidden="true"></span>
+      </div>
+
+      <div class="preloader__footer" aria-hidden="true">
+        <span>portfolio</span>
+        <span class="preloader__progress"><i></i></span>
+        <span>2026</span>
+      </div>
     </div>
   </div>
 
