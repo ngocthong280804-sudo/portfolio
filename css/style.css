@@ -843,7 +843,7 @@ body.is-loading { overflow: hidden; }
   --float-delay: -1.7s;
 }
 .digital-icon--growth {
-  right: 7%; bottom: -1%;
+  right: 7%; bottom: 6%;
   --icon-color: #c19cff;
   --float-y: 8px;
   --float-speed: 4.9s;
@@ -1448,7 +1448,7 @@ a:focus-visible, button:focus-visible {
   .digital-icon--target { right: 4%; top: 11%; }
   .digital-icon--data { left: -1%; top: 38%; }
   .digital-icon--ads { left: 8%; bottom: 6%; }
-  .digital-icon--growth { right: 9%; bottom: -2%; }
+  .digital-icon--growth { right: 9%; bottom: 8%; }
   .digital-star--2, .digital-star--6 { display: none; }
 
   .about__skills { grid-template-columns: 1fr; }
