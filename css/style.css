@@ -333,9 +333,8 @@ body.is-loading { overflow: hidden; }
   opacity: 0;
   color: transparent;
   -webkit-text-stroke: 1.35px rgba(171, 222, 255, .96);
-  text-shadow: 0 0 18px rgba(77, 225, 255, .52);
+  text-shadow: 0 0 14px rgba(77, 225, 255, .44);
   transform: translateY(.72em) scale(.5) rotate(7deg);
-  filter: blur(8px);
   animation: pre-ltr .72s var(--ease-pop) forwards;
   animation-delay: calc(var(--i) * .115s + .42s);
 }
@@ -358,8 +357,8 @@ body.is-loading { overflow: hidden; }
   -webkit-text-stroke: 0;
 }
 @keyframes pre-ltr {
-  58% { opacity: 1; transform: translateY(-.1em) scale(1.08) rotate(-1deg); filter: blur(0); }
-  to  { opacity: 1; transform: none; filter: blur(0); }
+  58% { opacity: 1; transform: translateY(-.1em) scale(1.08) rotate(-1deg); }
+  to  { opacity: 1; transform: none; }
 }
 @keyframes pre-ltr-fill { to { clip-path: inset(0 0 0 0); } }
 
