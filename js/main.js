@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════
-   TRẦN MAI ANH — PORTFOLIO v3
-   Holographic Pearl — Y2K chrome + kinetic type
+   TRẦN NGỌC THÔNG — PORTFOLIO
+   Neon Studio + linh vật THÔNG
    ═══════════════════════════════════════════════ */
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -15,19 +15,32 @@ document.querySelectorAll("[data-letters]").forEach(el => {
     const s = document.createElement("span");
     s.className = "ltr";
     s.style.setProperty("--i", offset + i);
-    s.textContent = ch === " " ? " " : ch;
+    s.textContent = ch;
     el.appendChild(s);
   });
 });
 
-/* ── Preloader → kích hoạt pop chữ hero ── */
+/* ── Preloader: tách chữ "Ngọc Thông" để nảy từng ký tự ── */
+const preName = document.getElementById("preName");
+if (preName) {
+  const text = preName.textContent;
+  preName.textContent = "";
+  [...text].forEach((ch, i) => {
+    const s = document.createElement("span");
+    s.className = "pltr";
+    s.style.setProperty("--i", i);
+    s.innerHTML = ch === " " ? "&nbsp;" : ch;
+    preName.appendChild(s);
+  });
+}
+
 window.addEventListener("load", () => {
   const pre = document.getElementById("preloader");
   setTimeout(() => {
     pre.classList.add("done");
     document.querySelectorAll(".hero-chrome").forEach(el => el.classList.add("popped"));
-    document.getElementById("mascotHero")?.classList.add("landed"); // linh vật nhảy vào
-  }, reducedMotion ? 0 : 800);
+    document.getElementById("mascotHero")?.classList.add("landed");
+  }, reducedMotion ? 0 : 2300); // đủ thời gian chữ nảy xong
 });
 
 /* ── Nav ── */
@@ -65,7 +78,7 @@ if (typeTarget) {
     setTimeout(function typeNext() {
       typeTarget.textContent = typeText.slice(0, ++i);
       if (i < typeText.length) setTimeout(typeNext, 34 + Math.random() * 40);
-    }, 1200);
+    }, 2600);
   }
 }
 
@@ -87,22 +100,18 @@ if (rotator && !reducedMotion) {
   }, 3200);
 }
 
-/* ── Reveal + kích hoạt hiệu ứng con ── */
+/* ── Reveal + pop chữ chrome ── */
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
     entry.target.classList.add("in");
-    // chữ chrome trong section → pop khi hiện
     entry.target.querySelectorAll(".chrome[data-letters]").forEach(c => c.classList.add("popped"));
     if (entry.target.classList.contains("chrome")) entry.target.classList.add("popped");
     revealObserver.unobserve(entry.target);
   });
 }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-
 document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
-/* chữ chrome đứng ngoài .reveal (vd. trong section-head .reveal đã bao) —
-   đảm bảo mọi chrome section đều pop khi vào tầm nhìn */
 const chromeObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -120,8 +129,7 @@ function animatePct(el) {
   const start = performance.now();
   function tick(now) {
     const p = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - p, 4);
-    el.textContent = Math.round(target * eased) + "%";
+    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 4))) + "%";
     if (p < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
@@ -145,8 +153,7 @@ function animateCount(el) {
   const start = performance.now();
   function tick(now) {
     const p = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - p, 4);
-    el.textContent = (target * eased).toFixed(decimals);
+    el.textContent = (target * (1 - Math.pow(1 - p, 4))).toFixed(decimals);
     if (p < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
@@ -223,137 +230,68 @@ if (finePointer && !reducedMotion) {
 }
 
 /* ═══════════════════════════════════════════════
-   HERO 3D — Three.js
-   Ngôi sao 4 cánh chrome holographic bay lơ lửng
-   (như sparkle trong ảnh tham khảo), phản ứng
-   theo chuột + cuộn trang
+   LINH VẬT — chuyển động lò xo mượt
+   - lơ lửng nhẹ nhàng (bob)
+   - né ra xa khi chuột lại gần (repel)
+   - nghiêng theo hướng di chuyển
+   - rê thẳng chuột vào → nhảy tinh nghịch
    ═══════════════════════════════════════════════ */
-async function initScene() {
-  const canvas = document.getElementById("scene");
-  if (!canvas) return;
+(function mascotMotion() {
+  const wrap = document.getElementById("mascotHero");
+  const img = document.getElementById("mascotImg");
+  if (!wrap || !img || reducedMotion) return;
 
-  let THREE, RoomEnvironment;
-  try {
-    THREE = await import("three");
-    ({ RoomEnvironment } = await import("three/addons/environments/RoomEnvironment.js"));
-  } catch (e) {
-    canvas.remove(); // offline → giữ nền gradient CSS
-    return;
-  }
+  let mx = -9999, my = -9999;       // vị trí chuột
+  let px = 0, py = 0;               // vị trí hiện tại (spring)
+  let vx = 0, vy = 0;               // vận tốc lò xo
+  const stiffness = 0.045, damping = 0.82;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-
-  const scene = new THREE.Scene();
-  const pmrem = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-
-  const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
-  camera.position.set(0, 0, 11);
-
-  /* hình ngôi sao 4 cánh (như sparkle ✦) */
-  function starShape(long = 1, short = 0.22) {
-    const s = new THREE.Shape();
-    s.moveTo(0, long);
-    s.lineTo(short, short);
-    s.lineTo(long, 0);
-    s.lineTo(short, -short);
-    s.lineTo(0, -long);
-    s.lineTo(-short, -short);
-    s.lineTo(-long, 0);
-    s.lineTo(-short, short);
-    s.closePath();
-    return s;
-  }
-  const starGeo = new THREE.ExtrudeGeometry(starShape(), {
-    depth: 0.16, bevelEnabled: true,
-    bevelThickness: 0.08, bevelSize: 0.07, bevelSegments: 4
-  });
-  starGeo.center();
-
-  /* vật liệu holographic chrome — sáng, tươi */
-  const holo = new THREE.MeshPhysicalMaterial({
-    color: 0xeae4ff, metalness: 0.9, roughness: 0.18,
-    envMapIntensity: 2.4,
-    iridescence: 0.85, iridescenceIOR: 1.4,
-    iridescenceThicknessRange: [140, 420]
-  });
-  const group = new THREE.Group();
-  scene.add(group);
-
-  /* sao lớn bên phải + sao đối xứng bên trái cho cân bố cục */
-  const bigStar = new THREE.Mesh(starGeo, holo);
-  bigStar.scale.setScalar(2.1);
-  bigStar.position.set(6.3, 0.2, -0.5);
-  group.add(bigStar);
-
-  const leftStar = new THREE.Mesh(starGeo, holo);
-  leftStar.scale.setScalar(1.5);
-  leftStar.position.set(-6.4, -0.8, -1.2);
-  leftStar.rotation.z = 0.5;
-  group.add(leftStar);
-
-  scene.add(new THREE.HemisphereLight(0xffffff, 0xf0e8ff, 1.2));
-  const key = new THREE.DirectionalLight(0xffffff, 1.6);
-  key.position.set(5, 6, 6);
-  scene.add(key);
-  const rim = new THREE.DirectionalLight(0x4de1ff, 0.8);
-  rim.position.set(-6, -3, 4);
-  scene.add(rim);
-
-  const hero = canvas.parentElement;
-  function resize() {
-    const w = hero.clientWidth, h = hero.clientHeight;
-    renderer.setSize(w, h, false);
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
-  }
-  resize();
-  window.addEventListener("resize", resize);
-
-  let targetX = 0, targetY = 0, curX = 0, curY = 0;
   if (finePointer) {
-    window.addEventListener("mousemove", e => {
-      targetX = (e.clientX / window.innerWidth - 0.5) * 2;
-      targetY = (e.clientY / window.innerHeight - 0.5) * 2;
-    }, { passive: true });
+    window.addEventListener("mousemove", e => { mx = e.clientX; my = e.clientY; }, { passive: true });
+
+    /* rê chuột vào → nhảy */
+    wrap.addEventListener("mouseenter", () => {
+      if (!wrap.classList.contains("jump")) {
+        wrap.classList.add("jump");
+        img.addEventListener("animationend", () => wrap.classList.remove("jump"), { once: true });
+      }
+    });
   }
 
-  const clock = new THREE.Clock();
-  function render() {
-    const t = clock.getElapsedTime();
-    const scroll = window.scrollY / window.innerHeight;
+  const start = performance.now();
+  (function loop(now) {
+    const t = (now - start) / 1000;
 
-    curX += (targetX - curX) * 0.04;
-    curY += (targetY - curY) * 0.04;
+    /* mục tiêu: bob sin + parallax nhẹ theo chuột */
+    let tx = Math.sin(t * 0.9) * 10;
+    let ty = Math.sin(t * 0.7 + 1.3) * 14;
 
-    bigStar.rotation.y = t * 0.35 + curX * 0.55;
-    bigStar.rotation.x = curY * 0.4;
-    bigStar.position.y = 0.2 + Math.sin(t * 0.6) * 0.25;
+    if (finePointer && mx > -999) {
+      /* parallax theo chuột (toàn màn hình) */
+      tx += (mx / window.innerWidth - 0.5) * 26;
+      ty += (my / window.innerHeight - 0.5) * 18;
 
-    leftStar.rotation.y = -t * 0.3 + curX * 0.4;
-    leftStar.position.y = -0.8 + Math.sin(t * 0.5 + 2) * 0.22;
+      /* né ra khi chuột lại gần linh vật */
+      const r = wrap.getBoundingClientRect();
+      const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      const dx = cx - mx, dy = cy - my;
+      const dist = Math.hypot(dx, dy);
+      const radius = r.width * 0.75;
+      if (dist < radius && dist > 1) {
+        const push = (1 - dist / radius) * 46;
+        tx += (dx / dist) * push;
+        ty += (dy / dist) * push;
+      }
+    }
 
-    group.rotation.y = scroll * 0.9 + curX * 0.05;
-    group.position.y = scroll * 2.4;
-    camera.position.z = 11 + scroll * 2.5;
+    /* lò xo: mượt và có đà */
+    vx = (vx + (tx - px) * stiffness) * damping;
+    vy = (vy + (ty - py) * stiffness) * damping;
+    px += vx; py += vy;
 
-    /* linh vật nghiêng nhẹ theo chuột (parallax) */
-    const mImg = document.getElementById("mascotImg");
-    if (mImg) mImg.style.transform = `translate(${curX * 14}px, ${curY * 10}px) rotate(${curX * 3}deg)`;
+    const tilt = Math.max(-8, Math.min(8, vx * 2.2));
+    img.style.transform = `translate(${px.toFixed(2)}px, ${py.toFixed(2)}px) rotate(${tilt.toFixed(2)}deg)`;
 
-    renderer.render(scene, camera);
-  }
-
-  if (reducedMotion) { render(); return; }
-
-  let heroVisible = true;
-  new IntersectionObserver(entries => {
-    heroVisible = entries[0].isIntersecting;
-  }).observe(hero);
-
-  renderer.setAnimationLoop(() => { if (heroVisible) render(); });
-}
-
-initScene();
+    requestAnimationFrame(loop);
+  })(start);
+})();

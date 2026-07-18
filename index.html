@@ -9,22 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Dancing+Script:wght@500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
-      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
-    }
-  }
-  </script>
 </head>
 <body>
 
   <!-- ═══════════ PRELOADER ═══════════ -->
   <div class="preloader" id="preloader">
     <div class="preloader__inner">
-      <span class="preloader__monogram chrome">NT</span>
-      <span class="preloader__bar"><i></i></span>
+      <img class="preloader__mascot" src="images/linh-vat.png" alt="" aria-hidden="true">
+      <span class="preloader__name" id="preName" aria-label="Ngọc Thông">Ngọc Thông</span>
       <span class="preloader__text">portfolio // 2026</span>
     </div>
   </div>
@@ -59,7 +51,6 @@
 
     <!-- ═══════════ HERO ═══════════ -->
     <section class="hero">
-      <canvas id="scene" class="hero__canvas" aria-hidden="true"></canvas>
       <div class="mascot-hero" id="mascotHero" aria-hidden="true">
         <img src="images/linh-vat.png" alt="" id="mascotImg">
       </div>
