@@ -2146,43 +2146,43 @@ a:focus-visible, button:focus-visible {
   background: #fff;
   box-shadow: 0 0 9px #fff, 0 0 21px rgba(77, 225, 255, .96);
 }
-.meteor-shower i:nth-child(1)  { --meteor-left:18%;  --meteor-top:-14%; --meteor-size:205px; --meteor-thickness:3px; --meteor-speed:7.6s; --meteor-delay:-1.2s; }
-.meteor-shower i:nth-child(2)  { --meteor-left:36%;  --meteor-top:-20%; --meteor-size:148px; --meteor-speed:8.8s; --meteor-delay:-6.3s; --meteor-x:-51vw; }
-.meteor-shower i:nth-child(3)  { --meteor-left:54%;  --meteor-top:-12%; --meteor-size:232px; --meteor-thickness:3px; --meteor-speed:8.1s; --meteor-delay:-3.7s; --meteor-y:62vh; }
-.meteor-shower i:nth-child(4)  { --meteor-left:72%;  --meteor-top:-22%; --meteor-size:172px; --meteor-speed:9.4s; --meteor-delay:-7.8s; --meteor-x:-42vw; }
-.meteor-shower i:nth-child(5)  { --meteor-left:90%;  --meteor-top:-10%; --meteor-size:218px; --meteor-thickness:3px; --meteor-speed:7.9s; --meteor-delay:-5.1s; --meteor-x:-40vw; }
-.meteor-shower i:nth-child(6)  { --meteor-left:108%; --meteor-top:-18%; --meteor-size:154px; --meteor-speed:9.1s; --meteor-delay:-2.4s; --meteor-x:-38vw; }
-.meteor-shower i:nth-child(7)  { --meteor-left:28%;  --meteor-top:8%;   --meteor-size:138px; --meteor-speed:9.2s; --meteor-delay:-7s; --meteor-y:49vh; }
-.meteor-shower i:nth-child(8)  { --meteor-left:47%;  --meteor-top:2%;   --meteor-size:196px; --meteor-thickness:3px; --meteor-speed:8.4s; --meteor-delay:-4.3s; --meteor-x:-49vw; --meteor-y:54vh; }
-.meteor-shower i:nth-child(9)  { --meteor-left:66%;  --meteor-top:11%;  --meteor-size:132px; --meteor-speed:9.7s; --meteor-delay:-.7s; --meteor-x:-44vw; }
-.meteor-shower i:nth-child(10) { --meteor-left:84%;  --meteor-top:4%;   --meteor-size:188px; --meteor-thickness:3px; --meteor-speed:8.7s; --meteor-delay:-5.8s; --meteor-x:-41vw; --meteor-y:51vh; }
-.meteor-shower i:nth-child(11) { --meteor-left:101%; --meteor-top:13%;  --meteor-size:142px; --meteor-speed:9.9s; --meteor-delay:-8.9s; --meteor-x:-36vw; }
-.meteor-shower i:nth-child(12) { --meteor-left:116%; --meteor-top:1%;   --meteor-size:180px; --meteor-thickness:3px; --meteor-speed:8.5s; --meteor-delay:-3s; --meteor-x:-33vw; --meteor-y:55vh; }
+.meteor-shower i:nth-child(1)  { --meteor-left:30%;  --meteor-top:-14%; --meteor-size:205px; --meteor-thickness:3px; }
+.meteor-shower i:nth-child(2)  { --meteor-left:65%;  --meteor-top:-20%; --meteor-size:148px; --meteor-x:-51vw; }
+.meteor-shower i:nth-child(3)  { --meteor-left:96%;  --meteor-top:-12%; --meteor-size:232px; --meteor-thickness:3px; --meteor-y:62vh; }
+.meteor-shower i:nth-child(4)  { --meteor-left:15%;  --meteor-top:-22%; --meteor-size:172px; --meteor-x:-42vw; }
+.meteor-shower i:nth-child(5)  { --meteor-left:50%;  --meteor-top:-10%; --meteor-size:218px; --meteor-thickness:3px; --meteor-x:-40vw; }
+.meteor-shower i:nth-child(6)  { --meteor-left:85%;  --meteor-top:-18%; --meteor-size:154px; --meteor-x:-38vw; }
+.meteor-shower i:nth-child(7)  { --meteor-left:25%;  --meteor-top:8%;   --meteor-size:138px; --meteor-y:49vh; }
+.meteor-shower i:nth-child(8)  { --meteor-left:60%;  --meteor-top:2%;   --meteor-size:196px; --meteor-thickness:3px; --meteor-x:-49vw; --meteor-y:54vh; }
+.meteor-shower i:nth-child(9)  { --meteor-left:95%;  --meteor-top:11%;  --meteor-size:132px; --meteor-x:-44vw; }
+.meteor-shower i:nth-child(10) { --meteor-left:10%;  --meteor-top:4%;   --meteor-size:188px; --meteor-thickness:3px; --meteor-x:-41vw; --meteor-y:51vh; }
+.meteor-shower i:nth-child(11) { --meteor-left:45%;  --meteor-top:13%;  --meteor-size:142px; --meteor-x:-36vw; }
+.meteor-shower i:nth-child(12) { --meteor-left:80%;  --meteor-top:1%;   --meteor-size:180px; --meteor-thickness:3px; --meteor-x:-33vw; --meteor-y:55vh; }
 
 /* Bốn nhóm x ba tia: nhóm sau nối nhóm trước để mưa sao băng không bị ngắt. */
 .meteor-shower i:nth-child(n) { --meteor-speed: 8.8s; }
 .meteor-shower i:nth-child(1)  { --meteor-delay: 0s; }
-.meteor-shower i:nth-child(2)  { --meteor-delay: -.14s; }
-.meteor-shower i:nth-child(3)  { --meteor-delay: -.28s; }
+.meteor-shower i:nth-child(2)  { --meteor-delay: 0s; }
+.meteor-shower i:nth-child(3)  { --meteor-delay: 0s; }
 .meteor-shower i:nth-child(4)  { --meteor-delay: -2.2s; }
-.meteor-shower i:nth-child(5)  { --meteor-delay: -2.34s; }
-.meteor-shower i:nth-child(6)  { --meteor-delay: -2.48s; }
+.meteor-shower i:nth-child(5)  { --meteor-delay: -2.2s; }
+.meteor-shower i:nth-child(6)  { --meteor-delay: -2.2s; }
 .meteor-shower i:nth-child(7)  { --meteor-delay: -4.4s; }
-.meteor-shower i:nth-child(8)  { --meteor-delay: -4.54s; }
-.meteor-shower i:nth-child(9)  { --meteor-delay: -4.68s; }
+.meteor-shower i:nth-child(8)  { --meteor-delay: -4.4s; }
+.meteor-shower i:nth-child(9)  { --meteor-delay: -4.4s; }
 .meteor-shower i:nth-child(10) { --meteor-delay: -6.6s; }
-.meteor-shower i:nth-child(11) { --meteor-delay: -6.74s; }
-.meteor-shower i:nth-child(12) { --meteor-delay: -6.88s; }
+.meteor-shower i:nth-child(11) { --meteor-delay: -6.6s; }
+.meteor-shower i:nth-child(12) { --meteor-delay: -6.6s; }
 @keyframes meteor-fall {
-  0%, 2% {
+  0% {
     opacity: 0;
-    transform: translate3d(10vw, -18vh, 0) scaleX(.45);
+    transform: translate3d(4vw, -18vh, 0) scaleX(.45);
   }
-  4%  { opacity: .18; }
-  8%  { opacity: .98; }
+  1%  { opacity: .18; }
+  5%  { opacity: .98; }
   17% { opacity: .86; }
-  22% { opacity: .4; }
-  25%, 100% {
+  23% { opacity: .48; }
+  27%, 100% {
     opacity: 0;
     transform: translate3d(var(--meteor-x), var(--meteor-y), 0) scaleX(1.12);
   }
