@@ -42,7 +42,7 @@ if (preName) {
   const mascot = document.getElementById("preMascot");
   if (!stage || !mascot || reducedMotion) return;
 
-  const duration = 3350;
+  const duration = 4200;
   const startAngle = Math.PI * 1.08;
   const turns = Math.PI * 2.42;
 
@@ -68,7 +68,7 @@ if (preName) {
 
 window.addEventListener("load", () => {
   const pre = document.getElementById("preloader");
-  const minimumDuration = reducedMotion ? 0 : 3450;
+  const minimumDuration = reducedMotion ? 0 : 4300;
   const wait = Math.max(0, minimumDuration - (performance.now() - preloaderStartedAt));
   setTimeout(() => {
     pre.classList.add("done");
