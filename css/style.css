@@ -2146,12 +2146,12 @@ a:focus-visible, button:focus-visible {
   background: #fff;
   box-shadow: 0 0 9px #fff, 0 0 21px rgba(77, 225, 255, .96);
 }
-.meteor-shower i:nth-child(1)  { --meteor-left:30%;  --meteor-top:-14%; --meteor-size:205px; --meteor-thickness:4px; }
-.meteor-shower i:nth-child(2)  { --meteor-left:65%;  --meteor-top:-20%; --meteor-size:148px; --meteor-x:-51vw; }
-.meteor-shower i:nth-child(3)  { --meteor-left:96%;  --meteor-top:-12%; --meteor-size:232px; --meteor-thickness:4px; --meteor-y:62vh; }
-.meteor-shower i:nth-child(4)  { --meteor-left:15%;  --meteor-top:-22%; --meteor-size:172px; --meteor-x:-42vw; }
-.meteor-shower i:nth-child(5)  { --meteor-left:50%;  --meteor-top:-10%; --meteor-size:218px; --meteor-thickness:4px; --meteor-x:-40vw; }
-.meteor-shower i:nth-child(6)  { --meteor-left:85%;  --meteor-top:-18%; --meteor-size:154px; --meteor-x:-38vw; }
+.meteor-shower i:nth-child(1)  { --meteor-left:30%;  --meteor-top:2%;  --meteor-size:205px; --meteor-thickness:4px; }
+.meteor-shower i:nth-child(2)  { --meteor-left:65%;  --meteor-top:8%;  --meteor-size:148px; --meteor-x:-51vw; }
+.meteor-shower i:nth-child(3)  { --meteor-left:96%;  --meteor-top:0%;  --meteor-size:232px; --meteor-thickness:4px; --meteor-y:62vh; }
+.meteor-shower i:nth-child(4)  { --meteor-left:15%;  --meteor-top:4%;  --meteor-size:172px; --meteor-x:-42vw; }
+.meteor-shower i:nth-child(5)  { --meteor-left:50%;  --meteor-top:10%; --meteor-size:218px; --meteor-thickness:4px; --meteor-x:-40vw; }
+.meteor-shower i:nth-child(6)  { --meteor-left:85%;  --meteor-top:2%;  --meteor-size:154px; --meteor-x:-38vw; }
 .meteor-shower i:nth-child(7)  { --meteor-left:25%;  --meteor-top:8%;   --meteor-size:138px; --meteor-y:49vh; }
 .meteor-shower i:nth-child(8)  { --meteor-left:60%;  --meteor-top:2%;   --meteor-size:196px; --meteor-thickness:4px; --meteor-x:-49vw; --meteor-y:54vh; }
 .meteor-shower i:nth-child(9)  { --meteor-left:95%;  --meteor-top:11%;  --meteor-size:132px; --meteor-x:-44vw; }
@@ -2181,7 +2181,7 @@ a:focus-visible, button:focus-visible {
 @keyframes meteor-fall {
   0% {
     opacity: 0;
-    transform: translate3d(4vw, -18vh, 0) scaleX(.45);
+    transform: translate3d(4vw, -6vh, 0) scaleX(.45);
   }
   1%  { opacity: .18; }
   5%  { opacity: .98; }
