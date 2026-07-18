@@ -253,7 +253,7 @@ body.is-loading { overflow: hidden; }
   border-top: 2px solid rgba(255, 255, 255, .72);
   border-right: 2px solid transparent;
   filter: drop-shadow(0 0 10px rgba(77, 225, 255, .9));
-  animation: pre-ring-turn 3.4s linear both;
+  animation: pre-ring-turn 4.2s linear both;
 }
 @keyframes pre-orbit-in { to { opacity: 1; transform: scale(1); } }
 @keyframes pre-ring-turn { from { rotate: -35deg; } to { rotate: 405deg; } }
@@ -305,7 +305,7 @@ body.is-loading { overflow: hidden; }
     0 0 0 5px rgba(10, 30, 74, .82),
     0 0 34px rgba(46, 123, 255, .88),
     inset 0 0 14px rgba(255, 255, 255, .26);
-  animation: pre-expression 3.35s steps(1, end) both;
+  animation: pre-expression 4.2s steps(1, end) both;
 }
 @keyframes pre-expression {
   0%, 34% { background-position: 7.08% 16.43%; }
@@ -337,7 +337,7 @@ body.is-loading { overflow: hidden; }
   transform: translateY(.72em) scale(.5) rotate(7deg);
   filter: blur(8px);
   animation: pre-ltr .72s var(--ease-pop) forwards;
-  animation-delay: calc(var(--i) * .095s + .38s);
+  animation-delay: calc(var(--i) * .115s + .42s);
 }
 .preloader__name .pltr::after {
   content: attr(data-char);
@@ -351,7 +351,7 @@ body.is-loading { overflow: hidden; }
     0 0 60px rgba(46, 123, 255, .68);
   clip-path: inset(0 100% 0 0);
   animation: pre-ltr-fill .48s var(--ease-out) forwards;
-  animation-delay: calc(var(--i) * .095s + .84s);
+  animation-delay: calc(var(--i) * .115s + .94s);
 }
 .preloader__name .pltr--space {
   width: .34em;
@@ -373,7 +373,7 @@ body.is-loading { overflow: hidden; }
   background: linear-gradient(90deg, transparent, #4de1ff 14%, #fff 50%, #4de1ff 86%, transparent);
   box-shadow: 0 0 12px #4de1ff, 0 0 30px rgba(46, 123, 255, .72);
   transform: scaleX(0);
-  animation: pre-stroke 1s var(--ease-out) forwards 1.55s;
+  animation: pre-stroke 1.15s var(--ease-out) forwards 1.85s;
 }
 @keyframes pre-stroke { to { transform: scaleX(1); } }
 
@@ -406,7 +406,7 @@ body.is-loading { overflow: hidden; }
   text-transform: uppercase;
   color: rgba(177, 203, 241, .62);
   opacity: 0;
-  animation: pre-fade .8s var(--ease-out) forwards 1.95s;
+  animation: pre-fade .9s var(--ease-out) forwards 2.35s;
 }
 @keyframes pre-fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 .preloader__progress {
@@ -420,7 +420,7 @@ body.is-loading { overflow: hidden; }
   background: linear-gradient(90deg, #2e7bff, #4de1ff, #fff);
   transform: scaleX(0);
   transform-origin: left;
-  animation: pre-progress 2.6s var(--ease-out) forwards .42s;
+  animation: pre-progress 3.25s var(--ease-out) forwards .45s;
 }
 @keyframes pre-progress { to { transform: scaleX(1); } }
 
