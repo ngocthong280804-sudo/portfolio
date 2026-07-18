@@ -733,6 +733,7 @@ body.is-loading { overflow: hidden; }
   position: absolute;
   right: 1.5vw; bottom: 5.5vh;
   width: clamp(280px, 32vw, 510px);
+  aspect-ratio: 2 / 3;
   z-index: 3;
   opacity: 0;
   transform: translateY(60px) scale(.6);
@@ -740,10 +741,12 @@ body.is-loading { overflow: hidden; }
 .mascot-hero.landed {
   animation: mascot-in 1s var(--ease-pop) forwards;
 }
-.mascot-hero img {
-  position: relative;
+.mascot-hero > #mascotImg {
+  position: absolute;
+  left: 50%; top: -15%;
   z-index: 2;
-  width: 100%; height: auto; display: block;
+  width: 82%; height: auto; display: block;
+  translate: -50% 0;
   will-change: transform;
   filter:
     drop-shadow(0 0 28px rgba(46, 123, 255, .6))
@@ -1031,7 +1034,7 @@ body.is-loading { overflow: hidden; }
   68%, 100% { transform: translateX(65%) rotate(8deg); opacity: 0; }
 }
 /* cú nhảy tinh nghịch khi rê chuột vào */
-.mascot-hero.jump img {
+.mascot-hero.jump > #mascotImg {
   animation: mascot-jump .7s var(--ease-pop);
 }
 @keyframes mascot-jump {
