@@ -178,10 +178,10 @@ body.is-loading { overflow: hidden; }
     radial-gradient(35% 45% at 12% 88%, rgba(77, 225, 255, .11), transparent 72%),
     linear-gradient(145deg, #030713 0%, #061027 50%, #030713 100%);
   display: grid; place-items: center;
-  transition: opacity .85s var(--ease-out), visibility .85s;
+  transition: opacity .55s var(--ease-out), visibility .55s;
 }
 .preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
-.preloader.done .preloader__inner { transform: scale(1.045); filter: blur(10px); }
+.preloader.done .preloader__inner { transform: scale(1.035); filter: blur(8px); }
 
 .preloader::before,
 .preloader::after {
@@ -214,7 +214,7 @@ body.is-loading { overflow: hidden; }
 .preloader__inner {
   width: min(940px, 94vw);
   text-align: center;
-  transition: transform .85s var(--ease-out), filter .85s var(--ease-out);
+  transition: transform .55s var(--ease-out), filter .55s var(--ease-out);
 }
 .preloader__stage {
   --mascot-size: clamp(74px, 10vw, 112px);
@@ -253,7 +253,7 @@ body.is-loading { overflow: hidden; }
   border-top: 2px solid rgba(255, 255, 255, .72);
   border-right: 2px solid transparent;
   filter: drop-shadow(0 0 10px rgba(77, 225, 255, .9));
-  animation: pre-ring-turn 4.2s linear both;
+  animation: pre-ring-turn 2.6s linear both;
 }
 @keyframes pre-orbit-in { to { opacity: 1; transform: scale(1); } }
 @keyframes pre-ring-turn { from { rotate: -35deg; } to { rotate: 405deg; } }
@@ -305,7 +305,7 @@ body.is-loading { overflow: hidden; }
     0 0 0 5px rgba(10, 30, 74, .82),
     0 0 34px rgba(46, 123, 255, .88),
     inset 0 0 14px rgba(255, 255, 255, .26);
-  animation: pre-expression 4.2s steps(1, end) both;
+  animation: pre-expression 2.6s steps(1, end) both;
 }
 @keyframes pre-expression {
   0%, 34% { background-position: 7.08% 16.43%; }
@@ -368,7 +368,7 @@ body.is-loading { overflow: hidden; }
   background: linear-gradient(90deg, transparent, #4de1ff 14%, #fff 50%, #4de1ff 86%, transparent);
   box-shadow: 0 0 12px #4de1ff, 0 0 30px rgba(46, 123, 255, .72);
   transform: scaleX(0);
-  animation: pre-stroke 1.15s var(--ease-out) forwards 1.85s;
+  animation: pre-stroke .8s var(--ease-out) forwards 1.35s;
 }
 @keyframes pre-stroke { to { transform: scaleX(1); } }
 
@@ -398,7 +398,7 @@ body.is-loading { overflow: hidden; }
   gap: .75rem;
   font-family: var(--font-mono);
   opacity: 0;
-  animation: pre-fade .9s var(--ease-out) forwards 2.35s;
+  animation: pre-fade .65s var(--ease-out) forwards 1.85s;
 }
 @keyframes pre-fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 .preloader__label {
@@ -424,7 +424,7 @@ body.is-loading { overflow: hidden; }
   background: linear-gradient(90deg, #2e7bff, #4de1ff, #fff);
   transform: scaleX(0);
   transform-origin: left;
-  animation: pre-progress 3.25s var(--ease-out) forwards .45s;
+  animation: pre-progress 2.25s var(--ease-out) forwards .3s;
 }
 @keyframes pre-progress { to { transform: scaleX(1); } }
 
@@ -732,7 +732,7 @@ body.is-loading { overflow: hidden; }
 .mascot-hero {
   position: absolute;
   right: 1.5vw; bottom: 5.5vh;
-  width: clamp(300px, 36vw, 560px);
+  width: clamp(280px, 32vw, 510px);
   z-index: 3;
   opacity: 0;
   transform: translateY(60px) scale(.6);
@@ -764,7 +764,7 @@ body.is-loading { overflow: hidden; }
 .digital-orbit__path {
   position: absolute;
   left: 50%; bottom: 2%;
-  width: 69%;
+  width: 76%;
   aspect-ratio: 1;
   translate: -50% 0;
   border: 1px dashed rgba(77, 225, 255, .42);
@@ -799,7 +799,7 @@ body.is-loading { overflow: hidden; }
 .holo-profile {
   position: absolute;
   left: 50%; bottom: 6%;
-  width: 57%;
+  width: 64%;
   aspect-ratio: 1;
   translate: -50% 0;
   z-index: 1;
@@ -843,7 +843,9 @@ body.is-loading { overflow: hidden; }
   z-index: 1;
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: 50% 14%;
+  object-position: 50% 13%;
+  transform: scale(1.08);
+  transform-origin: 50% 18%;
   filter:
     saturate(.9)
     contrast(1.06)
@@ -1558,11 +1560,11 @@ a:focus-visible, button:focus-visible {
 
   .timeline__item { grid-template-columns: 1fr; gap: .6rem; }
   .hero__scroll { display: none; }
-  .mascot-hero { width: clamp(210px, 29vw, 280px); right: -1vw; bottom: 5vh; z-index: 3; }
+  .mascot-hero { width: clamp(200px, 27vw, 260px); right: -1vw; bottom: 5vh; z-index: 3; }
   .digital-icon { width: clamp(38px, 5.5vw, 48px); border-radius: 14px; }
   .digital-icon::before { border-radius: 10px; }
-  .holo-profile { width: 61%; }
-  .digital-orbit__path { width: 74%; }
+  .holo-profile { width: 68%; }
+  .digital-orbit__path { width: 82%; }
   .mascot-icon { width: 60px; height: 60px; }
 }
 @media (max-width: 560px) {
@@ -1583,7 +1585,7 @@ a:focus-visible, button:focus-visible {
   .hero__intro { max-width: 73%; font-size: .86rem; }
   .hero__actions { max-width: 76%; gap: .75rem; }
   .btn { padding: .9em 1.35em; font-size: .72rem; }
-  .mascot-hero { width: clamp(165px, 43vw, 210px); right: -6vw; bottom: 7vh; }
+  .mascot-hero { width: clamp(155px, 39vw, 195px); right: -5vw; bottom: 7vh; }
   .digital-orbit { inset: -10% 3% -9% -7%; }
   .digital-icon { width: clamp(34px, 9.5vw, 42px); border-radius: 12px; }
   .digital-icon::before { inset: 3px; border-radius: 9px; }
@@ -1593,8 +1595,8 @@ a:focus-visible, button:focus-visible {
   .digital-icon--ads { left: 8%; bottom: 6%; }
   .digital-icon--growth { right: 9%; bottom: 8%; }
   .digital-star--2, .digital-star--6 { display: none; }
-  .holo-profile { width: 64%; bottom: 9%; }
-  .digital-orbit__path { width: 78%; bottom: 5%; }
+  .holo-profile { width: 70%; bottom: 9%; }
+  .digital-orbit__path { width: 86%; bottom: 5%; }
   .holo-profile__badge { bottom: 7%; min-width: 70%; padding: .28rem .4rem; }
   .holo-profile__badge b { font-size: .42rem; }
   .holo-profile__badge small { display: none; }
