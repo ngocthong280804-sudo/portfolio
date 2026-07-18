@@ -104,7 +104,7 @@ mobileMenu.querySelectorAll("a").forEach(a =>
 
 /* ── Typewriter ── */
 const typeTarget = document.getElementById("typewriter");
-const typeText = "trần ngọc thông — marketing strategist";
+const typeText = "trần ngọc thông";
 if (typeTarget) {
   if (reducedMotion) {
     typeTarget.textContent = typeText;
