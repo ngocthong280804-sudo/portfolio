@@ -1754,7 +1754,7 @@ a:focus-visible, button:focus-visible {
 /* Portfolio là tâm điểm: lớn, thở nhẹ, ánh sáng quét và chữ nảy từng ký tự. */
 .wordmark {
   isolation: isolate;
-  width: min(78vw, 1080px);
+  width: min(88vw, 1240px);
   margin: -4vh auto 0;
 }
 .wordmark::before {
@@ -1787,7 +1787,7 @@ a:focus-visible, button:focus-visible {
   animation: wordmark-breathe 5.4s ease-in-out infinite;
 }
 .wordmark__line {
-  font-size: clamp(5rem, 10.4vw, 9.8rem);
+  font-size: clamp(6rem, 13.2vw, 12rem);
   letter-spacing: .012em;
 }
 .wordmark__ring {
@@ -1804,10 +1804,31 @@ a:focus-visible, button:focus-visible {
   animation: none;
 }
 .hero-chrome .ltr {
+  --letter-swing: -1deg;
+  --letter-return: .45deg;
   filter:
     drop-shadow(0 1px 0 rgba(255, 255, 255, 1))
     drop-shadow(0 8px 18px rgba(64, 140, 255, .76))
     drop-shadow(0 0 20px rgba(0, 214, 255, .62));
+}
+.hero-chrome .ltr:nth-child(even) {
+  --letter-swing: 1deg;
+  --letter-return: -.45deg;
+}
+.hero-chrome.popped .ltr {
+  animation:
+    ltr-pop .7s var(--ease-pop) forwards,
+    chrome-sheen 6s ease-in-out infinite alternate,
+    hero-letter-wave 3.8s ease-in-out infinite;
+  animation-delay:
+    calc(var(--i) * .055s),
+    0s,
+    calc(1.25s + var(--i) * .12s);
+}
+@keyframes hero-letter-wave {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  45%      { translate: 0 -.055em; rotate: var(--letter-swing); }
+  72%      { translate: 0 .018em; rotate: var(--letter-return); }
 }
 @keyframes wordmark-aura { to { rotate: 360deg; } }
 @keyframes wordmark-breathe {
@@ -2001,10 +2022,100 @@ a:focus-visible, button:focus-visible {
   70%      { opacity: .35; transform: translateY(-2px) scale(.72) rotate(78deg); }
 }
 
+/* Bầu trời sao: ba lớp parallax bằng các pattern không đồng chu kỳ. */
+.hero-sky {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 44%, rgba(20, 76, 164, .2), transparent 43%),
+    linear-gradient(180deg, rgba(1, 7, 23, .08), rgba(1, 5, 18, .42));
+}
+.hero-sky__layer {
+  position: absolute;
+  inset: -18%;
+  background-repeat: repeat;
+  will-change: transform, background-position;
+}
+.hero-sky__layer--far {
+  opacity: .5;
+  background-image:
+    radial-gradient(circle, rgba(214, 236, 255, .84) 0 1px, transparent 1.2px),
+    radial-gradient(circle, rgba(115, 179, 255, .58) 0 .8px, transparent 1.1px),
+    radial-gradient(circle, rgba(255, 255, 255, .7) 0 .7px, transparent 1px);
+  background-size: 71px 83px, 113px 127px, 157px 139px;
+  background-position: 13px 21px, 47px 9px, 81px 58px;
+  animation: stars-far 42s linear infinite;
+}
+.hero-sky__layer--mid {
+  opacity: .48;
+  background-image:
+    radial-gradient(circle, #e9f8ff 0 1.25px, rgba(111, 194, 255, .45) 1.5px, transparent 2.4px),
+    radial-gradient(circle, #fff 0 1px, rgba(79, 161, 255, .34) 1.4px, transparent 2.2px);
+  background-size: 181px 167px, 239px 211px;
+  background-position: 28px 47px, 117px 86px;
+  filter: drop-shadow(0 0 4px rgba(77, 225, 255, .8));
+  animation: stars-mid 30s linear infinite;
+}
+.hero-sky__layer--near {
+  opacity: .4;
+  background-image:
+    radial-gradient(circle, #fff 0 1.5px, #78dfff 1.7px, transparent 3px),
+    radial-gradient(circle, rgba(255, 255, 255, .95) 0 1.3px, rgba(104, 128, 255, .38) 1.8px, transparent 3.4px);
+  background-size: 337px 283px, 419px 367px;
+  background-position: 71px 19px, 213px 137px;
+  filter: drop-shadow(0 0 7px rgba(77, 225, 255, .9));
+  animation: stars-near 22s linear infinite, stars-twinkle 4.6s ease-in-out infinite;
+}
+@keyframes stars-far { to { transform: translate3d(-40px, 55px, 0); } }
+@keyframes stars-mid { to { transform: translate3d(58px, 72px, 0); } }
+@keyframes stars-near { to { transform: translate3d(-76px, 94px, 0); } }
+@keyframes stars-twinkle {
+  0%, 100% { opacity: .24; }
+  52%      { opacity: .58; }
+}
+
+.shooting-star {
+  --shoot-x: 48vw;
+  position: absolute;
+  left: var(--shoot-left, 8%);
+  top: var(--shoot-top, 22%);
+  width: clamp(80px, 10vw, 145px);
+  height: 1px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(121, 213, 255, .55), #fff);
+  box-shadow: 0 0 7px rgba(255, 255, 255, .9), 0 0 16px rgba(77, 225, 255, .72);
+  opacity: 0;
+  rotate: -31deg;
+  transform-origin: right center;
+  animation: shooting-star 8.8s var(--ease-out) infinite var(--shoot-delay, 0s);
+}
+.shooting-star::after {
+  content: "";
+  position: absolute;
+  right: -2px; top: 50%;
+  width: 4px; height: 4px;
+  translate: 0 -50%;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 10px #fff, 0 0 24px #4de1ff;
+}
+.shooting-star--1 { --shoot-left: 6%; --shoot-top: 25%; --shoot-delay: 1.8s; }
+.shooting-star--2 { --shoot-left: 51%; --shoot-top: 16%; --shoot-delay: 5.7s; --shoot-x: 38vw; }
+.shooting-star--3 { --shoot-left: 28%; --shoot-top: 64%; --shoot-delay: 9.4s; --shoot-x: 44vw; }
+@keyframes shooting-star {
+  0%, 9% { opacity: 0; transform: translate3d(-12vw, -8vh, 0) scaleX(.35); }
+  11%    { opacity: 1; }
+  24%    { opacity: 0; transform: translate3d(var(--shoot-x), 29vh, 0) scaleX(1); }
+  100%   { opacity: 0; transform: translate3d(var(--shoot-x), 29vh, 0) scaleX(1); }
+}
+
 @media (max-width: 900px) {
   .hero__frame { padding-right: 0; }
-  .wordmark { width: 88vw; margin-top: -6vh; }
-  .wordmark__line { font-size: clamp(4.1rem, 12vw, 7rem); }
+  .wordmark { width: 94vw; margin-top: -6vh; }
+  .wordmark__line { font-size: clamp(4.8rem, 14vw, 8rem); }
   .hero-portrait-stage {
     left: 2vw; bottom: 5vh;
     width: clamp(190px, 25vw, 225px);
@@ -2024,9 +2135,9 @@ a:focus-visible, button:focus-visible {
     padding: 9rem 0 3.5rem;
   }
   .hero__frame { width: 100%; padding-right: 0; }
-  .wordmark { width: 94vw; margin: -8vh auto 0; }
-  .wordmark__line { font-size: clamp(3.3rem, 15vw, 5rem); }
-  .wordmark__ring { width: 108%; height: 166%; }
+  .wordmark { width: 98vw; margin: -8vh auto 0; }
+  .wordmark__line { font-size: clamp(3.65rem, 17vw, 5.4rem); }
+  .wordmark__ring { width: 104%; height: 160%; }
   .hero-portrait-stage {
     left: -1vw; bottom: 4vh;
     width: clamp(138px, 39vw, 158px);
@@ -2050,6 +2161,10 @@ a:focus-visible, button:focus-visible {
   .hero-spark-field i:nth-child(3),
   .hero-spark-field i:nth-child(7),
   .hero-spark-field i:nth-child(11) { display: none; }
+  .hero-sky__layer--far { opacity: .4; }
+  .hero-sky__layer--mid { opacity: .38; }
+  .hero-sky__layer--near { opacity: .28; }
+  .shooting-star--3 { display: none; }
 }
 
 /* ═══════════ REDUCED MOTION ═══════════ */
