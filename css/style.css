@@ -344,10 +344,6 @@ body.is-loading { overflow: hidden; }
   inset: 0;
   color: #f7fbff;
   -webkit-text-stroke: 0 transparent;
-  text-shadow:
-    0 0 9px rgba(255, 255, 255, .9),
-    0 0 25px rgba(77, 225, 255, .86),
-    0 0 60px rgba(46, 123, 255, .68);
   clip-path: inset(0 100% 0 0);
   animation: pre-ltr-fill .48s var(--ease-out) forwards;
   animation-delay: calc(var(--i) * .115s + .94s);
