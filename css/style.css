@@ -2173,6 +2173,11 @@ a:focus-visible, button:focus-visible {
 .meteor-shower i:nth-child(10) { --meteor-delay: -6.6s; }
 .meteor-shower i:nth-child(11) { --meteor-delay: -6.6s; }
 .meteor-shower i:nth-child(12) { --meteor-delay: -6.6s; }
+
+/* Giữ cả ba tia trong vùng nhìn thấy, ưu tiên nửa trên của bầu trời. */
+.meteor-shower i:nth-child(3n + 1) { --meteor-x: -28vw; --meteor-y: 45vh; }
+.meteor-shower i:nth-child(3n + 2) { --meteor-x: -32vw; --meteor-y: 48vh; }
+.meteor-shower i:nth-child(3n)     { --meteor-x: -36vw; --meteor-y: 50vh; }
 @keyframes meteor-fall {
   0% {
     opacity: 0;
