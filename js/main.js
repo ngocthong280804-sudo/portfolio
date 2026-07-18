@@ -20,27 +20,62 @@ document.querySelectorAll("[data-letters]").forEach(el => {
   });
 });
 
-/* ── Preloader: tách chữ "Ngọc Thông" để nảy từng ký tự ── */
+/* ── Preloader: dựng nét rồi bật sáng từng ký tự ── */
+const preloaderStartedAt = performance.now();
 const preName = document.getElementById("preName");
 if (preName) {
   const text = preName.textContent;
   preName.textContent = "";
   [...text].forEach((ch, i) => {
     const s = document.createElement("span");
-    s.className = "pltr";
+    s.className = ch === " " ? "pltr pltr--space" : "pltr";
     s.style.setProperty("--i", i);
-    s.innerHTML = ch === " " ? "&nbsp;" : ch;
+    s.dataset.char = ch;
+    s.textContent = ch === " " ? "\u00a0" : ch;
     preName.appendChild(s);
   });
 }
 
+/* Linh vật chạy theo ellipse, lướt sau chữ ở nửa trên và ra trước ở nửa dưới. */
+(function preloaderMascotMotion() {
+  const stage = document.getElementById("preStage");
+  const mascot = document.getElementById("preMascot");
+  if (!stage || !mascot || reducedMotion) return;
+
+  const duration = 3350;
+  const startAngle = Math.PI * 1.08;
+  const turns = Math.PI * 2.42;
+
+  function move(now) {
+    const progress = Math.min((now - preloaderStartedAt) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const angle = startAngle + turns * eased;
+    const rx = Math.min(stage.clientWidth * 0.425, 395);
+    const ry = Math.min(stage.clientHeight * 0.31, 118);
+    const x = Math.cos(angle) * rx;
+    const y = Math.sin(angle) * ry + Math.sin(progress * Math.PI * 8) * 4;
+    const tilt = Math.cos(angle) * 12;
+    const pulse = 1 + Math.sin(progress * Math.PI * 7) * 0.025;
+
+    mascot.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0) rotate(${tilt.toFixed(2)}deg) scale(${pulse.toFixed(3)})`;
+    mascot.style.zIndex = y > 4 ? "5" : "2";
+
+    if (progress < 1) requestAnimationFrame(move);
+  }
+
+  requestAnimationFrame(move);
+})();
+
 window.addEventListener("load", () => {
   const pre = document.getElementById("preloader");
+  const minimumDuration = reducedMotion ? 0 : 3450;
+  const wait = Math.max(0, minimumDuration - (performance.now() - preloaderStartedAt));
   setTimeout(() => {
     pre.classList.add("done");
+    document.body.classList.remove("is-loading");
     document.querySelectorAll(".hero-chrome").forEach(el => el.classList.add("popped"));
     document.getElementById("mascotHero")?.classList.add("landed");
-  }, reducedMotion ? 0 : 2300); // đủ thời gian chữ nảy xong
+  }, wait);
 });
 
 /* ── Nav ── */
