@@ -32,6 +32,7 @@
   <!-- ═══════════ CURSOR ═══════════ -->
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
+  <div class="vignette" aria-hidden="true"></div>
 
   <!-- ═══════════ NAV ═══════════ -->
   <header class="nav" id="nav">
@@ -59,6 +60,9 @@
     <!-- ═══════════ HERO ═══════════ -->
     <section class="hero">
       <canvas id="scene" class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="mascot-hero" id="mascotHero" aria-hidden="true">
+        <img src="images/linh-vat.png" alt="" id="mascotImg">
+      </div>
       <div class="hero__frame container">
         <!-- TÊN + LÁ CỜ — đầu trang, chính giữa -->
         <div class="topmark anim-hero" style="--d:.05s">
@@ -73,10 +77,10 @@
           <svg class="wordmark__ring wordmark__ring--back" viewBox="0 0 1000 420" aria-hidden="true" preserveAspectRatio="none">
             <defs>
               <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%"  stop-color="#ff9ad5"/>
+                <stop offset="0%"  stop-color="#4de1ff"/>
                 <stop offset="45%" stop-color="#ffffff"/>
-                <stop offset="75%" stop-color="#a78bfa"/>
-                <stop offset="100%" stop-color="#3ee6d8"/>
+                <stop offset="75%" stop-color="#2e7bff"/>
+                <stop offset="100%" stop-color="#9cd2ff"/>
               </linearGradient>
             </defs>
             <ellipse cx="500" cy="210" rx="470" ry="150" fill="none"
@@ -145,7 +149,7 @@
     <section class="skills" id="kynang">
       <div class="container">
         <div class="section-head reveal">
-          <p class="section-eyebrow section-eyebrow--light"><span class="rule"></span>Kỹ năng &amp; <em class="script script--inline">công cụ</em></p>
+          <p class="section-eyebrow section-eyebrow--light"><span class="mascot-icon mascot-icon--thinking" aria-hidden="true"></span><span class="chip">Kỹ năng &amp; <em class="script script--inline">công cụ</em></span></p>
           <h2 class="chrome chrome--section" data-letters aria-label="My Skills">My Skills</h2>
         </div>
         <ul class="bars">
@@ -176,7 +180,7 @@
 
     <!-- ═══════════ LEDGER / SỐ LIỆU ═══════════ -->
     <section class="ledger container reveal">
-      <p class="section-eyebrow"><span class="rule"></span>Hồ sơ năng lực</p>
+      <p class="section-eyebrow"><span class="mascot-icon mascot-icon--cool" aria-hidden="true"></span><span class="chip">Hồ sơ năng lực</span></p>
       <ul class="ledger__list">
         <li class="ledger__row reveal" style="--d:.05s">
           <span class="ledger__label">Năm kinh nghiệm</span>
@@ -204,7 +208,7 @@
     <!-- ═══════════ DỰ ÁN ═══════════ -->
     <section class="projects container" id="duan">
       <div class="section-head reveal">
-        <p class="section-eyebrow"><span class="rule"></span>Dự án <em class="script script--inline">tiêu biểu</em></p>
+        <p class="section-eyebrow"><span class="mascot-icon mascot-icon--excited" aria-hidden="true"></span><span class="chip">Dự án <em class="script script--inline">tiêu biểu</em></span></p>
         <h2 class="chrome chrome--section" data-letters aria-label="Projects">Projects</h2>
       </div>
 
@@ -278,7 +282,8 @@
     <!-- ═══════════ QUOTE — dark block ═══════════ -->
     <section class="quote reveal">
       <div class="container">
-        <span class="quote__mark chrome" aria-hidden="true">“</span>
+        <span class=”mascot-icon mascot-icon--surprised quote__icon” aria-hidden=”true”></span>
+        <span class=”quote__mark chrome” aria-hidden=”true”>”</span>
         <blockquote>
           <p>Ngọc Thông có tư duy chiến lược hiếm gặp — vừa hiểu con số,
           vừa kể được câu chuyện khiến khách hàng <em class="script script--inline">tin và yêu</em> thương hiệu.</p>
@@ -304,7 +309,7 @@
         </div>
       </div>
       <div class="about__content">
-        <p class="section-eyebrow reveal"><span class="rule"></span>Về tôi</p>
+        <p class="section-eyebrow reveal"><span class="mascot-icon mascot-icon--wink" aria-hidden="true"></span><span class="chip">Về tôi</span></p>
         <h2 class="chrome chrome--section reveal" data-letters aria-label="About Me">About Me</h2>
         <h3 class="about__lede reveal">Chiến lược có <em class="script script--inline">cảm xúc</em>, sáng tạo có số liệu.</h3>
         <p class="about__text reveal">
@@ -339,7 +344,7 @@
     <!-- ═══════════ KINH NGHIỆM ═══════════ -->
     <section class="timeline container" id="kinhnghiem">
       <div class="section-head reveal">
-        <p class="section-eyebrow"><span class="rule"></span>Hành trình <em class="script script--inline">nghề nghiệp</em></p>
+        <p class="section-eyebrow"><span class="mascot-icon mascot-icon--determined" aria-hidden="true"></span><span class="chip">Hành trình <em class="script script--inline">nghề nghiệp</em></span></p>
         <h2 class="chrome chrome--section" data-letters aria-label="Journey">Journey</h2>
       </div>
       <ol class="timeline__list">
@@ -381,7 +386,7 @@
     <!-- ═══════════ LIÊN HỆ — dark block ═══════════ -->
     <section class="contact" id="lienhe">
       <div class="container">
-        <p class="section-eyebrow section-eyebrow--light reveal"><span class="rule"></span>Liên hệ</p>
+        <p class="section-eyebrow section-eyebrow--light reveal"><span class="mascot-icon mascot-icon--love" aria-hidden="true"></span><span class="chip">Liên hệ</span></p>
         <h2 class="chrome chrome--big reveal" data-letters aria-label="Thank You!">Thank You!</h2>
         <span class="spark spark--c1" aria-hidden="true">✦</span>
         <span class="spark spark--c2" aria-hidden="true">✦</span>
@@ -401,7 +406,7 @@
   </main>
 
   <footer class="footer container">
-    <span>© 2026 Trần Ngọc Thông</span>
+    <span class="footer__left"><span class="mascot-icon mascot-icon--sad mascot-icon--sm" aria-hidden="true"></span>© 2026 Trần Ngọc Thông</span>
     <span>Thiết kế &amp; xây dựng với ♥ tại Sài Gòn</span>
   </footer>
 

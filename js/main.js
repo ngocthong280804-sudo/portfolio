@@ -26,6 +26,7 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     pre.classList.add("done");
     document.querySelectorAll(".hero-chrome").forEach(el => el.classList.add("popped"));
+    document.getElementById("mascotHero")?.classList.add("landed"); // linh vật nhảy vào
   }, reducedMotion ? 0 : 800);
 });
 
@@ -297,7 +298,7 @@ async function initScene() {
   const key = new THREE.DirectionalLight(0xffffff, 1.6);
   key.position.set(5, 6, 6);
   scene.add(key);
-  const rim = new THREE.DirectionalLight(0xffb1d9, 0.8);
+  const rim = new THREE.DirectionalLight(0x4de1ff, 0.8);
   rim.position.set(-6, -3, 4);
   scene.add(rim);
 
@@ -337,6 +338,10 @@ async function initScene() {
     group.rotation.y = scroll * 0.9 + curX * 0.05;
     group.position.y = scroll * 2.4;
     camera.position.z = 11 + scroll * 2.5;
+
+    /* linh vật nghiêng nhẹ theo chuột (parallax) */
+    const mImg = document.getElementById("mascotImg");
+    if (mImg) mImg.style.transform = `translate(${curX * 14}px, ${curY * 10}px) rotate(${curX * 3}deg)`;
 
     renderer.render(scene, camera);
   }
