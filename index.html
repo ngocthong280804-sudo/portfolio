@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Dancing+Script:wght@500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=preloader-v5">
+  <link rel="stylesheet" href="css/style.css?v=hero-layout-v6">
 </head>
 <body class="is-loading">
 
@@ -66,18 +66,18 @@
 
     <!-- ═══════════ HERO ═══════════ -->
     <section class="hero">
+      <!-- LÁ CỜ + TÊN — giữ đúng trục giữa màn hình -->
+      <div class="topmark anim-hero" style="--d:.05s">
+        <span class="flag" aria-hidden="true"><i class="flag__pole"></i><i class="flag__cloth">★</i></span>
+        <p class="hero__eyebrow">
+          <span class="type-caret" id="typewriter"></span>
+        </p>
+      </div>
+
       <div class="mascot-hero" id="mascotHero" aria-hidden="true">
         <img src="images/linh-vat.png" alt="" id="mascotImg">
       </div>
       <div class="hero__frame container">
-        <!-- TÊN + LÁ CỜ — đầu trang, chính giữa -->
-        <div class="topmark anim-hero" style="--d:.05s">
-          <span class="flag" aria-hidden="true"><i class="flag__pole"></i><i class="flag__cloth">★</i></span>
-          <p class="hero__eyebrow">
-            <span class="type-caret" id="typewriter"></span>
-          </p>
-        </div>
-
         <!-- WORDMARK: Portfolio chrome + vòng quỹ đạo -->
         <div class="wordmark" aria-label="Portfolio">
           <svg class="wordmark__ring wordmark__ring--back" viewBox="0 0 1000 420" aria-hidden="true" preserveAspectRatio="none">
@@ -416,6 +416,6 @@
     <span>Thiết kế &amp; xây dựng với ♥ tại Sài Gòn</span>
   </footer>
 
-  <script type="module" src="js/main.js?v=preloader-v2"></script>
+  <script type="module" src="js/main.js?v=hero-layout-v6"></script>
 </body>
 </html>
