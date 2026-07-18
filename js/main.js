@@ -75,6 +75,7 @@ window.addEventListener("load", () => {
     document.body.classList.remove("is-loading");
     document.querySelectorAll(".hero-chrome").forEach(el => el.classList.add("popped"));
     document.getElementById("mascotHero")?.classList.add("landed");
+    document.getElementById("portraitStage")?.classList.add("landed");
   }, wait);
 });
 
