@@ -558,7 +558,7 @@ body.is-loading { overflow: hidden; }
 /* ═══ TOPMARK — lá cờ + tên, đầu trang chính giữa ═══ */
 .topmark {
   position: absolute;
-  top: clamp(4.7rem, 8vh, 5.8rem);
+  top: 1.35rem;
   left: 50%;
   z-index: 5;
   translate: -50% 0;
@@ -1262,7 +1262,7 @@ a:focus-visible, button:focus-visible {
   .nav__burger { display: block; }
 
   .hero { padding: 9rem 0 4rem; }
-  .topmark { top: 4.7rem; }
+  .topmark { top: 1.25rem; }
   .hero__frame { padding-right: 27vw; }
   .wordmark { margin: 3.2rem 0 2.8rem; }
   .wordmark__line { font-size: clamp(3rem, 8.8vw, 5.4rem); }
@@ -1286,7 +1286,7 @@ a:focus-visible, button:focus-visible {
     align-items: flex-start;
     padding: 9.5rem 0 5rem;
   }
-  .topmark { top: 4.6rem; gap: .3rem; }
+  .topmark { top: 1.1rem; gap: .3rem; }
   .topmark .flag { scale: .82; }
   .hero__eyebrow { font-size: .76rem; letter-spacing: .16em; }
   .hero__frame { padding-right: 0; }
