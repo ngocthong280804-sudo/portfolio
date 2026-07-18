@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Dancing+Script:wght@500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=hero-balance-v4">
+  <link rel="stylesheet" href="css/style.css?v=hero-composition-v5">
 </head>
 <body class="is-loading">
 
@@ -167,24 +167,24 @@
           </svg>
 
         </div>
-
-        <h2 class="hero__title anim-hero" style="--d:1.15s">
-          Biến thương hiệu thành
-          <em class="script" id="rotator">câu chuyện</em>
-          đáng nhớ.
-        </h2>
-
-        <div class="hero__meta anim-hero" style="--d:1.35s">
-          <p class="hero__intro">
-            Tôi là <strong>Trần Ngọc Thông</strong> — 8 năm xây dựng chiến lược thương hiệu
-            và tăng trưởng cho các doanh nghiệp F&amp;B, mỹ phẩm và fintech tại Việt Nam.
-          </p>
-          <div class="hero__actions">
-            <a href="#duan" class="btn btn--pink" data-hover data-magnetic>Xem dự án</a>
-            <a href="#lienhe" class="btn btn--ghost" data-hover data-magnetic>Trò chuyện cùng tôi</a>
-          </div>
-        </div>
       </div>
+
+      <!-- Đường năng lượng nối cổng Portfolio với chân dung hologram -->
+      <svg class="hero-bridge" viewBox="0 0 640 260" aria-hidden="true" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="bridgeGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#4de1ff" stop-opacity="0"/>
+            <stop offset="34%" stop-color="#4de1ff" stop-opacity=".72"/>
+            <stop offset="72%" stop-color="#6f9bff" stop-opacity=".62"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path class="hero-bridge__trail" d="M12 210 C180 270 352 8 628 70"/>
+        <path class="hero-bridge__comet" d="M12 210 C180 270 352 8 628 70"/>
+        <circle class="hero-bridge__dot hero-bridge__dot--1" cx="188" cy="207" r="4"/>
+        <circle class="hero-bridge__dot hero-bridge__dot--2" cx="415" cy="71" r="3"/>
+      </svg>
+
       <div class="hero__scroll anim-hero" style="--d:1.3s" aria-hidden="true">
         <span>Cuộn xuống</span>
         <span class="hero__scroll-line"></span>
