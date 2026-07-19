@@ -797,6 +797,12 @@ body.is-loading { overflow: hidden; }
   font-family: inherit !important;
   font-weight: inherit !important;
   font-style: normal !important;
+  color: #f8fcff !important;
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: #f8fcff !important;
+  text-shadow: inherit !important;
 }
 .section-eyebrow .chip::before,
 .section-eyebrow .chip::after {
@@ -1252,19 +1258,19 @@ body.is-loading { overflow: hidden; }
     0 0 14px rgba(61, 168, 255, .75),
     0 0 44px rgba(46, 123, 255, .45);
 }
-/* bỏ kiểu script bên trong eyebrow — giữ màu gradient, cùng font cho dễ đọc */
+/* Bỏ kiểu script và màu riêng trong eyebrow — toàn bộ chữ dùng chung một màu. */
 .section-eyebrow .script--inline {
   font-family: inherit;
   font-weight: inherit;
   font-style: normal;
   font-size: 1em;
   line-height: inherit;
-  color: #73b9ff;
+  color: #f8fcff;
   background: none;
   -webkit-background-clip: border-box;
   background-clip: border-box;
-  -webkit-text-fill-color: currentColor;
-  text-shadow: 0 0 12px rgba(73, 163, 255, .42);
+  -webkit-text-fill-color: #f8fcff;
+  text-shadow: 0 0 10px rgba(255,255,255,.24), 0 0 20px rgba(77,225,255,.18);
 }
 .section-eyebrow--light { color: rgba(255, 255, 255, .6); }
 .rule {
