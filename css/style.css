@@ -2298,6 +2298,95 @@ a:focus-visible, button:focus-visible {
   to { transform: scale(1.32); opacity: .7; }
 }
 
+/* Bản vệt dài theo video: ít tia hơn, mỗi tia quét xuyên toàn màn hình
+   và giữ phần đuôi sáng đủ lâu trước khi tan chậm. */
+.meteor-shower i {
+  --meteor-x: -138vw;
+  --meteor-y: 112vh;
+  width: var(--meteor-size, clamp(260px, 30vw, 520px));
+  height: var(--meteor-thickness, 1.2px);
+  animation-name: meteor-screen-sweep;
+  animation-timing-function: linear;
+}
+.meteor-shower i:nth-child(n + 9) { display: none; }
+.meteor-shower i:nth-child(1) { --meteor-left:38%;  --meteor-top:-22%; --meteor-size:clamp(270px,31vw,520px); --meteor-speed:13.6s; --meteor-delay:-1.1s; }
+.meteor-shower i:nth-child(2) { --meteor-left:70%;  --meteor-top:-32%; --meteor-size:clamp(320px,36vw,610px); --meteor-speed:14.4s; --meteor-delay:-8.2s; }
+.meteor-shower i:nth-child(3) { --meteor-left:101%; --meteor-top:-18%; --meteor-size:clamp(245px,28vw,480px); --meteor-speed:12.8s; --meteor-delay:-4.9s; }
+.meteor-shower i:nth-child(4) { --meteor-left:118%; --meteor-top:4%;   --meteor-size:clamp(300px,34vw,570px); --meteor-speed:15s;   --meteor-delay:-11.6s; }
+.meteor-shower i:nth-child(5) { --meteor-left:54%;  --meteor-top:-38%; --meteor-size:clamp(230px,27vw,450px); --meteor-speed:12.4s; --meteor-delay:-6.3s; }
+.meteor-shower i:nth-child(6) { --meteor-left:90%;  --meteor-top:-42%; --meteor-size:clamp(285px,32vw,540px); --meteor-speed:14s;   --meteor-delay:-2.8s; }
+.meteor-shower i:nth-child(7) { --meteor-left:126%; --meteor-top:-24%; --meteor-size:clamp(250px,29vw,490px); --meteor-speed:13.2s; --meteor-delay:-9.7s; }
+.meteor-shower i:nth-child(8) { --meteor-left:82%;  --meteor-top:-10%; --meteor-size:clamp(315px,35vw,600px); --meteor-speed:14.7s; --meteor-delay:-5.4s; }
+@keyframes meteor-screen-sweep {
+  0% {
+    opacity: 0;
+    transform: translate3d(12vw, -12vh, 0) scaleX(.38);
+  }
+  7%  { opacity: .08; }
+  15% { opacity: .72; transform: translate3d(-12vw, 10vh, 0) scaleX(.88); }
+  55% { opacity: .68; }
+  71% { opacity: .38; }
+  84%, 100% {
+    opacity: 0;
+    transform: translate3d(var(--meteor-x), var(--meteor-y), 0) scaleX(1.08);
+  }
+}
+
+.cosmic-comet {
+  --comet-x: -156vw;
+  --comet-y: 132vh;
+  left: var(--comet-left, 112%);
+  top: var(--comet-top, -40%);
+  width: var(--comet-size, clamp(760px, 72vw, 1320px));
+  height: var(--comet-thickness, 4px);
+  rotate: -36deg;
+  animation-name: cosmic-screen-sweep;
+  animation-duration: 12.8s;
+  animation-timing-function: cubic-bezier(.24, .42, .34, .98);
+}
+.cosmic-comet--cyan {
+  --comet-left:112%; --comet-top:-52%;
+  --comet-size:clamp(820px,78vw,1420px); --comet-thickness:4.5px;
+  --comet-speed:12.8s; --comet-delay:0s;
+  --comet-x:-160vw; --comet-y:138vh;
+}
+.cosmic-comet--violet {
+  --comet-left:124%; --comet-top:-30%;
+  --comet-size:clamp(700px,68vw,1240px); --comet-thickness:5px;
+  --comet-speed:12.8s; --comet-delay:-3.2s;
+  --comet-x:-164vw; --comet-y:132vh;
+}
+.cosmic-comet--pink {
+  --comet-left:108%; --comet-top:-68%;
+  --comet-size:clamp(780px,74vw,1360px); --comet-thickness:4px;
+  --comet-speed:12.8s; --comet-delay:-6.4s;
+  --comet-x:-152vw; --comet-y:142vh;
+}
+.cosmic-comet--ice {
+  --comet-left:132%; --comet-top:-44%;
+  --comet-size:clamp(860px,82vw,1480px); --comet-thickness:5.5px;
+  --comet-speed:12.8s; --comet-delay:-9.6s;
+  --comet-x:-172vw; --comet-y:144vh;
+}
+@keyframes cosmic-screen-sweep {
+  0% {
+    opacity: 0;
+    transform: translate3d(14vw, -14vh, 0) scaleX(.38);
+  }
+  6%  { opacity: .06; }
+  14% {
+    opacity: .9;
+    transform: translate3d(-15vw, 12vh, 0) scaleX(.92);
+  }
+  57% { opacity: .86; }
+  69% { opacity: .62; }
+  78% { opacity: .28; }
+  87%, 100% {
+    opacity: 0;
+    transform: translate3d(var(--comet-x), var(--comet-y), 0) scaleX(1.08);
+  }
+}
+
 @media (max-width: 900px) {
   .hero__frame { padding-right: 0; }
   .wordmark { width: 94vw; margin-top: -6vh; }
@@ -2351,10 +2440,11 @@ a:focus-visible, button:focus-visible {
   .hero-sky__layer--mid { opacity: .38; }
   .hero-sky__layer--near { opacity: .28; }
   .shooting-star--3 { display: none; }
-  .meteor-shower i:nth-child(3n) { display: none; }
+  .meteor-shower i:nth-child(3n),
+  .meteor-shower i:nth-child(n + 7) { display: none; }
   .cosmic-comet--gold,
   .cosmic-comet--pink { display: none; }
-  .cosmic-comet { --comet-size: 180px; --comet-thickness: 3px; }
+  .cosmic-comet { --comet-size: clamp(440px, 105vw, 620px); --comet-thickness: 3px; }
 }
 
 /* ═══════════ REDUCED MOTION ═══════════ */
