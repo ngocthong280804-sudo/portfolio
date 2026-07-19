@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Dancing+Script:wght@500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=long-meteor-v11">
+  <link rel="stylesheet" href="css/style.css?v=star-loader-v12">
 </head>
 <body class="is-loading">
 
@@ -29,9 +29,15 @@
         <span class="preloader__stroke" aria-hidden="true"></span>
       </div>
 
-      <div class="preloader__footer" aria-hidden="true">
-        <span class="preloader__label">portfolio</span>
-        <span class="preloader__progress"><i></i></span>
+      <div class="preloader__footer">
+        <div class="preloader__progress-head">
+          <span class="preloader__label">Đang mở Portfolio</span>
+          <strong class="preloader__percent" id="prePercent">0%</strong>
+        </div>
+        <span class="preloader__progress" id="preProgress" role="progressbar" aria-label="Tiến trình mở Portfolio" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <i id="preProgressFill"></i>
+        </span>
+        <span class="preloader__status" id="preStatus">Đang chuẩn bị trải nghiệm</span>
       </div>
     </div>
   </div>
@@ -494,6 +500,6 @@
     <span>Thiết kế &amp; xây dựng với ♥ tại Sài Gòn</span>
   </footer>
 
-  <script type="module" src="js/main.js?v=preloader-fast-v7"></script>
+  <script type="module" src="js/main.js?v=star-loader-v8"></script>
 </body>
 </html>
