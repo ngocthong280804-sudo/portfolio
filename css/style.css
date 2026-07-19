@@ -2250,34 +2250,34 @@ a:focus-visible, button:focus-visible {
   --comet-color: 63, 218, 255;
   --comet-left: 102%; --comet-top: -8%;
   --comet-size: 360px; --comet-thickness: 4px;
-  --comet-speed: 10.8s; --comet-delay: -8.6s;
+  --comet-speed: 11s; --comet-delay: 0s;
 }
 .cosmic-comet--violet {
   --comet-color: 154, 112, 255;
   --comet-left: 82%; --comet-top: -18%;
   --comet-size: 280px; --comet-thickness: 4.5px;
-  --comet-speed: 12.2s; --comet-delay: -4.2s;
+  --comet-speed: 11s; --comet-delay: -2.2s;
   --comet-x: -66vw; --comet-y: 72vh;
 }
 .cosmic-comet--pink {
   --comet-color: 255, 97, 189;
   --comet-left: 111%; --comet-top: 12%;
   --comet-size: 235px; --comet-thickness: 3.5px;
-  --comet-speed: 9.6s; --comet-delay: -1.3s;
+  --comet-speed: 11s; --comet-delay: -4.4s;
   --comet-x: -64vw; --comet-y: 69vh;
 }
 .cosmic-comet--gold {
   --comet-color: 255, 184, 88;
   --comet-left: 70%; --comet-top: -25%;
   --comet-size: 210px; --comet-thickness: 3px;
-  --comet-speed: 11.6s; --comet-delay: -10.1s;
+  --comet-speed: 11s; --comet-delay: -6.6s;
   --comet-x: -58vw; --comet-y: 66vh;
 }
 .cosmic-comet--ice {
   --comet-color: 185, 239, 255;
   --comet-left: 122%; --comet-top: -22%;
   --comet-size: 320px; --comet-thickness: 5px;
-  --comet-speed: 13s; --comet-delay: -6.7s;
+  --comet-speed: 11s; --comet-delay: -8.8s;
   --comet-x: -78vw; --comet-y: 82vh;
 }
 @keyframes cosmic-comet-fall {
