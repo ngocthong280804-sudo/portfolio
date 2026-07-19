@@ -22,6 +22,44 @@ document.querySelectorAll("[data-letters]").forEach(el => {
 
 /* ── Preloader: dựng nét rồi bật sáng từng ký tự ── */
 const preloaderStartedAt = performance.now();
+const preloaderMinimumDuration = reducedMotion ? 1 : 2700;
+const preProgress = document.getElementById("preProgress");
+const preProgressFill = document.getElementById("preProgressFill");
+const prePercent = document.getElementById("prePercent");
+const preStatus = document.getElementById("preStatus");
+let preloaderPageReady = document.readyState === "complete";
+
+/* Tiến trình hiển thị bám thời gian tải thật: chờ ở 94% nếu tài nguyên chưa sẵn sàng. */
+(function preloaderProgressMotion() {
+  if (!preProgress || !preProgressFill || !prePercent) return;
+
+  let lastValue = -1;
+  function update(now) {
+    const elapsedProgress = Math.min((now - preloaderStartedAt) / preloaderMinimumDuration, 1);
+    const visibleProgress = preloaderPageReady
+      ? elapsedProgress
+      : Math.min(elapsedProgress * .94, .94);
+    const value = Math.round(visibleProgress * 100);
+
+    preProgressFill.style.transform = `scaleX(${visibleProgress.toFixed(4)})`;
+    if (value !== lastValue) {
+      prePercent.textContent = `${value}%`;
+      preProgress.setAttribute("aria-valuenow", String(value));
+      if (preStatus) {
+        preStatus.textContent = value >= 100
+          ? "Sẵn sàng khám phá"
+          : value >= 72
+            ? "Đang hoàn thiện không gian"
+            : "Đang chuẩn bị trải nghiệm";
+      }
+      lastValue = value;
+    }
+
+    if (!preloaderPageReady || visibleProgress < 1) requestAnimationFrame(update);
+  }
+
+  requestAnimationFrame(update);
+})();
 const preName = document.getElementById("preName");
 if (preName) {
   const text = preName.textContent;
@@ -67,16 +105,16 @@ if (preName) {
 })();
 
 window.addEventListener("load", () => {
+  preloaderPageReady = true;
   const pre = document.getElementById("preloader");
-  const minimumDuration = reducedMotion ? 0 : 2700;
-  const wait = Math.max(0, minimumDuration - (performance.now() - preloaderStartedAt));
+  const wait = Math.max(0, preloaderMinimumDuration - (performance.now() - preloaderStartedAt));
   setTimeout(() => {
     pre.classList.add("done");
     document.body.classList.remove("is-loading");
     document.querySelectorAll(".hero-chrome").forEach(el => el.classList.add("popped"));
     document.getElementById("mascotHero")?.classList.add("landed");
     document.getElementById("portraitStage")?.classList.add("landed");
-  }, wait);
+  }, wait + (reducedMotion ? 0 : 180));
 });
 
 /* ── Nav ── */
