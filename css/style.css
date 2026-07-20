@@ -2588,6 +2588,103 @@ a:focus-visible, button:focus-visible {
   .cosmic-comet { --comet-size: clamp(440px, 105vw, 620px); --comet-thickness: 3px; }
 }
 
+/* ═══════════ COSMIC MOON V14 — chân trời trăng khổng lồ ═══════════ */
+.cosmic-moon {
+  position: absolute;
+  left: 50%;
+  width: max(1120px, 122vw);
+  aspect-ratio: 1;
+  translate: -50% 0;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 72%, rgba(21, 48, 94, .34) 0 2.2%, transparent 2.7%),
+    radial-gradient(circle at 31% 84%, rgba(24, 52, 101, .3) 0 3.6%, transparent 4.1%),
+    radial-gradient(circle at 43% 69%, rgba(35, 65, 116, .24) 0 1.9%, transparent 2.5%),
+    radial-gradient(circle at 55% 88%, rgba(22, 50, 100, .29) 0 4.2%, transparent 4.8%),
+    radial-gradient(circle at 68% 76%, rgba(32, 63, 116, .28) 0 2.8%, transparent 3.35%),
+    radial-gradient(circle at 82% 87%, rgba(17, 45, 94, .33) 0 3.2%, transparent 3.8%),
+    radial-gradient(circle at 90% 67%, rgba(36, 71, 127, .22) 0 1.75%, transparent 2.25%),
+    radial-gradient(circle at 48% 56%, rgba(255, 255, 255, .18), transparent 34%),
+    radial-gradient(circle at 50% 58%, #dcecff 0 42%, #adc9e9 67%, #759bc9 86%, #456b9e 100%);
+  background-blend-mode: multiply, multiply, multiply, multiply, multiply, multiply, multiply, screen, normal;
+  box-shadow:
+    inset 0 -38px 96px rgba(37, 91, 170, .38),
+    inset 0 22px 90px rgba(255, 255, 255, .13),
+    0 3px 5px rgba(255, 255, 255, .94),
+    0 9px 26px rgba(190, 234, 255, .82),
+    0 26px 72px rgba(72, 162, 255, .62),
+    0 72px 180px rgba(41, 92, 255, .38);
+  will-change: transform, filter;
+  animation: cosmic-moon-drift 13s ease-in-out infinite alternate;
+}
+.cosmic-moon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: .58;
+  background:
+    radial-gradient(ellipse at 22% 78%, transparent 0 7%, rgba(52, 82, 128, .25) 7.5% 8.6%, transparent 9.1%),
+    radial-gradient(ellipse at 73% 82%, transparent 0 9%, rgba(54, 85, 133, .2) 9.4% 10.3%, transparent 10.8%),
+    repeating-radial-gradient(circle at 50% 66%, rgba(255,255,255,.07) 0 1px, transparent 1.5px 8px);
+  mix-blend-mode: multiply;
+  transform: rotate(-7deg);
+}
+.cosmic-moon::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(229, 249, 255, .52);
+  box-shadow:
+    inset 0 -2px 0 rgba(255, 255, 255, .95),
+    inset 0 -10px 28px rgba(171, 231, 255, .46),
+    0 2px 7px rgba(255, 255, 255, .86),
+    0 12px 38px rgba(77, 225, 255, .7);
+  animation: cosmic-moon-rim 4.8s ease-in-out infinite;
+}
+.cosmic-moon--loader {
+  z-index: 0;
+  bottom: 63vh;
+  opacity: .5;
+  filter: saturate(.82) brightness(.92);
+}
+.preloader__grid { z-index: 1; }
+.preloader__inner { position: relative; z-index: 3; }
+.cosmic-moon--hero {
+  z-index: 0;
+  bottom: 68vh;
+  opacity: .34;
+  filter: saturate(.8) brightness(.84);
+  animation-delay: -4.5s;
+}
+.hero-sky__layer { z-index: 1; }
+.meteor-shower,
+.cosmic-comets { z-index: 2; }
+
+@keyframes cosmic-moon-drift {
+  0%   { transform: translate3d(-1.2vw, -5px, 0) scale(1); filter: brightness(.92); }
+  55%  { transform: translate3d(.4vw, 2px, 0) scale(1.008); filter: brightness(1.02); }
+  100% { transform: translate3d(1.2vw, 7px, 0) scale(1.014); filter: brightness(.96); }
+}
+@keyframes cosmic-moon-rim {
+  0%, 100% { opacity: .74; }
+  50%      { opacity: 1; box-shadow: inset 0 -2px 0 #fff, inset 0 -13px 34px rgba(171,231,255,.62), 0 3px 9px #fff, 0 17px 52px rgba(77,225,255,.82); }
+}
+
+@media (max-width: 900px) {
+  .cosmic-moon { width: max(900px, 152vw); }
+  .cosmic-moon--loader { bottom: 66vh; opacity: .46; }
+  .cosmic-moon--hero { bottom: 72vh; opacity: .3; }
+}
+
+@media (max-width: 560px) {
+  .cosmic-moon { width: max(760px, 205vw); }
+  .cosmic-moon--loader { bottom: 71vh; opacity: .44; }
+  .cosmic-moon--hero { bottom: 75vh; opacity: .3; }
+}
+
 /* ═══════════ REDUCED MOTION ═══════════ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
