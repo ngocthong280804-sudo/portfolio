@@ -2598,15 +2598,15 @@ a:focus-visible, button:focus-visible {
   border-radius: 50%;
   pointer-events: none;
   background:
-    radial-gradient(circle at 18% 72%, rgba(21, 48, 94, .34) 0 2.2%, transparent 2.7%),
-    radial-gradient(circle at 31% 84%, rgba(24, 52, 101, .3) 0 3.6%, transparent 4.1%),
-    radial-gradient(circle at 43% 69%, rgba(35, 65, 116, .24) 0 1.9%, transparent 2.5%),
-    radial-gradient(circle at 55% 88%, rgba(22, 50, 100, .29) 0 4.2%, transparent 4.8%),
-    radial-gradient(circle at 68% 76%, rgba(32, 63, 116, .28) 0 2.8%, transparent 3.35%),
-    radial-gradient(circle at 82% 87%, rgba(17, 45, 94, .33) 0 3.2%, transparent 3.8%),
-    radial-gradient(circle at 90% 67%, rgba(36, 71, 127, .22) 0 1.75%, transparent 2.25%),
-    radial-gradient(circle at 48% 56%, rgba(255, 255, 255, .18), transparent 34%),
-    radial-gradient(circle at 50% 58%, #dcecff 0 42%, #adc9e9 67%, #759bc9 86%, #456b9e 100%);
+    radial-gradient(circle at 18% 72%, rgba(21, 48, 94, .18) 0 1.05%, transparent 1.48%),
+    radial-gradient(circle at 31% 84%, rgba(24, 52, 101, .17) 0 1.7%, transparent 2.08%),
+    radial-gradient(circle at 43% 69%, rgba(35, 65, 116, .14) 0 .9%, transparent 1.32%),
+    radial-gradient(circle at 55% 88%, rgba(22, 50, 100, .18) 0 2.15%, transparent 2.6%),
+    radial-gradient(circle at 68% 76%, rgba(32, 63, 116, .16) 0 1.35%, transparent 1.78%),
+    radial-gradient(circle at 82% 87%, rgba(17, 45, 94, .18) 0 1.55%, transparent 2%),
+    radial-gradient(circle at 90% 67%, rgba(36, 71, 127, .13) 0 .8%, transparent 1.18%),
+    radial-gradient(circle at 48% 56%, rgba(255, 255, 255, .21), transparent 34%),
+    radial-gradient(circle at 50% 58%, #dcecff 0 42%, #a9c8eb 67%, #7099c9 86%, #416caa 100%);
   background-blend-mode: multiply, multiply, multiply, multiply, multiply, multiply, multiply, screen, normal;
   box-shadow:
     inset 0 -38px 96px rgba(37, 91, 170, .38),
@@ -2664,9 +2664,9 @@ a:focus-visible, button:focus-visible {
 .cosmic-comets { z-index: 2; }
 
 @keyframes cosmic-moon-drift {
-  0%   { transform: translate3d(-1.2vw, -5px, 0) scale(1); filter: brightness(.92); }
-  55%  { transform: translate3d(.4vw, 2px, 0) scale(1.008); filter: brightness(1.02); }
-  100% { transform: translate3d(1.2vw, 7px, 0) scale(1.014); filter: brightness(.96); }
+  0%   { transform: translate3d(-1.2vw, -5px, 0) scale(1); }
+  55%  { transform: translate3d(.4vw, 2px, 0) scale(1.008); }
+  100% { transform: translate3d(1.2vw, 7px, 0) scale(1.014); }
 }
 @keyframes cosmic-moon-rim {
   0%, 100% { opacity: .74; }
