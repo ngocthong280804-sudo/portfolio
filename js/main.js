@@ -220,6 +220,12 @@ const pctObserver = new IntersectionObserver(entries => {
 document.querySelectorAll(".bar__pct").forEach(el => pctObserver.observe(el));
 
 /* ── Đếm số liệu ── */
+/* định dạng kiểu Việt Nam: 22354 → 22.354 ; 5.25 → 5,25 */
+function formatVN(value, decimals) {
+  const [intPart, decPart] = value.toFixed(decimals).split(".");
+  const grouped = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return decPart ? grouped + "," + decPart : grouped;
+}
 function animateCount(el) {
   const target = parseFloat(el.dataset.count);
   const decimals = parseInt(el.dataset.decimal || "0", 10);
@@ -227,7 +233,7 @@ function animateCount(el) {
   const start = performance.now();
   function tick(now) {
     const p = Math.min((now - start) / duration, 1);
-    el.textContent = (target * (1 - Math.pow(1 - p, 4))).toFixed(decimals);
+    el.textContent = formatVN(target * (1 - Math.pow(1 - p, 4)), decimals);
     if (p < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
@@ -237,7 +243,7 @@ const countObserver = new IntersectionObserver(entries => {
     if (entry.isIntersecting) {
       const el = entry.target;
       if (reducedMotion) {
-        el.textContent = parseFloat(el.dataset.count).toFixed(parseInt(el.dataset.decimal || "0", 10));
+        el.textContent = formatVN(parseFloat(el.dataset.count), parseInt(el.dataset.decimal || "0", 10));
       } else {
         animateCount(el);
       }
