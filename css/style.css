@@ -1510,6 +1510,9 @@ section { position: relative; z-index: 2; }
 .card__visual--lumen { background: linear-gradient(135deg, #4de1ff, #8fe8de 55%, #14508a); }
 .card__visual--tet   { background: linear-gradient(135deg, #ff7ab8, #ffb86b 60%, #d34a8a); }
 .card__visual--fingo { background: linear-gradient(135deg, #3ee6d8, #7cb8ff 55%, #3b3f9e); }
+.card__visual--food   { background: linear-gradient(135deg, #ffc46b, #ff8a4c 55%, #b23c1b); }
+.card__visual--host   { background: linear-gradient(135deg, #b98bff, #ff86d6 55%, #5b2a9e); }
+.card__visual--motion { background: linear-gradient(135deg, #86ffc4, #3ad7cd 55%, #0f5f6b); }
 
 .card__index {
   font-family: var(--font-chrome);
@@ -2697,4 +2700,136 @@ a:focus-visible, button:focus-visible {
   .chrome .ltr { opacity: 1; transform: none; }
   .bar__fill { width: var(--pct); }
   .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* ═══════════ IN & XUẤT PDF ═══════════ */
+/* Đầu trang chỉ dành cho bản in — ẩn hoàn toàn trên màn hình */
+.print-head { display: none; }
+
+@media print {
+  @page { size: A4; margin: 13mm 12mm 14mm; }
+
+  html, body {
+    background: #fff !important;
+    color: #101c33 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body.is-loading { overflow: visible !important; }
+
+  /* Tắt hoạt ảnh, phát sáng, đổ bóng */
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    transform: none !important;
+  }
+
+  /* Khối chờ cuộn phải hiện đủ, nếu không PDF sẽ trắng trang */
+  .reveal, .anim-hero, .chrome .ltr { opacity: 1 !important; }
+  .bar__fill { width: var(--pct) !important; }
+
+  /* Ẩn trang trí, điều hướng, nền động */
+  .preloader, .cursor-dot, .cursor-ring, .vignette,
+  .nav, .mobile-menu, .hero, .tape, .footer,
+  .mascot-icon, .spark, .arrow, .portrait-mini,
+  .quote__mark, .card__visual::after { display: none !important; }
+
+  /* Đầu trang bản in */
+  .print-head {
+    display: block !important;
+    padding-bottom: 6mm;
+    margin-bottom: 8mm;
+    border-bottom: 2px solid #101c33;
+  }
+  .print-head__name {
+    font-family: var(--font-display);
+    font-size: 25pt; font-weight: 800; letter-spacing: -.02em;
+    margin: 0 0 1.5mm; color: #101c33;
+  }
+  .print-head__role {
+    font-size: 11pt; font-weight: 600; color: #2e5bbf; margin: 0 0 2.5mm;
+  }
+  .print-head__contact {
+    font-size: 8.5pt; color: #46577a; margin: 0; line-height: 1.6;
+  }
+
+  /* Khối nền tối → nền trắng */
+  .skills, .contact, .quote {
+    background: #fff !important;
+    color: #101c33 !important;
+  }
+  .chip {
+    color: #2e5bbf !important;
+    border-color: #b9cdf0 !important;
+    background: #f2f6fd !important;
+  }
+
+  /* Chữ gradient → chữ đặc, nếu không sẽ mất chữ khi in */
+  .chrome, .chrome .ltr, .script {
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #101c33 !important;
+    color: #101c33 !important;
+  }
+  .chrome--section { font-size: 18pt !important; }
+  .chrome--big     { font-size: 21pt !important; }
+
+  .container { width: 100% !important; max-width: none !important; padding: 0 !important; }
+  section { padding: 0 0 7mm !important; margin: 0 !important; }
+  h2, h3, .section-head { break-after: avoid; break-inside: avoid; }
+
+  /* Thẻ dự án — không được cắt ngang giữa 2 trang */
+  .projects__grid { gap: 5mm !important; }
+  .card {
+    background: #fff !important;
+    border: 1px solid #c8d8f2 !important;
+    border-radius: 8px !important;
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .card__visual {
+    aspect-ratio: auto !important;
+    height: 14mm !important;
+    display: flex !important;
+    align-items: center; justify-content: space-between;
+    padding: 0 5mm; border-radius: 0 !important;
+  }
+  .card__index, .card__badge {
+    position: static !important;
+    color: #fff !important; font-size: 8.5pt !important; font-weight: 700;
+  }
+  .card__body  { padding: 4mm 5mm 5mm !important; }
+  .card__tags  { font-size: 8pt !important;   color: #5b6d90 !important; }
+  .card__name  { font-size: 11pt !important;  color: #101c33 !important; margin: 1.5mm 0 2mm; }
+  .card__desc  { font-size: 8.8pt !important; line-height: 1.55 !important; color: #2b3a55 !important; }
+  .card__link  { font-size: 8.5pt !important; color: #2e5bbf !important; }
+
+  /* Số liệu · kỹ năng · hành trình */
+  .ledger__row, .bar, .timeline__item, .skill-group { break-inside: avoid; }
+  .ledger__label, .bar__head, .about__text, .timeline__item p, li { color: #2b3a55 !important; }
+  .ledger__value, .bar__pct, .timeline__year { color: #101c33 !important; font-weight: 700; }
+  .pill {
+    background: #f2f6fd !important;
+    border: 1px solid #c8d8f2 !important;
+    color: #2b3a55 !important;
+  }
+
+  .about { break-before: page; }
+  .portrait-card__img { max-height: 68mm; object-fit: cover; }
+
+  .contact__email    { color: #2e5bbf !important; font-size: 13pt !important; }
+  .contact__socials a { color: #2b3a55 !important; }
+
+  /* Mỗi gradient nền bị trình duyệt rasterise thành một ảnh khi in, làm file PDF
+     phình lên nhiều MB. Chỉ giữ dải màu của thẻ dự án, còn lại chuyển màu đặc. */
+  *:not(.card__visual), *::before, *::after { background-image: none !important; }
+
+  .bar__track { background: #e6edfa !important; }
+  .bar__fill  { background: #2e5bbf !important; }
+  .ledger__dots { border-bottom: 1px dotted #b9cdf0; align-self: end; margin-bottom: 4px; }
+  .contact__socials a { border-color: #c8d8f2 !important; }
 }

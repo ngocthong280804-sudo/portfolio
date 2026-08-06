@@ -375,3 +375,31 @@ if (finePointer && !reducedMotion) {
     requestAnimationFrame(loop);
   })(start);
 })();
+
+/* ── Chuẩn bị khi in / xuất PDF ──
+   IntersectionObserver chỉ chạy khi phần tử lọt vào khung nhìn, nên lúc in
+   các khối phía dưới có thể còn ẩn và số liệu còn đứng ở 0.
+   Hàm này ép hiện hết nội dung và chốt số về giá trị cuối. */
+function prepareForPrint() {
+  document.body.classList.remove("is-loading");
+  const pre = document.getElementById("preloader");
+  if (pre) pre.style.display = "none";
+
+  document.querySelectorAll(".reveal, .bar").forEach(el => el.classList.add("in"));
+  document.querySelectorAll(".bar__pct").forEach(el => {
+    el.textContent = (el.dataset.pct || "0") + "%";
+  });
+  document.querySelectorAll(".count").forEach(el => {
+    el.textContent = formatVN(
+      parseFloat(el.dataset.count),
+      parseInt(el.dataset.decimal || "0", 10)
+    );
+  });
+}
+window.addEventListener("beforeprint", prepareForPrint);
+
+/* Mở kèm ?print=1 để chốt nội dung ngay — dùng khi render PDF bằng trình duyệt headless */
+if (new URLSearchParams(location.search).has("print")) {
+  prepareForPrint();
+  window.addEventListener("load", prepareForPrint);
+}
