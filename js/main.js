@@ -376,6 +376,147 @@ if (finePointer && !reducedMotion) {
   })(start);
 })();
 
+/* ═══════════════════════════════════════════════
+   PROJECT CINEMA
+   Tab nhỏ morph thành case study, sau đó mới mở nội dung đọc.
+   Native <dialog> giữ focus và phím Escape đúng chuẩn truy cập.
+   ═══════════════════════════════════════════════ */
+(function projectCinema() {
+  const triggers = [...document.querySelectorAll("[data-project-open]")];
+  const dialogs = [...document.querySelectorAll(".project-case")];
+  if (!triggers.length || !dialogs.length) return;
+
+  let activeTrigger = null;
+  let closeTimer = 0;
+
+  function setReadable(dialog) {
+    dialog.classList.add("is-readable");
+    const scrollArea = dialog.querySelector(".case-modal__scroll");
+    window.setTimeout(() => scrollArea?.focus({ preventScroll: true }), reducedMotion ? 0 : 620);
+  }
+
+  function animateOpen(dialog, trigger) {
+    const shell = dialog.querySelector(".case-modal__shell");
+    if (!shell || reducedMotion || typeof shell.animate !== "function") {
+      setReadable(dialog);
+      return;
+    }
+
+    const from = trigger.getBoundingClientRect();
+    const to = shell.getBoundingClientRect();
+    const scaleX = Math.max(.03, from.width / to.width);
+    const scaleY = Math.max(.03, from.height / to.height);
+    const translateX = from.left - to.left;
+    const translateY = from.top - to.top;
+
+    shell.animate([
+      {
+        transform: `translate3d(${translateX}px, ${translateY}px, 0) scale(${scaleX}, ${scaleY})`,
+        borderRadius: "18px",
+        opacity: .45,
+        filter: "brightness(1.8) saturate(1.35)"
+      },
+      {
+        offset: .66,
+        transform: "translate3d(0, 0, 0) scale(1.012, 1.012)",
+        borderRadius: "28px",
+        opacity: 1,
+        filter: "brightness(1.15) saturate(1.08)"
+      },
+      {
+        transform: "translate3d(0, 0, 0) scale(1, 1)",
+        borderRadius: "28px",
+        opacity: 1,
+        filter: "none"
+      }
+    ], {
+      duration: 820,
+      easing: "cubic-bezier(.19, 1, .22, 1)",
+      fill: "both"
+    });
+
+    window.setTimeout(() => setReadable(dialog), 760);
+  }
+
+  function openProject(trigger) {
+    const dialog = document.getElementById(trigger.dataset.projectOpen);
+    if (!(dialog instanceof HTMLDialogElement) || dialog.open) return;
+
+    window.clearTimeout(closeTimer);
+    activeTrigger = trigger;
+    dialog.classList.remove("is-readable", "is-closing");
+    dialog.classList.add("is-opening");
+    trigger.setAttribute("aria-expanded", "true");
+    document.body.classList.add("case-open");
+    dialog.showModal();
+    dialog.querySelector(".case-modal__scroll")?.scrollTo({ top: 0 });
+
+    requestAnimationFrame(() => requestAnimationFrame(() => animateOpen(dialog, trigger)));
+  }
+
+  function finishClose(dialog) {
+    if (dialog.open) dialog.close();
+    dialog.classList.remove("is-opening", "is-readable", "is-closing");
+    document.body.classList.remove("case-open");
+    if (activeTrigger) {
+      activeTrigger.setAttribute("aria-expanded", "false");
+      activeTrigger.focus({ preventScroll: true });
+    }
+    activeTrigger = null;
+  }
+
+  function closeProject(dialog) {
+    if (!dialog.open || dialog.classList.contains("is-closing")) return;
+    const shell = dialog.querySelector(".case-modal__shell");
+    dialog.classList.add("is-closing");
+    dialog.classList.remove("is-readable");
+
+    if (reducedMotion || !shell || typeof shell.animate !== "function" || !activeTrigger) {
+      finishClose(dialog);
+      return;
+    }
+
+    const from = shell.getBoundingClientRect();
+    const to = activeTrigger.getBoundingClientRect();
+    const scaleX = Math.max(.03, to.width / from.width);
+    const scaleY = Math.max(.03, to.height / from.height);
+    const translateX = to.left - from.left;
+    const translateY = to.top - from.top;
+
+    shell.animate([
+      { transform: "translate3d(0, 0, 0) scale(1)", opacity: 1, filter: "none" },
+      {
+        transform: `translate3d(${translateX}px, ${translateY}px, 0) scale(${scaleX}, ${scaleY})`,
+        opacity: 0,
+        filter: "blur(5px) brightness(1.5)"
+      }
+    ], {
+      duration: 430,
+      easing: "cubic-bezier(.55, .06, .68, .19)",
+      fill: "both"
+    });
+    closeTimer = window.setTimeout(() => finishClose(dialog), 420);
+  }
+
+  triggers.forEach(trigger => {
+    trigger.setAttribute("aria-expanded", "false");
+    trigger.addEventListener("click", () => openProject(trigger));
+  });
+
+  dialogs.forEach(dialog => {
+    dialog.querySelectorAll("[data-project-close]").forEach(button => {
+      button.addEventListener("click", () => closeProject(dialog));
+    });
+    dialog.addEventListener("cancel", event => {
+      event.preventDefault();
+      closeProject(dialog);
+    });
+    dialog.addEventListener("click", event => {
+      if (event.target === dialog) closeProject(dialog);
+    });
+  });
+})();
+
 /* ── Chuẩn bị khi in / xuất PDF ──
    IntersectionObserver chỉ chạy khi phần tử lọt vào khung nhìn, nên lúc in
    các khối phía dưới có thể còn ẩn và số liệu còn đứng ở 0.

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Dancing+Script:wght@500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=thien-ly-case-v1">
+  <link rel="stylesheet" href="css/style.css?v=project-cinema-v2">
 </head>
 <body class="is-loading">
 
@@ -307,153 +307,238 @@
       </ul>
     </section>
 
-    <!-- ═══════════ DỰ ÁN ═══════════ -->
+    <!-- ═══════════ DỰ ÁN — PROJECT LAUNCHER + CINEMATIC CASE STUDIES ═══════════ -->
     <section class="projects container" id="duan">
       <div class="section-head reveal">
         <p class="section-eyebrow"><span class="mascot-icon mascot-icon--excited" aria-hidden="true"></span><span class="chip">Dự án <em class="script script--inline">tiêu biểu</em></span></p>
         <h2 class="chrome chrome--section" data-letters aria-label="Projects">Projects</h2>
+        <p class="projects__intro">Mỗi dự án bắt đầu từ một vấn đề thật. Chạm vào từng tab để mở toàn bộ quá trình, vai trò và bằng chứng kết quả.</p>
       </div>
 
-      <div class="projects__grid">
-        <article class="card card--featured reveal" data-tilt data-hover>
-          <div class="card__visual card__visual--thuc">
-            <span class="card__index">№1</span>
-            <span class="card__badge">34 chi nhánh · GMV 5,25 tỷ</span>
-          </div>
-          <div class="card__body">
-            <p class="card__tags">E-commerce Operations · F&amp;B Content · 04/2026 — nay</p>
-            <h3 class="card__name">Cơm Niêu Thiên Lý — Vận hành &amp; nội dung đa kênh</h3>
-            <p class="card__desc card__desc--lead">
-              Trong vai trò Intern, tôi phụ trách phạm vi vận hành GrabFood, ShopeeFood và XanhSM
-              cho toàn hệ thống 34 chi nhánh; đồng thời đóng góp ý tưởng, hỗ trợ quay và trực tiếp
-              xuất hiện làm host trong các video short-form của thương hiệu.
-            </p>
+      <div class="project-tabs" aria-label="Danh sách 5 dự án tiêu biểu">
+        <button class="project-tab project-tab--thien reveal" type="button" data-project-open="project-thien-ly" data-hover aria-haspopup="dialog" aria-controls="project-thien-ly">
+          <span class="project-tab__number">01</span>
+          <span class="project-tab__copy">
+            <span class="project-tab__type">E-commerce Operations · F&amp;B Content</span>
+            <strong>Cơm Niêu Thiên Lý</strong>
+            <small>Vận hành và nội dung đa kênh cho toàn hệ thống</small>
+          </span>
+          <span class="project-tab__metric"><b>5,25 tỷ</b><small>GMV · 05/2026</small></span>
+          <span class="project-tab__action">Mở case <i>↗</i></span>
+        </button>
 
-            <div class="case-kpis" aria-label="Kết quả nổi bật của dự án">
-              <div class="case-kpi"><strong>34</strong><span>chi nhánh phụ trách</span></div>
-              <div class="case-kpi"><strong>22.354</strong><span>đơn tháng 5/2026</span></div>
-              <div class="case-kpi"><strong>48,6%</strong><span>Gross Margin toàn hệ thống</span></div>
-              <div class="case-kpi"><strong>274K</strong><span>views video host cao nhất</span></div>
-            </div>
+        <button class="project-tab project-tab--agent reveal" type="button" data-project-open="project-ai-agent" data-hover aria-haspopup="dialog" aria-controls="project-ai-agent" style="--d:.06s">
+          <span class="project-tab__number">02</span>
+          <span class="project-tab__copy">
+            <span class="project-tab__type">AI Automation · Business Analysis</span>
+            <strong>AI Business Report Agent</strong>
+            <small>Biến dữ liệu vận hành thành tín hiệu ra quyết định</small>
+          </span>
+          <span class="project-tab__metric"><b>71 món</b><small>được phân tích</small></span>
+          <span class="project-tab__action">Mở case <i>↗</i></span>
+        </button>
 
-            <div class="case-chapters">
-              <section class="case-chapter">
-                <p class="case-chapter__eyebrow">01 · E-commerce Operations</p>
-                <h4>Vận hành 3 nền tảng giao đồ ăn</h4>
-                <p>
-                  Phụ trách phạm vi vận hành 34 chi nhánh, xây SOP xử lý đơn và checklist theo ca.
-                  Dữ liệu toàn hệ thống tháng 5/2026 do tôi tổng hợp ghi nhận 22.354 đơn,
-                  GMV 5,25 tỷ đồng.
-                </p>
-                <span class="case-chapter__result">GrabFood 45,9% · ShopeeFood 51,9% · XanhSM 56,6% GM</span>
-              </section>
+        <button class="project-tab project-tab--tiktok reveal" type="button" data-project-open="project-ai-tiktok" data-hover aria-haspopup="dialog" aria-controls="project-ai-tiktok" style="--d:.12s">
+          <span class="project-tab__number">03</span>
+          <span class="project-tab__copy">
+            <span class="project-tab__type">Generative AI · TikTok Affiliate</span>
+            <strong>AI TikTok Studio</strong>
+            <small>Hai định vị AI-first và một affiliate sprint được xác minh</small>
+          </span>
+          <span class="project-tab__metric"><b>21.240</b><small>views · 8 ngày</small></span>
+          <span class="project-tab__action">Mở case <i>↗</i></span>
+        </button>
 
-              <section class="case-chapter">
-                <p class="case-chapter__eyebrow">02 · Food Content</p>
-                <h4>Tuyến food porn</h4>
-                <p>
-                  Đóng góp ý tưởng và hỗ trợ quay các video cận món ăn. Nhóm video nổi bật đạt
-                  56K–138K lượt xem; các chỉ số công khai gồm cả organic và paid ads.
-                </p>
-                <div class="card__links" aria-label="Video food porn tiêu biểu">
-                  <a class="card__link" href="https://www.facebook.com/reel/1641033200343477" target="_blank" rel="noopener noreferrer">138K views <span class="arrow">↗</span></a>
-                  <a class="card__link" href="https://www.facebook.com/reel/1667555107829911" target="_blank" rel="noopener noreferrer">101K views <span class="arrow">↗</span></a>
-                  <a class="card__link" href="https://www.facebook.com/reel/1497281601861961" target="_blank" rel="noopener noreferrer">87K views <span class="arrow">↗</span></a>
-                </div>
-              </section>
+        <button class="project-tab project-tab--chuli reveal" type="button" data-project-open="project-chuli" data-hover aria-haspopup="dialog" aria-controls="project-chuli" style="--d:.18s">
+          <span class="project-tab__number">04</span>
+          <span class="project-tab__copy">
+            <span class="project-tab__type">Shopee · Business Development</span>
+            <strong>Chuli Studio</strong>
+            <small>Xây nền tảng kinh doanh online cho thương hiệu thời trang</small>
+          </span>
+          <span class="project-tab__metric"><b>9/10</b><small>điểm học phần</small></span>
+          <span class="project-tab__action">Mở case <i>↗</i></span>
+        </button>
 
-              <section class="case-chapter">
-                <p class="case-chapter__eyebrow">03 · On-camera Hosting</p>
-                <h4>Video bắt trend &amp; khai trương</h4>
-                <p>
-                  Đóng góp ý tưởng, hỗ trợ quay và trực tiếp xuất hiện trước ống kính với vai trò
-                  host. Video nổi bật nhất đạt 274K lượt xem.
-                </p>
-                <div class="card__links" aria-label="Video host tiêu biểu">
-                  <a class="card__link" href="https://www.facebook.com/reel/1311036094475687" target="_blank" rel="noopener noreferrer">274K views <span class="arrow">↗</span></a>
-                  <a class="card__link" href="https://www.facebook.com/reel/1015452274187072" target="_blank" rel="noopener noreferrer">74K views <span class="arrow">↗</span></a>
-                </div>
-              </section>
-            </div>
-
-            <p class="case-note">
-              Số liệu vận hành là kết quả toàn hệ thống do tôi tổng hợp. Lượt xem video là tổng phân phối
-              công khai gồm organic và paid ads, kiểm tra ngày 06/08/2026.
-            </p>
-          </div>
-        </article>
-
-        <article class="card reveal" data-tilt data-hover style="--d:.1s">
-          <div class="card__visual card__visual--fingo">
-            <span class="card__index">№2</span>
-            <span class="card__badge">71 món phân tích</span>
-          </div>
-          <div class="card__body">
-            <p class="card__tags">Data &amp; AI Automation · 2026</p>
-            <h3 class="card__name">Báo cáo kinh doanh tự động bằng AI Agent</h3>
-            <p class="card__desc">
-              Dùng Claude Code kết nối thẳng Google Drive/Sheets để đọc và tổng hợp dữ liệu kinh doanh
-              thay cho thao tác thủ công: doanh thu theo chi nhánh và khung giờ, Gross Margin theo
-              nền tảng và theo 71 món, chấm % target để đề xuất push ads cho chi nhánh dưới 85%.
-            </p>
-            <span class="card__link">Rút ngắn thời gian xử lý số liệu <span class="arrow">→</span></span>
-          </div>
-        </article>
-
-        <article class="card reveal" data-tilt data-hover>
-          <div class="card__visual card__visual--motion">
-            <span class="card__index">№3</span>
-            <span class="card__badge">Dựng video bằng code</span>
-          </div>
-          <div class="card__body">
-            <p class="card__tags">Motion Design · Remotion · Dự án cá nhân · 2026</p>
-            <h3 class="card__name">Chuỗi logo animation dựng bằng Remotion</h3>
-            <p class="card__desc">
-              <strong>Dự án cá nhân tự luyện — không phải sản phẩm đặt hàng của các thương hiệu.</strong>
-              Dựng lại logo Meta, TikTok, Shopee, Grab, Puma và Canva thành video motion bằng Remotion:
-              viết code React để render ra video thay cho phần mềm dựng truyền thống, mỗi lần đổi nội
-              dung chỉ cần sửa tham số và render lại.
-            </p>
-            <span class="card__link">Đăng tải trên kênh @leotnt <span class="arrow">→</span></span>
-          </div>
-        </article>
-
-        <article class="card reveal" data-tilt data-hover>
-          <div class="card__visual card__visual--tet">
-            <span class="card__index">№4</span>
-            <span class="card__badge">2.380 followers</span>
-          </div>
-          <div class="card__body">
-            <p class="card__tags">AI Content · TikTok · Dự án cá nhân · 2026</p>
-            <h3 class="card__name">Hai kênh TikTok sản xuất hoàn toàn bằng AI</h3>
-            <p class="card__desc">
-              <strong>@odaycododepcungleo</strong> — phối đồ nam, 1.297 followers, 2.679 lượt thích,
-              video cao nhất 7.655 views. <strong>@leotnt</strong> — định vị motion design,
-              1.083 followers. Toàn bộ hình ảnh và video sản xuất bằng AI: không model,
-              không studio, không thiết bị quay.
-            </p>
-            <span class="card__link">Tự sản xuất từ ý tưởng đến render <span class="arrow">→</span></span>
-          </div>
-        </article>
-
-        <article class="card reveal" data-tilt data-hover style="--d:.1s">
-          <div class="card__visual card__visual--lumen">
-            <span class="card__index">№5</span>
-            <span class="card__badge">9/10 · shop đang chạy</span>
-          </div>
-          <div class="card__body">
-            <p class="card__tags">E-commerce Business Development · Shopee · 2026</p>
-            <h3 class="card__name">Chuli Studio — Phát triển kinh doanh trên Shopee</h3>
-            <p class="card__desc">
-              Xây kế hoạch kinh doanh trực tuyến cho thương hiệu thời trang nữ: nghiên cứu thị trường,
-              chiến lược sản phẩm và giá bán, vận hành gian hàng, phát triển nội dung kéo traffic.
-              Dự án được triển khai thật — cửa hàng hiện vẫn đang hoạt động trên Shopee.
-            </p>
-            <span class="card__link">Đạt 9/10 điểm học phần <span class="arrow">→</span></span>
-          </div>
-        </article>
+        <button class="project-tab project-tab--motion reveal" type="button" data-project-open="project-remotion" data-hover aria-haspopup="dialog" aria-controls="project-remotion" style="--d:.24s">
+          <span class="project-tab__number">05</span>
+          <span class="project-tab__copy">
+            <span class="project-tab__type">Creative Coding · Motion Design</span>
+            <strong>Remotion Motion Lab</strong>
+            <small>Biến logo tĩnh thành animation bằng React và code</small>
+          </span>
+          <span class="project-tab__metric"><b>06 logo</b><small>motion studies</small></span>
+          <span class="project-tab__action">Mở case <i>↗</i></span>
+        </button>
       </div>
+      <p class="project-tabs__hint reveal"><span aria-hidden="true">↳</span> Click / Enter để mở · Esc để đóng</p>
     </section>
+
+    <!-- CASE 01 — CƠM NIÊU THIÊN LÝ -->
+    <dialog class="project-case project-case--thien" id="project-thien-ly" aria-labelledby="project-thien-title">
+      <div class="case-modal__shell">
+        <div class="case-motion" aria-hidden="true">
+          <span class="case-motion__scan"></span><span class="case-motion__beam"></span>
+          <span class="case-motion__count">01</span><span class="case-motion__word">OPERATE</span>
+        </div>
+        <header class="case-modal__topbar">
+          <span>CASE 01 / 05</span><span class="case-modal__progress"><i></i></span>
+          <button class="case-modal__close" type="button" data-project-close aria-label="Đóng dự án Cơm Niêu Thiên Lý">Đóng <i>×</i></button>
+        </header>
+        <div class="case-modal__scroll" tabindex="-1">
+          <section class="case-hero">
+            <div class="case-hero__copy">
+              <p class="case-overline">E-commerce Operations · Content · 04/2026 — nay</p>
+              <h3 id="project-thien-title">Cơm Niêu<br><em>Thiên Lý</em></h3>
+              <p class="case-hero__lede">Kết nối vận hành, dữ liệu và short-form content cho một hệ thống F&amp;B 34 chi nhánh.</p>
+            </div>
+            <div class="case-hero__signal" aria-label="Kết quả nổi bật">
+              <span class="case-signal__ring"></span><b>274K</b><small>highest host video views</small>
+            </div>
+          </section>
+
+          <div class="case-metrics" aria-label="Các chỉ số chính">
+            <div><strong>34</strong><span>chi nhánh phụ trách</span></div>
+            <div><strong>22.354</strong><span>đơn · tháng 5/2026</span></div>
+            <div><strong>5,25 tỷ</strong><span>GMV toàn hệ thống</span></div>
+            <div><strong>48,6%</strong><span>Gross Margin</span></div>
+          </div>
+
+          <div class="case-layout">
+            <aside class="case-facts">
+              <p class="case-label">Vai trò &amp; phạm vi</p>
+              <dl>
+                <div><dt>Chức danh</dt><dd>Marketing &amp; E-commerce Intern</dd></div>
+                <div><dt>Nền tảng</dt><dd>GrabFood · ShopeeFood · XanhSM</dd></div>
+                <div><dt>Content</dt><dd>12 food porn · 3 host videos</dd></div>
+                <div><dt>Đóng góp</dt><dd>Vận hành · Tổng hợp dữ liệu · Ý tưởng · Hỗ trợ quay · On-camera host</dd></div>
+              </dl>
+            </aside>
+            <div class="case-story">
+              <section class="case-section">
+                <p class="case-label">01 · Bối cảnh</p>
+                <h4>Một hệ thống, ba nền tảng, nhiều lớp dữ liệu.</h4>
+                <p>Cơm Niêu Thiên Lý cần giữ quy trình xử lý đơn nhất quán cho 34 chi nhánh, đồng thời biến dữ liệu phân tán thành báo cáo dễ đọc và duy trì nhịp nội dung ngắn cho thương hiệu.</p>
+              </section>
+              <section class="case-section">
+                <p class="case-label">02 · Cách triển khai</p>
+                <div class="case-workflow case-workflow--three">
+                  <div><b>01</b><h5>Chuẩn hoá</h5><p>Xây SOP xử lý đơn 10 bước và checklist theo ca cho ba nền tảng.</p></div>
+                  <div><b>02</b><h5>Tổng hợp</h5><p>Theo dõi đơn hàng, GMV và Gross Margin ở cấp toàn hệ thống.</p></div>
+                  <div><b>03</b><h5>Kích hoạt</h5><p>Tham gia 15 video, đưa món ăn và yếu tố host vào short-form content.</p></div>
+                </div>
+              </section>
+              <section class="case-section">
+                <p class="case-label">03 · Hiệu quả vận hành</p>
+                <div class="platform-bars" aria-label="Gross Margin theo nền tảng">
+                  <div style="--score:45.9%"><span>GrabFood</span><i></i><b>45,9%</b></div>
+                  <div style="--score:51.9%"><span>ShopeeFood</span><i></i><b>51,9%</b></div>
+                  <div style="--score:56.6%"><span>XanhSM</span><i></i><b>56,6%</b></div>
+                </div>
+              </section>
+              <section class="case-section">
+                <p class="case-label">04 · Video tiêu biểu</p>
+                <div class="proof-grid">
+                  <a class="proof-card" href="https://www.facebook.com/reel/1311036094475687" target="_blank" rel="noopener noreferrer"><span>Host · Coming Soon</span><strong>274K</strong><small>Ý tưởng · Hỗ trợ quay · Host ↗</small></a>
+                  <a class="proof-card" href="https://www.facebook.com/reel/1015452274187072" target="_blank" rel="noopener noreferrer"><span>Host · Khai trương</span><strong>74K</strong><small>Ý tưởng · Hỗ trợ quay · Host ↗</small></a>
+                  <a class="proof-card" href="https://www.facebook.com/reel/1641033200343477" target="_blank" rel="noopener noreferrer"><span>Food porn · Cá kho</span><strong>138K</strong><small>Ý tưởng · Hỗ trợ quay ↗</small></a>
+                  <a class="proof-card" href="https://www.facebook.com/reel/1667555107829911" target="_blank" rel="noopener noreferrer"><span>Food porn · Cơm chiên</span><strong>101K</strong><small>Ý tưởng · Hỗ trợ quay ↗</small></a>
+                  <a class="proof-card" href="https://www.facebook.com/reel/1497281601861961" target="_blank" rel="noopener noreferrer"><span>Food porn · Kho quẹt</span><strong>87K</strong><small>Ý tưởng · Hỗ trợ quay ↗</small></a>
+                </div>
+                <p class="case-disclaimer">Số liệu vận hành là kết quả toàn hệ thống do tôi tổng hợp. Views gồm organic và paid distribution, kiểm tra ngày 06/08/2026.</p>
+              </section>
+              <section class="case-takeaway"><span>Điều tôi học được</span><p>Một case tăng trưởng tốt phải nối được ba lớp: quy trình vận hành, dữ liệu kinh doanh và cách thương hiệu xuất hiện trước khách hàng — đồng thời luôn nói đúng phạm vi đóng góp của mình.</p></section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- CASE 02 — AI BUSINESS REPORT AGENT -->
+    <dialog class="project-case project-case--agent" id="project-ai-agent" aria-labelledby="project-agent-title">
+      <div class="case-modal__shell">
+        <div class="case-motion" aria-hidden="true"><span class="case-motion__scan"></span><span class="case-motion__beam"></span><span class="case-motion__count">02</span><span class="case-motion__word">ANALYZE</span></div>
+        <header class="case-modal__topbar"><span>CASE 02 / 05</span><span class="case-modal__progress"><i></i></span><button class="case-modal__close" type="button" data-project-close aria-label="Đóng dự án AI Business Report Agent">Đóng <i>×</i></button></header>
+        <div class="case-modal__scroll" tabindex="-1">
+          <section class="case-hero">
+            <div class="case-hero__copy"><p class="case-overline">AI Automation · Data Reporting · 2026</p><h3 id="project-agent-title">Business Report<br><em>AI Agent</em></h3><p class="case-hero__lede">Đưa dữ liệu từ Google Drive và Sheets vào một luồng phân tích có quy tắc, có kiểm tra và hướng tới hành động.</p></div>
+            <div class="case-hero__signal"><span class="case-signal__ring"></span><b>71</b><small>menu items analyzed</small></div>
+          </section>
+          <div class="case-metrics"><div><strong>34</strong><span>chi nhánh theo dõi</span></div><div><strong>03</strong><span>nền tảng giao đồ ăn</span></div><div><strong>71</strong><span>món phân tích GM</span></div><div><strong>&lt;85%</strong><span>ngưỡng cảnh báo target</span></div></div>
+          <div class="case-layout">
+            <aside class="case-facts"><p class="case-label">Vai trò &amp; công cụ</p><dl><div><dt>Vai trò</dt><dd>Workflow designer · Data operator</dd></div><div><dt>Công cụ</dt><dd>Claude Code · Google Drive · Google Sheets</dd></div><div><dt>Đầu ra</dt><dd>Doanh thu · Khung giờ · Gross Margin · % target</dd></div><div><dt>Kiểm soát</dt><dd>Con người đối chiếu dữ liệu trước khi dùng insight</dd></div></dl></aside>
+            <div class="case-story">
+              <section class="case-section"><p class="case-label">01 · Bài toán</p><h4>Báo cáo không chỉ cần nhanh — nó phải dẫn tới quyết định.</h4><p>Dữ liệu vận hành nằm ở nhiều bảng tính và cần được đọc theo chi nhánh, khung giờ, nền tảng và món. Nếu chỉ tổng hợp con số, người đọc vẫn phải tự tìm nơi cần hành động.</p></section>
+              <section class="case-section"><p class="case-label">02 · Luồng Agent</p><div class="data-pipeline"><div><b>INPUT</b><span>Drive / Sheets</span></div><i>→</i><div><b>PROCESS</b><span>Làm sạch · tính GM</span></div><i>→</i><div><b>DETECT</b><span>Target &lt; 85%</span></div><i>→</i><div><b>ACTION</b><span>Đề xuất push ads</span></div></div></section>
+              <section class="case-section"><p class="case-label">03 · Cách hệ thống đọc dữ liệu</p><div class="case-workflow case-workflow--two"><div><b>01</b><h5>Chi nhánh &amp; khung giờ</h5><p>Tổng hợp doanh thu để nhìn ra điểm bán và thời điểm cần ưu tiên.</p></div><div><b>02</b><h5>Nền tảng &amp; món</h5><p>So sánh Gross Margin trên ba nền tảng và đi sâu đến 71 món.</p></div><div><b>03</b><h5>Target</h5><p>Chấm tỷ lệ hoàn thành; đánh dấu chi nhánh dưới ngưỡng 85%.</p></div><div><b>04</b><h5>Human check</h5><p>Đối chiếu nguồn trước khi sử dụng đề xuất trong vận hành.</p></div></div></section>
+              <section class="case-section"><p class="case-label">04 · Giá trị tạo ra</p><div class="insight-card"><span>SIGNAL / ACTION</span><strong>Target dưới 85%</strong><p>Biến một bảng số liệu thành tín hiệu rõ ràng: chi nhánh nào đang hụt mục tiêu, cần kiểm tra nguyên nhân và cân nhắc hỗ trợ quảng cáo.</p></div><p class="case-disclaimer">Portfolio chưa công bố con số thời gian trước–sau; case này chỉ trình bày phạm vi tự động hoá đã xác nhận, không tự suy diễn mức tiết kiệm.</p></section>
+              <section class="case-takeaway"><span>Điều tôi học được</span><p>AI tạo giá trị khi được đặt trong một quy trình có dữ liệu nguồn, quy tắc tính rõ và bước phê duyệt của con người — không phải khi nó chỉ viết một đoạn tóm tắt nghe thuyết phục.</p></section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- CASE 03 — AI TIKTOK STUDIO -->
+    <dialog class="project-case project-case--tiktok" id="project-ai-tiktok" aria-labelledby="project-tiktok-title">
+      <div class="case-modal__shell">
+        <div class="case-motion" aria-hidden="true"><span class="case-motion__scan"></span><span class="case-motion__beam"></span><span class="case-motion__count">03</span><span class="case-motion__word">CREATE</span></div>
+        <header class="case-modal__topbar"><span>CASE 03 / 05</span><span class="case-modal__progress"><i></i></span><button class="case-modal__close" type="button" data-project-close aria-label="Đóng dự án AI TikTok Studio">Đóng <i>×</i></button></header>
+        <div class="case-modal__scroll" tabindex="-1">
+          <section class="case-hero"><div class="case-hero__copy"><p class="case-overline">Generative AI · TikTok Affiliate · 03–10/07/2026</p><h3 id="project-tiktok-title">AI TikTok<br><em>Studio</em></h3><p class="case-hero__lede">Một thử nghiệm 8 ngày để kiểm chứng workflow AI-first có thể đi từ nghiên cứu sản phẩm đến nội dung và tín hiệu thương mại.</p></div><div class="case-hero__signal"><span class="case-signal__ring"></span><b>8 ngày</b><small>from workflow to first order</small></div></section>
+          <div class="case-metrics"><div><strong>17</strong><span>video trong sprint</span></div><div><strong>21.240</strong><span>views · sprint 8 ngày</span></div><div><strong>2.380</strong><span>followers · 2 kênh portfolio</span></div><div><strong>01</strong><span>đơn affiliate đầu tiên</span></div></div>
+          <div class="case-layout"><aside class="case-facts"><p class="case-label">Vai trò &amp; phạm vi</p><dl><div><dt>Vai trò</dt><dd>Creator · AI Workflow Designer · Content Operator</dd></div><div><dt>Hai kênh chính</dt><dd>@odaycododepcungleo · @leotnt</dd></div><div><dt>Sprint xác minh</dt><dd>@leotaplamcontent · 03–10/07/2026</dd></div><div><dt>Mô hình</dt><dd>Human-in-the-loop · TikTok Shop Affiliate</dd></div></dl></aside>
+            <div class="case-story">
+              <section class="case-section"><p class="case-label">01 · Giả thuyết</p><h4>Có thể giảm nguồn lực sản xuất mà vẫn giữ quyền kiểm soát sáng tạo?</h4><p>Tôi dùng AI cho phần tạo sinh, nhưng giữ con người ở các điểm quyết định: chọn sản phẩm, viết prompt, kiểm lỗi, chọn đầu ra, dựng nhịp, gắn sản phẩm và quyết định video được đăng.</p></section>
+              <section class="case-section"><p class="case-label">02 · Hai định vị nội dung</p><div class="split-results"><div><span>AI Fashion</span><strong>@odaycododepcungleo</strong><p>1.297 followers · 2.679 lượt thích · video cao nhất 7.655 views.</p></div><div><span>AI Motion</span><strong>@leotnt</strong><p>1.083 followers · kênh tập trung motion design và creative coding.</p></div></div></section>
+              <section class="case-section"><p class="case-label">03 · Workflow 6 bước</p><ol class="step-track"><li><b>01</b><span>Nghiên cứu sản phẩm</span></li><li><b>02</b><span>Xây nhân vật faceless</span></li><li><b>03</b><span>Tạo ảnh &amp; bối cảnh</span></li><li><b>04</b><span>Image-to-video</span></li><li><b>05</b><span>Biên tập &amp; âm thanh</span></li><li><b>06</b><span>Đăng &amp; đo lường</span></li></ol></section>
+              <section class="case-section"><p class="case-label">04 · Kết quả affiliate sprint</p><div class="split-results"><div><span>Content</span><strong>465 likes</strong><p>7 bình luận · 61 lượt chia sẻ trong giai đoạn ghi nhận.</p></div><div><span>Commerce</span><strong>88.000đ GMV</strong><p>Khoảng 10.600đ hoa hồng từ đơn đầu tiên.</p></div></div><a class="case-cta" href="https://www.tiktok.com/@leotaplamcontent" target="_blank" rel="noopener noreferrer">Xem kênh thử nghiệm <span>↗</span></a><p class="case-disclaimer">Số liệu hai kênh portfolio và sprint @leotaplamcontent được ghi nhận theo hai lát cắt riêng, không cộng gộp. Sprint kéo dài 8 ngày, chưa có nhóm đối chứng và không khẳng định AI là nguyên nhân duy nhất tạo ra đơn hàng.</p></section>
+              <section class="case-takeaway"><span>Điều tôi học được</span><p>AI tăng tốc khâu sản xuất; chất lượng kênh vẫn phụ thuộc vào khả năng chọn, kiểm soát và học từ dữ liệu của người vận hành.</p></section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- CASE 04 — CHULI STUDIO -->
+    <dialog class="project-case project-case--chuli" id="project-chuli" aria-labelledby="project-chuli-title">
+      <div class="case-modal__shell">
+        <div class="case-motion" aria-hidden="true"><span class="case-motion__scan"></span><span class="case-motion__beam"></span><span class="case-motion__count">04</span><span class="case-motion__word">GROW</span></div>
+        <header class="case-modal__topbar"><span>CASE 04 / 05</span><span class="case-modal__progress"><i></i></span><button class="case-modal__close" type="button" data-project-close aria-label="Đóng dự án Chuli Studio">Đóng <i>×</i></button></header>
+        <div class="case-modal__scroll" tabindex="-1">
+          <section class="case-hero"><div class="case-hero__copy"><p class="case-overline">Shopee · E-commerce Business Development · 2026</p><h3 id="project-chuli-title">Chuli<br><em>Studio</em></h3><p class="case-hero__lede">Từ kế hoạch học phần đến một gian hàng thời trang nữ được triển khai thật và tiếp tục hoạt động trên Shopee.</p></div><div class="case-hero__signal"><span class="case-signal__ring"></span><b>9/10</b><small>academic project score</small></div></section>
+          <div class="case-metrics"><div><strong>01</strong><span>thương hiệu thời trang</span></div><div><strong>04</strong><span>trụ cột kinh doanh</span></div><div><strong>9/10</strong><span>điểm học phần</span></div><div><strong>Live</strong><span>shop tiếp tục hoạt động</span></div></div>
+          <div class="case-layout"><aside class="case-facts"><p class="case-label">Phạm vi dự án</p><dl><div><dt>Kênh</dt><dd>Shopee</dd></div><div><dt>Ngành hàng</dt><dd>Thời trang nữ</dd></div><div><dt>Hình thức</dt><dd>Dự án học phần triển khai thực tế</dd></div><div><dt>Phạm vi</dt><dd>Market research · Product &amp; pricing · Store operations · Content</dd></div></dl></aside>
+            <div class="case-story">
+              <section class="case-section"><p class="case-label">01 · Bài toán</p><h4>Xây một kênh bán có cấu trúc, không chỉ đưa sản phẩm lên sàn.</h4><p>Chuli Studio cần kết nối nghiên cứu thị trường, chiến lược sản phẩm, giá bán, hình ảnh gian hàng và hoạt động kéo traffic thành một kế hoạch kinh doanh online thống nhất.</p></section>
+              <section class="case-section"><p class="case-label">02 · Bốn trụ cột triển khai</p><div class="case-workflow case-workflow--two"><div><b>01</b><h5>Thị trường</h5><p>Phân tích tệp khách hàng, đối thủ và bối cảnh ngành hàng thời trang nữ.</p></div><div><b>02</b><h5>Sản phẩm &amp; giá</h5><p>Xây logic danh mục, định vị sản phẩm và chiến lược giá bán.</p></div><div><b>03</b><h5>Gian hàng</h5><p>Tổ chức nội dung và trải nghiệm mua hàng trên Shopee.</p></div><div><b>04</b><h5>Traffic</h5><p>Phát triển hướng nội dung hỗ trợ tiếp cận và chuyển đổi.</p></div></div></section>
+              <section class="case-section"><p class="case-label">03 · Kết quả</p><div class="split-results"><div><span>Đánh giá</span><strong>9/10</strong><p>Dự án đạt điểm cao trong học phần Kinh doanh online.</p></div><div><span>Ứng dụng</span><strong>Shop đang chạy</strong><p>Kế hoạch không dừng ở slide; gian hàng đã được triển khai thực tế.</p></div></div><p class="case-disclaimer">Case study chưa công bố doanh thu, đơn hàng hoặc tỷ lệ chuyển đổi nên không dùng các số liệu ước tính. Phạm vi được trình bày đúng theo dữ kiện đã xác nhận.</p></section>
+              <section class="case-takeaway"><span>Điều tôi học được</span><p>Vận hành Shopee là bài toán liên kết: sản phẩm, nội dung, giá, khuyến mãi và trải nghiệm mua phải cùng hướng đến một mục tiêu kinh doanh.</p></section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- CASE 05 — REMOTION MOTION LAB -->
+    <dialog class="project-case project-case--motion" id="project-remotion" aria-labelledby="project-remotion-title">
+      <div class="case-modal__shell">
+        <div class="case-motion" aria-hidden="true"><span class="case-motion__scan"></span><span class="case-motion__beam"></span><span class="case-motion__count">05</span><span class="case-motion__word">MOTION</span></div>
+        <header class="case-modal__topbar"><span>CASE 05 / 05</span><span class="case-modal__progress"><i></i></span><button class="case-modal__close" type="button" data-project-close aria-label="Đóng dự án Remotion Motion Lab">Đóng <i>×</i></button></header>
+        <div class="case-modal__scroll" tabindex="-1">
+          <section class="case-hero"><div class="case-hero__copy"><p class="case-overline">Creative Coding · Motion Design · 2026</p><h3 id="project-remotion-title">Remotion<br><em>Motion Lab</em></h3><p class="case-hero__lede">Biến motion design thành một hệ thống có thể điều khiển bằng timing, easing và tham số trong React.</p></div><div class="case-hero__signal"><span class="case-signal__ring"></span><b>06</b><small>logo motion studies</small></div></section>
+          <div class="case-metrics"><div><strong>06</strong><span>logo được thử nghiệm</span></div><div><strong>React</strong><span>composition bằng code</span></div><div><strong>Reuse</strong><span>glow · transition · timing</span></div><div><strong>Render</strong><span>đầu ra video</span></div></div>
+          <div class="case-layout"><aside class="case-facts"><p class="case-label">Vai trò &amp; phạm vi</p><dl><div><dt>Vai trò</dt><dd>Creative Developer · Motion Designer</dd></div><div><dt>Công cụ</dt><dd>Remotion · React</dd></div><div><dt>Logo studies</dt><dd>Meta · TikTok · Shopee · Grab · Puma · Canva</dd></div><div><dt>Lưu ý</dt><dd>Dự án tự luyện, không phải sản phẩm đặt hàng của thương hiệu</dd></div></dl></aside>
+            <div class="case-story">
+              <section class="case-section"><p class="case-label">01 · Ý tưởng</p><h4>Dựng chuyển động như thiết kế một hệ thống.</h4><p>Thay vì thao tác thủ công trên từng timeline, tôi mô tả chuyển động bằng code để kiểm soát timing, easing, màu sắc và tạo biến thể từ cùng một composition.</p></section>
+              <section class="case-section"><p class="case-label">02 · Motion studies</p><div class="logo-stage" aria-label="Sáu logo được thử nghiệm"><span>META</span><span>TikTok</span><span>Shopee</span><span>Grab</span><span>PUMA</span><span>Canva</span></div></section>
+              <section class="case-section"><p class="case-label">03 · Quy trình</p><div class="case-workflow case-workflow--three"><div><b>01</b><h5>Decode</h5><p>Phân tích hình học và tính cách riêng của từng logo.</p></div><div><b>02</b><h5>Compose</h5><p>Dựng component, timing và chuyển động trong Remotion.</p></div><div><b>03</b><h5>Refine</h5><p>Render, xem lại nhịp và tinh chỉnh easing theo cảm giác thị giác.</p></div></div><a class="case-cta" href="https://www.tiktok.com/@leotnt" target="_blank" rel="noopener noreferrer">Xem motion trên @leotnt <span>↗</span></a></section>
+              <section class="case-takeaway"><span>Điều tôi học được</span><p>Code không thay thế ý tưởng sáng tạo; nó giúp ý tưởng được kiểm soát chính xác, tái sử dụng và mở rộng thành một quy trình sản xuất.</p></section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
 
     <!-- ═══════════ QUOTE — dark block ═══════════ -->
     <section class="quote reveal">
@@ -528,7 +613,7 @@
         <li class="timeline__item reveal">
           <span class="timeline__year">4/2026 — nay</span>
           <div>
-            <h3>Marketing &amp; E-commerce Executive (Thực tập)</h3>
+            <h3>Marketing &amp; E-commerce Intern</h3>
             <p class="timeline__org">Cơm Niêu Thiên Lý · TP.HCM</p>
             <p>Vận hành gian hàng 3 nền tảng giao đồ ăn cho 34 chi nhánh, xây SOP xử lý đơn, phân tích Gross Margin theo món, booking 50+ KOC/KOL và xây concept truyền thông "9 dịp cơm nhà".</p>
           </div>
@@ -587,6 +672,6 @@
     <span>Thiết kế &amp; xây dựng với ♥ tại Sài Gòn</span>
   </footer>
 
-  <script type="module" src="js/main.js?v=du-an-moi-print-v1"></script>
+  <script type="module" src="js/main.js?v=project-cinema-v2"></script>
 </body>
 </html>
