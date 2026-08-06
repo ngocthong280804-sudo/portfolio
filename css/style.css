@@ -1563,6 +1563,144 @@ section { position: relative; z-index: 2; }
 .arrow { transition: transform .35s var(--ease-out); display: inline-block; }
 .card:hover .arrow, .contact__email:hover .arrow { transform: translateX(8px); }
 
+/* ═══════════ FEATURED CASE STUDY — CƠM NIÊU THIÊN LÝ ═══════════ */
+.card--featured {
+  grid-column: 1 / -1;
+}
+.card--featured .card__visual {
+  aspect-ratio: 21 / 7;
+  min-height: 250px;
+}
+.card--featured .card__body {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+.card__desc--lead {
+  max-width: 920px;
+  font-size: 1rem;
+}
+.case-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .85rem;
+  margin: .25rem 0 1.5rem;
+}
+.case-kpi {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgba(77, 141, 255, .32);
+  border-radius: 14px;
+  background: rgba(4, 12, 34, .38);
+}
+.case-kpi strong {
+  display: block;
+  color: #f6fbff;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -.035em;
+}
+.case-kpi span {
+  display: block;
+  margin-top: .4rem;
+  color: var(--muted);
+  font-size: .72rem;
+  line-height: 1.45;
+}
+.case-chapters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.case-chapter {
+  min-width: 0;
+  padding: 1.15rem;
+  border: 1px solid rgba(77, 141, 255, .3);
+  border-radius: 16px;
+  background: linear-gradient(155deg, rgba(19, 50, 113, .72), rgba(5, 14, 38, .76));
+}
+.case-chapter__eyebrow {
+  margin-bottom: .55rem;
+  color: var(--aqua);
+  font-family: var(--font-mono);
+  font-size: .65rem;
+  font-weight: 500;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.case-chapter h4 {
+  margin-bottom: .65rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.3;
+}
+.case-chapter > p:not(.case-chapter__eyebrow) {
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.65;
+}
+.case-chapter__result {
+  display: block;
+  margin-top: .9rem;
+  color: #c9e9ff;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  line-height: 1.55;
+}
+.card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem 1rem;
+  margin-top: 1rem;
+}
+.card__links .card__link {
+  padding-bottom: .16rem;
+  border-bottom: 1px solid rgba(77, 225, 255, .38);
+  font-size: .7rem;
+  line-height: 1.4;
+}
+.card__links .card__link:hover,
+.card__links .card__link:focus-visible {
+  border-bottom-color: var(--aqua);
+}
+.card__links .card__link:focus-visible {
+  outline: 2px solid var(--aqua);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+.case-note {
+  margin-top: 1rem;
+  color: rgba(143, 169, 217, .78);
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .card--featured .card__visual {
+    aspect-ratio: 16 / 8;
+    min-height: 210px;
+  }
+  .case-chapters {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .card--featured .card__visual {
+    aspect-ratio: 16 / 9;
+    min-height: 180px;
+  }
+  .case-kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+  .case-kpi {
+    padding: .85rem;
+  }
+  .case-kpi span {
+    font-size: .66rem;
+  }
+}
+
 /* ═══════════ QUOTE — khối tối ═══════════ */
 .quote {
   background: linear-gradient(150deg, rgba(13, 32, 82, .6), rgba(4, 9, 25, .85));
@@ -2807,6 +2945,12 @@ a:focus-visible, button:focus-visible {
   .card__name  { font-size: 11pt !important;  color: #101c33 !important; margin: 1.5mm 0 2mm; }
   .card__desc  { font-size: 8.8pt !important; line-height: 1.55 !important; color: #2b3a55 !important; }
   .card__link  { font-size: 8.5pt !important; color: #2e5bbf !important; }
+  .case-kpis { grid-template-columns: repeat(4, 1fr) !important; gap: 2mm !important; margin: 2mm 0 4mm !important; }
+  .case-kpi, .case-chapter { border: 1px solid #c8d8f2 !important; background: #fff !important; padding: 3mm !important; }
+  .case-kpi strong, .case-chapter h4 { color: #101c33 !important; }
+  .case-kpi span, .case-chapter p, .case-note { color: #46577a !important; }
+  .case-chapters { grid-template-columns: 1fr !important; gap: 2mm !important; }
+  .card__links { margin-top: 2mm !important; }
 
   /* Số liệu · kỹ năng · hành trình */
   .ledger__row, .bar, .timeline__item, .skill-group { break-inside: avoid; }
