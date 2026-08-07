@@ -389,6 +389,20 @@ if (finePointer && !reducedMotion) {
   let activeTrigger = null;
   let closeTimer = 0;
 
+  /* Facebook Reels chỉ tải khi case được mở để trang đầu nhẹ hơn.
+     Reset iframe khi đóng để mọi video/âm thanh dừng hẳn. */
+  function loadProjectEmbeds(dialog) {
+    dialog.querySelectorAll("iframe[data-src]").forEach(frame => {
+      if (frame.src === "about:blank") frame.src = frame.dataset.src;
+    });
+  }
+
+  function unloadProjectEmbeds(dialog) {
+    dialog.querySelectorAll("iframe[data-src]").forEach(frame => {
+      frame.src = "about:blank";
+    });
+  }
+
   function setReadable(dialog) {
     dialog.classList.add("is-readable");
     const scrollArea = dialog.querySelector(".case-modal__scroll");
@@ -449,12 +463,14 @@ if (finePointer && !reducedMotion) {
     trigger.setAttribute("aria-expanded", "true");
     document.body.classList.add("case-open");
     dialog.showModal();
+    loadProjectEmbeds(dialog);
     dialog.querySelector(".case-modal__scroll")?.scrollTo({ top: 0 });
 
     requestAnimationFrame(() => requestAnimationFrame(() => animateOpen(dialog, trigger)));
   }
 
   function finishClose(dialog) {
+    unloadProjectEmbeds(dialog);
     if (dialog.open) dialog.close();
     dialog.classList.remove("is-opening", "is-readable", "is-closing");
     document.body.classList.remove("case-open");
