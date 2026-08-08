@@ -390,14 +390,14 @@ if (finePointer && !reducedMotion) {
   let closeTimer = 0;
 
   /* Media chỉ tải khi case được mở để trang đầu nhẹ hơn.
-     Facebook iframe được reset khi đóng; TikTok Creator Embed giữ nguyên
-     vì không tự phát video và cung cấp cả ảnh kênh lẫn danh sách video. */
-  function loadTikTokCreatorEmbeds(dialog) {
+     Facebook iframe được reset khi đóng; TikTok Embed giữ nguyên để
+     trình phát chính thức và liên kết từng video không phải khởi tạo lại. */
+  function loadTikTokEmbeds(dialog) {
     if (!dialog.querySelector(".tiktok-embed")) return;
-    if (document.getElementById("tiktok-creator-embed-script")) return;
+    if (document.getElementById("tiktok-embed-script")) return;
 
     const script = document.createElement("script");
-    script.id = "tiktok-creator-embed-script";
+    script.id = "tiktok-embed-script";
     script.src = "https://www.tiktok.com/embed.js";
     script.async = true;
     script.dataset.projectMedia = "ai-tiktok-studio";
@@ -408,7 +408,7 @@ if (finePointer && !reducedMotion) {
     dialog.querySelectorAll("iframe[data-src]").forEach(frame => {
       if (frame.src === "about:blank") frame.src = frame.dataset.src;
     });
-    loadTikTokCreatorEmbeds(dialog);
+    loadTikTokEmbeds(dialog);
   }
 
   function unloadProjectEmbeds(dialog) {
