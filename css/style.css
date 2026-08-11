@@ -4815,10 +4815,11 @@ a:focus-visible, button:focus-visible {
     #090909;
   box-shadow: -2px 0 0 rgba(37, 244, 238, .26), 2px 0 0 rgba(254, 44, 85, .24);
 }
-.tiktok-channel__preview {
+.tiktok-channel-directory article > .tiktok-channel__preview {
   position: relative;
   width: 82px;
   aspect-ratio: 9 / 13;
+  display: block;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, .24);
   border-radius: 13px;
@@ -4844,7 +4845,7 @@ a:focus-visible, button:focus-visible {
 }
 .tiktok-channel__preview:hover img,
 .tiktok-channel__preview:focus-visible img { scale: 1.07; }
-.tiktok-channel__preview--sprint {
+.tiktok-channel-directory article > .tiktok-channel__preview--sprint {
   display: grid;
   align-content: center;
   justify-items: center;
@@ -5049,7 +5050,7 @@ a:focus-visible, button:focus-visible {
 
 @media (max-width: 1100px) {
   .tiktok-channel-directory article { grid-template-columns: 92px minmax(0, 1fr) 36px; }
-  .tiktok-channel__preview { width: 92px; }
+  .tiktok-channel-directory article > .tiktok-channel__preview { width: 92px; }
   .tiktok-video-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
@@ -5073,7 +5074,7 @@ a:focus-visible, button:focus-visible {
   .tiktok-hero__post small { font-size: .36rem; }
   .tiktok-hero__post::after { top: .48rem; right: .48rem; width: 27px; font-size: .43rem; }
   .tiktok-channel-directory article { grid-template-columns: 74px minmax(0, 1fr) 32px; }
-  .tiktok-channel__preview { width: 74px; }
+  .tiktok-channel-directory article > .tiktok-channel__preview { width: 74px; }
   .tiktok-video-grid { display: flex; }
   .tiktok-remotion-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
