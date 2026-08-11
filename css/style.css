@@ -1720,6 +1720,12 @@ section { position: relative; z-index: 2; }
 .project-tab {
   --tab-accent: #4de1ff;
   --tab-accent-rgb: 77, 225, 255;
+  --tab-accent-2-rgb: 46, 123, 255;
+  --tab-bg-start: #102a66;
+  --tab-bg-end: #050f27;
+  --tab-ink: #f4f8ff;
+  --tab-muted: rgba(184, 202, 235, .72);
+  --tab-action-contrast: #031026;
   position: relative;
   isolation: isolate;
   width: 100%;
@@ -1730,13 +1736,14 @@ section { position: relative; z-index: 2; }
   gap: clamp(.8rem, 2.3vw, 2rem);
   overflow: hidden;
   padding: 1.15rem clamp(1rem, 2.4vw, 1.8rem);
-  border: 1px solid rgba(100, 157, 255, .3);
+  border: 1px solid rgba(var(--tab-accent-rgb), .34);
   border-radius: 18px;
   background:
-    linear-gradient(100deg, rgba(var(--tab-accent-rgb), .11), transparent 32%),
-    linear-gradient(160deg, rgba(16, 42, 102, .95), rgba(5, 15, 39, .96));
+    radial-gradient(circle at 88% 50%, rgba(var(--tab-accent-2-rgb), .18), transparent 29%),
+    linear-gradient(100deg, rgba(var(--tab-accent-rgb), .18), transparent 38%),
+    linear-gradient(160deg, var(--tab-bg-start), var(--tab-bg-end));
   box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 22px 48px -36px rgba(0,0,0,.8);
-  color: var(--ink);
+  color: var(--tab-ink);
   font: inherit;
   text-align: left;
   cursor: pointer;
@@ -1765,7 +1772,7 @@ section { position: relative; z-index: 2; }
   right: -170px;
   top: 50%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(var(--tab-accent-rgb), .23), transparent 70%);
+  background: radial-gradient(circle, rgba(var(--tab-accent-2-rgb), .3), rgba(var(--tab-accent-rgb), .1) 44%, transparent 72%);
   translate: 0 -50%;
   opacity: .6;
   transition: transform .8s var(--ease-out), opacity .4s;
@@ -1774,18 +1781,46 @@ section { position: relative; z-index: 2; }
 .project-tab:focus-visible {
   transform: translate3d(10px, 0, 0);
   border-color: rgba(var(--tab-accent-rgb), .68);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.13), 0 25px 60px -35px rgba(var(--tab-accent-rgb), .48);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.13),
+    -10px 25px 60px -40px rgba(var(--tab-accent-rgb), .55),
+    14px 25px 60px -42px rgba(var(--tab-accent-2-rgb), .58);
 }
 .project-tab:hover::before,
 .project-tab:focus-visible::before { width: 9px; }
 .project-tab:hover::after,
 .project-tab:focus-visible::after { transform: scale(1.35); opacity: 1; }
 
-.project-tab--thien { --tab-accent: #4de1ff; --tab-accent-rgb: 77, 225, 255; }
-.project-tab--agent { --tab-accent: #68ffba; --tab-accent-rgb: 104, 255, 186; }
-.project-tab--tiktok { --tab-accent: #25f4ee; --tab-accent-rgb: 37, 244, 238; }
-.project-tab--chuli { --tab-accent: #ffb866; --tab-accent-rgb: 255, 184, 102; }
-.project-tab--motion { --tab-accent: #a78bfa; --tab-accent-rgb: 167, 139, 250; }
+.project-tab--thien {
+  --tab-accent: #f8c114;
+  --tab-accent-rgb: 248, 193, 20;
+  --tab-accent-2-rgb: 247, 194, 79;
+  --tab-bg-start: #551b15;
+  --tab-bg-end: #240c0a;
+  --tab-ink: #fff7df;
+  --tab-muted: rgba(255, 247, 223, .7);
+  --tab-action-contrast: #551b15;
+}
+.project-tab--tiktok {
+  --tab-accent: #25f4ee;
+  --tab-accent-rgb: 37, 244, 238;
+  --tab-accent-2-rgb: 254, 44, 85;
+  --tab-bg-start: #151515;
+  --tab-bg-end: #000;
+  --tab-ink: #fff;
+  --tab-muted: rgba(255, 255, 255, .66);
+  --tab-action-contrast: #000;
+}
+.project-tab--chuli {
+  --tab-accent: #ffb866;
+  --tab-accent-rgb: 255, 184, 102;
+  --tab-accent-2-rgb: 255, 111, 145;
+  --tab-bg-start: #47213f;
+  --tab-bg-end: #160c1a;
+  --tab-ink: #fff8f4;
+  --tab-muted: rgba(255, 238, 230, .7);
+  --tab-action-contrast: #321523;
+}
 
 .project-tab__number {
   color: var(--tab-accent);
@@ -1814,13 +1849,13 @@ section { position: relative; z-index: 2; }
 }
 .project-tab__copy small,
 .project-tab__metric small {
-  color: var(--muted);
+  color: var(--tab-muted);
   font-size: .72rem;
   line-height: 1.45;
 }
 .project-tab__metric { display: grid; gap: .18rem; }
 .project-tab__metric b {
-  color: #f6fbff;
+  color: var(--tab-ink);
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 2vw, 1.45rem);
   font-variant-numeric: tabular-nums;
@@ -1836,7 +1871,7 @@ section { position: relative; z-index: 2; }
   display: inline-flex;
   align-items: center;
   gap: .65rem;
-  color: #eaf6ff;
+  color: var(--tab-ink);
   font-family: var(--font-mono);
   font-size: .66rem;
   letter-spacing: .12em;
@@ -1857,7 +1892,7 @@ section { position: relative; z-index: 2; }
 .project-tab:focus-visible .project-tab__action i {
   transform: rotate(45deg) scale(1.08);
   background: var(--tab-accent);
-  color: #031026;
+  color: var(--tab-action-contrast);
 }
 .project-tabs__hint {
   margin-top: 1rem;
@@ -1900,7 +1935,6 @@ body.case-open { overflow: hidden; }
   --cntl-red: #ed1c24;
   font-family: "Inter Tight", var(--font-body);
 }
-.project-case--agent { --case-accent: #68ffba; --case-accent-2: #16bda0; --case-rgb: 104, 255, 186; }
 .project-case--tiktok {
   --case-accent: #25f4ee;
   --case-accent-2: #fe2c55;
@@ -1910,7 +1944,6 @@ body.case-open { overflow: hidden; }
   --tiktok-black: #050505;
 }
 .project-case--chuli { --case-accent: #ffb866; --case-accent-2: #ff6f91; --case-rgb: 255, 184, 102; }
-.project-case--motion { --case-accent: #a78bfa; --case-accent-2: #4de1ff; --case-rgb: 167, 139, 250; }
 
 .case-modal__shell {
   position: relative;
