@@ -5673,8 +5673,10 @@ a:focus-visible, button:focus-visible {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: .55rem;
 }
-.toolkit-card__logos--compact,
-.toolkit-card__logos--certificates { grid-template-columns: 1fr; }
+.toolkit-card__logos--certificates { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.toolkit-card__logos--certificates .tool-logo--google-edu { grid-column: 1 / -1; }
+.toolkit-card__logos--data { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.toolkit-card__logos--data .tool-logo--powerbi { grid-column: 1 / -1; }
 .toolkit-card__logos--platforms {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: .4rem;
@@ -5750,6 +5752,7 @@ a:focus-visible, button:focus-visible {
 .tool-logo--excel,
 .tool-logo--grab,
 .tool-logo--xanhsm { --logo-rgb: 52, 168, 83; }
+.tool-logo--powerbi { --logo-rgb: 242, 200, 17; }
 .tool-logo--claude { --logo-rgb: 217, 119, 87; }
 .tool-logo--chatgpt { --logo-rgb: 16, 163, 127; }
 .tool-logo--gemini,
@@ -5774,8 +5777,10 @@ a:focus-visible, button:focus-visible {
 }
 .tool-logo--tiktok,
 .tool-logo--tiktok-ads { --logo-rgb: 37, 244, 238; }
+.tool-logo--meta { --logo-rgb: 79, 128, 255; }
 .tool-logo--shopee { --logo-rgb: 238, 77, 45; }
 .tool-logo--google-edu { --logo-rgb: 66, 133, 244; }
+.tool-logo--photoshop-cert { --logo-rgb: 49, 168, 255; }
 .toolkit-card__logos--platforms .tool-logo { padding-inline: .15rem; }
 .toolkit-card__logos--platforms .tool-logo > i { width: 33px; height: 33px; padding: 6px; }
 .toolkit-card__logos--platforms .tool-logo img { max-width: 22px; max-height: 22px; }
