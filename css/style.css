@@ -5200,10 +5200,10 @@ a:focus-visible, button:focus-visible {
 }
 .project-filter {
   padding: .63rem .9rem;
-  border: 1px solid rgba(65, 105, 180, .24);
+  border: 1px solid rgba(77, 225, 255, .24);
   border-radius: 999px;
-  background: rgba(255,255,255,.54);
-  color: var(--muted);
+  background: rgba(5, 15, 39, .72);
+  color: rgba(235, 245, 255, .78);
   font-family: var(--font-mono);
   font-size: .61rem;
   letter-spacing: .08em;
@@ -5215,8 +5215,8 @@ a:focus-visible, button:focus-visible {
 .project-filter:focus-visible,
 .project-filter.is-active {
   border-color: var(--aqua);
-  background: linear-gradient(120deg, rgba(77,225,255,.14), rgba(167,139,250,.12));
-  color: #183052;
+  background: linear-gradient(120deg, rgba(77,225,255,.25), rgba(46,123,255,.24));
+  color: #fff;
   box-shadow: 0 10px 26px -18px rgba(46,123,255,.8);
 }
 .project-tab.is-hidden { display: none; }
