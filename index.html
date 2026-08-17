@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Dancing+Script:wght@500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=original-concept-content-v3">
+  <link rel="stylesheet" href="css/style.css?v=original-concept-content-v4">
 </head>
 <body class="is-loading">
 
@@ -207,11 +207,22 @@
         <div class="hero__positioning anim-hero" style="--d:.9s">
           <strong>MARKETING &amp; E-COMMERCE EXECUTIVE</strong>
           <p>Thông kết nối nội dung, creator, thương mại điện tử và dữ liệu để biến ý tưởng Marketing thành kết quả có thể đo lường.</p>
-          <div class="hero__quick-actions">
-            <a href="#duan" data-hover>View Selected Work <span>↓</span></a>
-            <a href="https://canva.link/lz833cvpccc9ei6" target="_blank" rel="noopener" data-hover>Download CV <span>↗</span></a>
-            <a href="https://www.linkedin.com/in/thongtranngoc/" target="_blank" rel="noopener" data-hover>LinkedIn <span>↗</span></a>
-            <a href="#lienhe" data-hover>Contact Me <span>↗</span></a>
+          <div class="hero__quick-actions" aria-label="Tài liệu nổi bật">
+            <a class="hero-action hero-action--work" href="#duan" data-hover>
+              <span class="hero-action__meta"><span>01 · Explore</span><span>Selected work</span></span>
+              <span class="hero-action__label">View Work</span>
+              <span class="hero-action__icon" aria-hidden="true">↓</span>
+            </a>
+            <button class="hero-action hero-action--cv" type="button" disabled aria-label="CV PDF sẽ được cập nhật sau">
+              <span class="hero-action__meta"><span>02 · PDF</span><span>Sắp cập nhật</span></span>
+              <span class="hero-action__label">CV</span>
+              <span class="hero-action__icon" aria-hidden="true">···</span>
+            </button>
+            <button class="hero-action hero-action--portfolio" type="button" disabled aria-label="Portfolio PDF sẽ được cập nhật sau">
+              <span class="hero-action__meta"><span>03 · PDF</span><span>Sắp cập nhật</span></span>
+              <span class="hero-action__label">Portfolio</span>
+              <span class="hero-action__icon" aria-hidden="true">···</span>
+            </button>
           </div>
         </div>
         </div>
@@ -1005,7 +1016,7 @@
             <div class="contact__socials reveal">
               <a href="https://www.linkedin.com/in/thongtranngoc/" target="_blank" rel="noopener" data-hover>LinkedIn</a>
               <a href="https://www.tiktok.com/@leotnt" target="_blank" rel="noopener" data-hover>TikTok · @leotnt</a>
-              <a href="https://canva.link/lz833cvpccc9ei6" target="_blank" rel="noopener" data-hover>Download CV</a>
+              <span class="contact__cv-pending" aria-label="CV và Portfolio PDF sẽ được cập nhật sau">CV &amp; Portfolio PDF · Sắp cập nhật</span>
               <a href="tel:0335665042" data-hover>0335 665 042</a>
             </div>
           </div>
