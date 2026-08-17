@@ -1,802 +1,458 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trần Ngọc Thông — E-commerce &amp; Marketing Portfolio</title>
-  <meta name="description" content="Portfolio của Trần Ngọc Thông — sinh viên năm cuối Thương mại điện tử. Vận hành kênh bán online cho hệ thống 34 nhà hàng, phân tích Gross Margin, tự động hoá báo cáo bằng AI.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071411">
+  <title>Trần Ngọc Thông — Marketing & E-commerce Portfolio</title>
+  <meta name="description" content="Portfolio Marketing & E-commerce của Trần Ngọc Thông: Social Media, Content, KOC/KOL, vận hành thương mại điện tử, dữ liệu và Marketing Technology.">
+  <meta property="og:title" content="Trần Ngọc Thông — Marketing & E-commerce Portfolio">
+  <meta property="og:description" content="Content tạo sự chú ý. Creator tạo độ tin cậy. E-commerce tạo chuyển đổi. Data chứng minh hiệu quả.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/cntl/cntl-space-collage.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Dancing+Script:wght@500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=brand-project-tabs-v5">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=marketing-portfolio-2026">
 </head>
-<body class="is-loading">
+<body>
+  <a class="skip-link" href="#noi-dung">Đi đến nội dung chính</a>
 
-  <!-- ═══════════ PRELOADER ═══════════ -->
-  <div class="preloader" id="preloader" role="status" aria-label="Đang mở portfolio của Ngọc Thông">
-    <div class="preloader__grid" aria-hidden="true"></div>
-    <span class="cosmic-moon cosmic-moon--loader" aria-hidden="true"></span>
-    <div class="preloader__inner">
-      <div class="preloader__stage" id="preStage">
-        <span class="preloader__orbit" aria-hidden="true"></span>
-        <span class="preloader__spark preloader__spark--one" aria-hidden="true">✦</span>
-        <span class="preloader__spark preloader__spark--two" aria-hidden="true">✦</span>
+  <header class="site-header" id="dau-trang">
+    <a class="brand" href="#trang-chu" aria-label="Về đầu trang">
+      <span class="brand__mark">TNT</span>
+      <span class="brand__copy">Marketing<br>Portfolio ’26</span>
+    </a>
 
-        <span class="preloader__mascot-runner" id="preMascot" aria-hidden="true">
-          <span class="preloader__mascot-face"></span>
-        </span>
-
-        <span class="preloader__name" id="preName" aria-label="Ngọc Thông">Ngọc Thông</span>
-        <span class="preloader__stroke" aria-hidden="true"></span>
-      </div>
-
-      <div class="preloader__footer">
-        <div class="preloader__progress-head">
-          <span class="preloader__label">Đang mở Portfolio</span>
-          <strong class="preloader__percent" id="prePercent">0%</strong>
-        </div>
-        <span class="preloader__progress" id="preProgress" role="progressbar" aria-label="Tiến trình mở Portfolio" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-          <i id="preProgressFill"></i>
-        </span>
-        <span class="preloader__status" id="preStatus">Đang chuẩn bị trải nghiệm</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════ CURSOR ═══════════ -->
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-  <div class="vignette" aria-hidden="true"></div>
-
-  <!-- ═══════════ NAV ═══════════ -->
-  <header class="nav" id="nav">
-    <a href="#top" class="nav__logo" data-hover>Ngọc&nbsp;Thông<span class="nav__logo-dot">✦</span></a>
-    <nav class="nav__links">
-      <a href="#duan" data-hover>Dự án</a>
-      <a href="#kynang" data-hover>Kỹ năng</a>
-      <a href="#vetoi" data-hover>Về tôi</a>
-      <a href="#lienhe" class="nav__cta" data-hover data-magnetic>Liên hệ</a>
+    <nav class="desktop-nav" aria-label="Điều hướng chính">
+      <a href="#gioi-thieu">Giới thiệu</a>
+      <a href="#chuyen-mon">Chuyên môn</a>
+      <a href="#du-an">Dự án</a>
+      <a href="#kinh-nghiem">Kinh nghiệm</a>
     </nav>
-    <button class="nav__burger" id="navBurger" aria-label="Mở menu" aria-expanded="false">
+
+    <a class="header-cta" href="#lien-he">Liên hệ <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Mở menu">
       <span></span><span></span>
     </button>
   </header>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#duan">Dự án</a>
-    <a href="#kynang">Kỹ năng</a>
-    <a href="#vetoi">Về tôi</a>
-    <a href="#lienhe">Liên hệ</a>
-  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Điều hướng di động">
+    <a href="#gioi-thieu">Giới thiệu</a>
+    <a href="#chuyen-mon">Chuyên môn</a>
+    <a href="#du-an">Dự án</a>
+    <a href="#kinh-nghiem">Kinh nghiệm</a>
+    <a href="#lien-he">Liên hệ</a>
+  </nav>
 
-  <main id="top">
-
-    <!-- ═══════════ ĐẦU TRANG — chỉ hiện khi in / xuất PDF ═══════════ -->
-    <div class="print-head">
-      <h1 class="print-head__name">Trần Ngọc Thông</h1>
-      <p class="print-head__role">E-commerce &amp; Marketing · Portfolio 2026</p>
-      <p class="print-head__contact">
-        0335 665 042 · ngocthong280804@gmail.com · linkedin.com/in/thongtranngoc
-        · ngocthong280804-sudo.github.io/portfolio
-      </p>
-    </div>
-
-    <!-- ═══════════ HERO ═══════════ -->
-    <section class="hero">
-      <!-- LÁ CỜ + TÊN — giữ đúng trục giữa màn hình -->
-      <div class="topmark anim-hero" style="--d:.05s">
-        <span class="flag" aria-hidden="true"><i class="flag__pole"></i><i class="flag__cloth">★</i></span>
-        <p class="hero__eyebrow">
-          <span class="type-caret" id="typewriter"></span>
+  <main id="noi-dung">
+    <section class="hero section-shell" id="trang-chu">
+      <div class="hero__ambient" aria-hidden="true"></div>
+      <div class="hero__copy">
+        <p class="eyebrow reveal"><span class="status-dot"></span> Open to opportunities · 2026</p>
+        <h1 class="reveal">
+          <span>Trần Ngọc Thông</span>
+          Marketing &amp;<br><em>E-commerce</em>
+        </h1>
+        <p class="hero__positioning reveal">
+          Thông kết nối <strong>nội dung</strong>, <strong>creator</strong>, <strong>thương mại điện tử</strong> và <strong>dữ liệu</strong> để biến ý tưởng Marketing thành kết quả có thể đo lường.
         </p>
+        <div class="hero__actions reveal">
+          <a class="button button--primary" href="#du-an">Xem dự án nổi bật <span>↓</span></a>
+          <a class="button button--ghost" href="mailto:ngocthong280804@gmail.com">Trao đổi cùng Thông <span>↗</span></a>
+        </div>
+        <p class="hero__disciplines reveal">Social Media · Content Marketing · Influencer Marketing · E-commerce · Performance &amp; Analytics</p>
       </div>
 
-      <!-- Bầu trời sao nhiều lớp: xa, gần và sao băng -->
-      <div class="hero-sky" aria-hidden="true">
-        <span class="cosmic-moon cosmic-moon--hero"></span>
-        <span class="hero-sky__layer hero-sky__layer--far"></span>
-        <span class="hero-sky__layer hero-sky__layer--mid"></span>
-        <span class="hero-sky__layer hero-sky__layer--near"></span>
-        <span class="meteor-shower">
-          <i></i><i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i></i><i></i>
-        </span>
-        <span class="cosmic-comets">
-          <i class="cosmic-comet cosmic-comet--cyan"></i>
-          <i class="cosmic-comet cosmic-comet--violet"></i>
-          <i class="cosmic-comet cosmic-comet--pink"></i>
-          <i class="cosmic-comet cosmic-comet--ice"></i>
-        </span>
-      </div>
-
-      <!-- Chân dung: vệ tinh hologram bên trái -->
-      <div class="hero-portrait-stage" id="portraitStage" aria-hidden="true">
-        <span class="digital-orbit__path"></span>
-        <span class="holo-profile">
-          <img src="images/tran-ngoc-thong-portrait.png" alt="" decoding="async">
-          <i class="holo-profile__scan"></i>
-          <span class="holo-profile__badge">
-            <b>NGỌC THÔNG</b>
-            <small>E-commerce &amp; Marketing</small>
-          </span>
-        </span>
-
-        <span class="digital-icon digital-icon--data">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 19v-6m5 6V9m5 10V5m5 14v-9M2 19h20"/>
-            <path d="m3 9 5-4 4 3 7-6"/>
-          </svg>
-          <b>DATA</b>
-        </span>
-        <span class="digital-icon digital-icon--ads">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 10.5v3h3l9 4v-11l-9 4H4Z"/>
-            <path d="m7 13.5 1.5 6h3L10 15m9-6 2-1m-2 7 2 1"/>
-          </svg>
-          <b>ADS</b>
-        </span>
-        <i class="digital-star portrait-star portrait-star--1">✦</i>
-        <i class="digital-star portrait-star portrait-star--2">✦</i>
-        <i class="digital-star portrait-star portrait-star--3">✦</i>
-      </div>
-
-      <!-- Linh vật: vệ tinh tương tác bên phải -->
-      <div class="mascot-hero" id="mascotHero" aria-hidden="true">
-        <span class="mascot-hero__orbit"></span>
-        <span class="digital-icon digital-icon--target">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="8"/>
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M12 4V1m0 22v-3M4 12H1m22 0h-3"/>
-          </svg>
-          <b>TARGET</b>
-        </span>
-        <span class="digital-icon digital-icon--growth">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 19V5m0 14h16"/>
-            <path d="m7 15 4-4 3 2 5-6m-4 0h4v4"/>
-          </svg>
-          <b>GROWTH</b>
-        </span>
-        <i class="digital-star mascot-star mascot-star--1">✦</i>
-        <i class="digital-star mascot-star mascot-star--2">✦</i>
-        <i class="digital-star mascot-star mascot-star--3">✦</i>
-        <img src="images/linh-vat.png" alt="" id="mascotImg">
-      </div>
-      <div class="hero__frame container">
-        <!-- WORDMARK: Portfolio chrome + vòng quỹ đạo -->
-        <div class="wordmark" aria-label="Portfolio">
-          <svg class="wordmark__ring wordmark__ring--back" viewBox="0 0 1000 420" aria-hidden="true" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%"  stop-color="#4de1ff"/>
-                <stop offset="45%" stop-color="#ffffff"/>
-                <stop offset="75%" stop-color="#2e7bff"/>
-                <stop offset="100%" stop-color="#9cd2ff"/>
-              </linearGradient>
-            </defs>
-            <ellipse cx="500" cy="210" rx="470" ry="150" fill="none"
-                     stroke="url(#ringGrad)" stroke-width="26" opacity=".35" class="ring-blur"/>
-            <ellipse cx="500" cy="210" rx="470" ry="150" fill="none"
-                     stroke="url(#ringGrad)" stroke-width="10"/>
-            <ellipse class="ring-comet" cx="500" cy="210" rx="470" ry="150" fill="none"
-                     stroke="#ffffff" stroke-width="14" stroke-linecap="round"
-                     stroke-dasharray="230 2740"/>
-          </svg>
-
-          <h1 class="wordmark__text">
-            <span class="chrome hero-chrome wordmark__line" data-letters data-offset="0" aria-hidden="true">Portfolio</span>
-          </h1>
-
-          <svg class="wordmark__ring wordmark__ring--front" viewBox="0 0 1000 420" aria-hidden="true" preserveAspectRatio="none">
-            <defs>
-              <clipPath id="ringLower"><rect x="0" y="210" width="1000" height="210"/></clipPath>
-            </defs>
-            <g clip-path="url(#ringLower)">
-              <ellipse cx="500" cy="210" rx="470" ry="150" fill="none"
-                       stroke="url(#ringGrad)" stroke-width="26" opacity=".4" class="ring-blur"/>
-              <ellipse cx="500" cy="210" rx="470" ry="150" fill="none"
-                       stroke="url(#ringGrad)" stroke-width="10"/>
-            </g>
-          </svg>
-
+      <div class="hero__visual reveal">
+        <div class="portrait-frame">
+          <div class="portrait-frame__meta">
+            <span>MARKETING GENERALIST</span>
+            <span>TP.HCM · VN</span>
+          </div>
+          <img src="images/tran-ngoc-thong-portrait.png" alt="Chân dung Trần Ngọc Thông" width="511" height="768">
+          <div class="portrait-frame__orbit" aria-hidden="true"></div>
+          <span class="portrait-frame__label">Ideas<br>to impact.</span>
         </div>
       </div>
 
-      <!-- Hai luồng dữ liệu nối Portfolio với chân dung và linh vật -->
-      <svg class="hero-network" viewBox="0 0 1440 720" aria-hidden="true" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="networkGrad" x1="50%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#4de1ff" stop-opacity="0"/>
-            <stop offset="34%" stop-color="#ffffff" stop-opacity=".78"/>
-            <stop offset="72%" stop-color="#4de1ff" stop-opacity=".58"/>
-            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-        <path class="hero-network__trail" d="M720 260 C600 340 470 480 230 590"/>
-        <path class="hero-network__trail hero-network__trail--right" d="M720 260 C840 340 970 480 1210 590"/>
-        <path class="hero-network__comet" d="M720 260 C600 340 470 480 230 590"/>
-        <path class="hero-network__comet hero-network__comet--right" d="M720 260 C840 340 970 480 1210 590"/>
-        <circle class="hero-network__node hero-network__node--1" cx="500" cy="446" r="4"/>
-        <circle class="hero-network__node hero-network__node--2" cx="940" cy="446" r="4"/>
-      </svg>
-
-      <!-- Trường sao tạo chiều sâu quanh sân khấu -->
-      <div class="hero-spark-field" aria-hidden="true">
-        <i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i>
-        <i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i>
-      </div>
-
-      <div class="hero__scroll anim-hero" style="--d:1.3s" aria-hidden="true">
-        <span>Cuộn xuống</span>
-        <span class="hero__scroll-line"></span>
+      <div class="metric-strip reveal" aria-label="Các số liệu nổi bật">
+        <article><strong>50+</strong><span>KOC/KOL phối hợp</span></article>
+        <article><strong>34</strong><span>chi nhánh vận hành</span></article>
+        <article><strong>274K</strong><span>lượt xem cao nhất</span></article>
+        <article><strong>22.354</strong><span>đơn hàng / tháng</span></article>
+        <article><strong>5,25 tỷ</strong><span>GMV / tháng</span></article>
+        <article><strong>48,6%</strong><span>Gross Margin</span></article>
       </div>
     </section>
 
-    <!-- ═══════════ MARQUEE TAPE ═══════════ -->
-    <div class="tape" aria-hidden="true">
-      <div class="tape__track">
-        <span>E-commerce Operations</span><i>✦</i><span>Gross Margin Analysis</span><i>✦</i>
-        <span>AI Automation</span><i>✦</i><span>TikTok Content</span><i>✦</i>
-        <span>KOC Booking</span><i>✦</i><span>Motion Design</span><i>✦</i>
-        <span>E-commerce Operations</span><i>✦</i><span>Gross Margin Analysis</span><i>✦</i>
-        <span>AI Automation</span><i>✦</i><span>TikTok Content</span><i>✦</i>
-        <span>KOC Booking</span><i>✦</i><span>Motion Design</span><i>✦</i>
+    <section class="manifesto" aria-label="Triết lý làm Marketing">
+      <div class="manifesto__track" aria-hidden="true">
+        <span>CONTENT</span><i>tạo sự chú ý</i><span>CREATOR</span><i>tạo độ tin cậy</i><span>E-COMMERCE</span><i>tạo chuyển đổi</i><span>DATA</span><i>chứng minh hiệu quả</i>
+        <span>CONTENT</span><i>tạo sự chú ý</i><span>CREATOR</span><i>tạo độ tin cậy</i><span>E-COMMERCE</span><i>tạo chuyển đổi</i><span>DATA</span><i>chứng minh hiệu quả</i>
       </div>
-    </div>
+    </section>
 
-    <!-- ═══════════ SKILLS — dark block (kinetic bars) ═══════════ -->
-    <section class="skills" id="kynang">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="section-eyebrow section-eyebrow--light"><span class="mascot-icon mascot-icon--thinking" aria-hidden="true"></span><span class="chip">Kỹ năng &amp; <em class="script script--inline">công cụ</em></span></p>
-          <h2 class="chrome chrome--section" data-letters aria-label="My Skills">My Skills</h2>
-        </div>
-        <ul class="bars">
-          <li class="bar reveal">
-            <div class="bar__head"><span>Vận hành sàn TMĐT &amp; app giao đồ ăn</span><span class="bar__pct" data-pct="90">0%</span></div>
-            <div class="bar__track"><i class="bar__fill" style="--pct:90%"></i></div>
-          </li>
-          <li class="bar reveal" style="--d:.1s">
-            <div class="bar__head"><span>Ứng dụng AI Agent vào công việc</span><span class="bar__pct" data-pct="88">0%</span></div>
-            <div class="bar__track"><i class="bar__fill" style="--pct:88%"></i></div>
-          </li>
-          <li class="bar reveal" style="--d:.2s">
-            <div class="bar__head"><span>Phân tích doanh thu &amp; Gross Margin</span><span class="bar__pct" data-pct="85">0%</span></div>
-            <div class="bar__track"><i class="bar__fill" style="--pct:85%"></i></div>
-          </li>
-          <li class="bar reveal" style="--d:.3s">
-            <div class="bar__head"><span>Sáng tạo nội dung &amp; Motion Design</span><span class="bar__pct" data-pct="82">0%</span></div>
-            <div class="bar__track"><i class="bar__fill" style="--pct:82%"></i></div>
-          </li>
-        </ul>
-        <div class="skills__tools reveal">
-          <span class="pill">Grab Merchant</span><span class="pill">ShopeeFood</span><span class="pill">XanhSM</span>
-          <span class="pill">Google Sheets</span><span class="pill">Claude Code</span><span class="pill">Remotion</span>
-          <span class="pill">CapCut</span><span class="pill">Canva</span><span class="pill">TikTok Ads</span>
+    <section class="about section-shell" id="gioi-thieu">
+      <div class="section-index reveal">
+        <span>01</span>
+        <p>Giới thiệu</p>
+      </div>
+      <div class="about__main">
+        <p class="kicker reveal">Một người làm Marketing thích nhìn thấy ý tưởng đi hết hành trình — từ bản brief đến kết quả kinh doanh.</p>
+        <div class="about__grid">
+          <div class="about__copy reveal">
+            <p>Thông là sinh viên năm cuối ngành Thương mại điện tử tại UEF, có gần một năm thực hành Social Content và TikTok từ tháng 10/2025, cùng kinh nghiệm vận hành Marketing &amp; E-commerce trong môi trường F&amp;B nhiều chi nhánh.</p>
+            <p>Điểm mạnh nằm ở khả năng kết nối tư duy sáng tạo với vận hành: phát triển ý tưởng nội dung, phối hợp KOC/KOL, quản trị gian hàng và đọc dữ liệu để tìm cơ hội cải thiện.</p>
+          </div>
+          <div class="about__snapshot reveal">
+            <div><span>Kinh nghiệm thực hành</span><strong>Gần 01 năm</strong></div>
+            <div><span>Hệ kênh từng làm</span><strong>TikTok · Meta · Shopee · Food Apps</strong></div>
+            <div><span>Định hướng</span><strong>Marketing Executive · E-commerce</strong></div>
+            <div><span>Ngôn ngữ làm việc</span><strong>Tiếng Việt · Tiếng Anh</strong></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ LEDGER / SỐ LIỆU ═══════════ -->
-    <section class="ledger container reveal">
-      <p class="section-eyebrow"><span class="mascot-icon mascot-icon--cool" aria-hidden="true"></span><span class="chip">Con số <em class="script script--inline">thực tế</em></span></p>
-      <ul class="ledger__list">
-        <li class="ledger__row reveal" style="--d:.05s">
-          <span class="ledger__label">Chi nhánh đang vận hành</span>
-          <span class="ledger__dots"></span>
-          <span class="ledger__value"><span class="count" data-count="34">0</span></span>
-        </li>
-        <li class="ledger__row reveal" style="--d:.15s">
-          <span class="ledger__label">Đơn hàng xử lý trong tháng 5/2026</span>
-          <span class="ledger__dots"></span>
-          <span class="ledger__value"><span class="count" data-count="22354">0</span></span>
-        </li>
-        <li class="ledger__row reveal" style="--d:.25s">
-          <span class="ledger__label">GMV 3 nền tảng, tháng 5/2026</span>
-          <span class="ledger__dots"></span>
-          <span class="ledger__value">₫<span class="count" data-count="5.25" data-decimal="2">0</span> tỷ</span>
-        </li>
-        <li class="ledger__row reveal" style="--d:.35s">
-          <span class="ledger__label">Biên lợi nhuận gộp đạt được</span>
-          <span class="ledger__dots"></span>
-          <span class="ledger__value"><span class="count" data-count="48.6" data-decimal="1">0</span>%</span>
-        </li>
-      </ul>
+    <section class="expertise section-shell" id="chuyen-mon">
+      <div class="section-index reveal">
+        <span>02</span>
+        <p>Chuyên môn</p>
+      </div>
+      <div class="section-heading reveal">
+        <p class="eyebrow">Marketing expertise</p>
+        <h2>Một nền tảng rộng,<br><em>sáu mũi nhọn rõ ràng.</em></h2>
+      </div>
+      <div class="expertise-grid">
+        <article class="expertise-card reveal">
+          <span>01</span><h3>Social Media<br>&amp; Content</h3>
+          <p>Content research, creative concept, script, quay dựng short-form và tối ưu theo hiệu suất nội dung.</p>
+          <small>TikTok · Facebook · Reels</small>
+        </article>
+        <article class="expertise-card reveal">
+          <span>02</span><h3>Influencer<br>Marketing</h3>
+          <p>Tìm kiếm creator, chuẩn bị brief, điều phối lịch quay, theo dõi đăng bài và tổng hợp kết quả.</p>
+          <small>KOC/KOL · Brief · Tracking</small>
+        </article>
+        <article class="expertise-card reveal">
+          <span>03</span><h3>E-commerce<br>Operations</h3>
+          <p>Quản trị menu, hình ảnh, giá bán, chương trình khuyến mãi và vận hành đa nền tảng.</p>
+          <small>Shopee · GrabFood · ShopeeFood</small>
+        </article>
+        <article class="expertise-card reveal">
+          <span>04</span><h3>Campaign<br>&amp; Brand</h3>
+          <p>Consumer insight, key message, concept, kế hoạch kênh và triển khai tài sản truyền thông.</p>
+          <small>Planning · IMC · Brand idea</small>
+        </article>
+        <article class="expertise-card reveal">
+          <span>05</span><h3>Performance<br>&amp; Analytics</h3>
+          <p>Theo dõi doanh thu, đơn hàng, GMV, Gross Margin và trình bày dữ liệu thành insight hành động.</p>
+          <small>Google Sheets · Dashboard · KPI</small>
+        </article>
+        <article class="expertise-card reveal">
+          <span>06</span><h3>Marketing<br>Technology</h3>
+          <p>Ứng dụng AI Agent, workflow tự động hóa và creative coding để tăng tốc nghiên cứu, sản xuất.</p>
+          <small>AI Workflow · Remotion · Automation</small>
+        </article>
+      </div>
     </section>
 
-    <!-- ═══════════ DỰ ÁN — PROJECT LAUNCHER + CINEMATIC CASE STUDIES ═══════════ -->
-    <section class="projects container" id="duan">
-      <div class="section-head reveal">
-        <p class="section-eyebrow"><span class="mascot-icon mascot-icon--excited" aria-hidden="true"></span><span class="chip">Dự án <em class="script script--inline">tiêu biểu</em></span></p>
-        <h2 class="chrome chrome--section" data-letters aria-label="Projects">Projects</h2>
-        <p class="projects__intro">Mỗi dự án bắt đầu từ một vấn đề thật. Chạm vào từng tab để mở toàn bộ quá trình, vai trò và bằng chứng kết quả.</p>
+    <section class="work section-shell" id="du-an">
+      <div class="section-index reveal">
+        <span>03</span>
+        <p>Selected work</p>
       </div>
-
-      <div class="project-tabs" aria-label="Danh sách 3 dự án tiêu biểu">
-        <button class="project-tab project-tab--thien reveal" type="button" data-project-open="project-thien-ly" data-hover aria-haspopup="dialog" aria-controls="project-thien-ly">
-          <span class="project-tab__number">01</span>
-          <span class="project-tab__copy">
-            <span class="project-tab__type">E-commerce Operations · F&amp;B Content</span>
-            <strong>Cơm Niêu Thiên Lý</strong>
-            <small>Vận hành và nội dung đa kênh cho toàn hệ thống</small>
-          </span>
-          <span class="project-tab__metric"><b>5,25 tỷ</b><small>GMV · 05/2026</small></span>
-          <span class="project-tab__action">Mở case <i>↗</i></span>
-        </button>
-
-        <button class="project-tab project-tab--tiktok reveal" type="button" data-project-open="project-ai-tiktok" data-hover aria-haspopup="dialog" aria-controls="project-ai-tiktok" style="--d:.06s">
-          <span class="project-tab__number">02</span>
-          <span class="project-tab__copy">
-            <span class="project-tab__type">Generative AI · TikTok · Remotion</span>
-            <strong>AI TikTok Studio</strong>
-            <small>AI content, affiliate sprint và motion bằng code trong một studio</small>
-          </span>
-          <span class="project-tab__metric"><b>21.240</b><small>views · 8 ngày</small></span>
-          <span class="project-tab__action">Mở case <i>↗</i></span>
-        </button>
-
-        <button class="project-tab project-tab--chuli reveal" type="button" data-project-open="project-chuli" data-hover aria-haspopup="dialog" aria-controls="project-chuli" style="--d:.12s">
-          <span class="project-tab__number">03</span>
-          <span class="project-tab__copy">
-            <span class="project-tab__type">Shopee · Business Development</span>
-            <strong>Chuli Studio</strong>
-            <small>Xây nền tảng kinh doanh online cho thương hiệu thời trang</small>
-          </span>
-          <span class="project-tab__metric"><b>9/10</b><small>điểm học phần</small></span>
-          <span class="project-tab__action">Mở case <i>↗</i></span>
-        </button>
-
-      </div>
-      <p class="project-tabs__hint reveal"><span aria-hidden="true">↳</span> Click / Enter để mở · Esc để đóng</p>
-    </section>
-
-    <!-- CASE 01 — CƠM NIÊU THIÊN LÝ -->
-    <dialog class="project-case project-case--thien" id="project-thien-ly" aria-labelledby="project-thien-title">
-      <div class="case-modal__shell">
-        <div class="case-motion" aria-hidden="true">
-          <span class="case-motion__scan"></span><span class="case-motion__beam"></span>
-          <span class="case-motion__count">01</span><span class="case-motion__word">THIÊN LÝ</span>
+      <div class="work__intro">
+        <div class="section-heading reveal">
+          <p class="eyebrow">7 case studies · 6 năng lực</p>
+          <h2>Công việc được kể bằng<br><em>bối cảnh, vai trò và kết quả.</em></h2>
         </div>
-        <header class="case-modal__topbar">
-          <span>CASE 01 / 03 · CNTL</span><span class="case-modal__progress"><i></i></span>
-          <button class="case-modal__close" type="button" data-project-close aria-label="Đóng dự án Cơm Niêu Thiên Lý">Đóng <i>×</i></button>
-        </header>
-        <div class="case-modal__scroll" tabindex="-1">
-          <section class="case-hero case-hero--cntl">
-            <div class="case-hero__copy">
-              <p class="case-overline">Marketing &amp; E-commerce Intern · 04/2026 — nay</p>
-              <h3 id="project-thien-title">Cơm Niêu<br><em>Thiên Lý</em></h3>
-              <p class="case-hero__lede">Kết nối vận hành đa nền tảng, báo cáo dữ liệu và short-form content cho toàn hệ thống 34 chi nhánh.</p>
-              <div class="cntl-hero__tags" aria-label="Phạm vi dự án">
-                <span>Operations</span><span>Business Reporting</span><span>F&amp;B Content</span>
+        <p class="work__note reveal">Chọn nhóm năng lực để xem nhanh. Mỗi case có phần mở rộng về bài toán, cách triển khai và bằng chứng kết quả.</p>
+      </div>
+
+      <div class="filters reveal" role="group" aria-label="Lọc dự án">
+        <button class="filter is-active" type="button" data-filter="all">Tất cả <span>07</span></button>
+        <button class="filter" type="button" data-filter="social">Social <span>04</span></button>
+        <button class="filter" type="button" data-filter="influencer">Influencer <span>01</span></button>
+        <button class="filter" type="button" data-filter="ecommerce">E-commerce <span>03</span></button>
+        <button class="filter" type="button" data-filter="campaign">Campaign <span>03</span></button>
+        <button class="filter" type="button" data-filter="technology">Technology <span>02</span></button>
+      </div>
+
+      <div class="case-list">
+        <article class="case-card case-card--wide reveal" data-categories="social campaign">
+          <div class="case-card__media">
+            <img src="images/cntl/cntl-space-collage.webp" alt="Không gian và món ăn tại Cơm Niêu Thiên Lý" width="1800" height="810" loading="lazy">
+            <span class="case-card__number">01</span>
+            <span class="case-card__metric">274K max views</span>
+          </div>
+          <div class="case-card__summary">
+            <div class="case-card__meta"><span>Social Media · F&amp;B</span><span>04–07/2026</span></div>
+            <h3>Cơm Niêu Thiên Lý:<br>Social Content &amp; Video Performance</h3>
+            <p>Phát triển short-form content cho thương hiệu F&amp;B quy mô 34 chi nhánh, từ ý tưởng, hỗ trợ sản xuất đến xuất hiện trực tiếp trong video khai trương.</p>
+            <ul class="tag-list"><li>Content Idea</li><li>Script</li><li>Production</li><li>Performance</li></ul>
+            <details class="case-detail">
+              <summary>Xem case study <span>+</span></summary>
+              <div class="case-detail__body">
+                <div><span>Bài toán</span><p>Tạo nội dung đủ gần gũi với bữa cơm Việt, đồng thời hỗ trợ nhận diện thương hiệu và truyền thông khai trương chi nhánh mới.</p></div>
+                <div><span>Vai trò của Thông</span><p>Nghiên cứu format, đề xuất ý tưởng, hỗ trợ viết kịch bản, phối hợp quay dựng và làm host ở một số video.</p></div>
+                <div><span>Cách triển khai</span><p>Xây các tuyến Food Porn, món mới, câu chuyện bữa cơm và countdown khai trương; theo dõi hiệu suất để chọn góc nội dung có tiềm năng.</p></div>
+                <div><span>Kết quả</span><p>Các video nổi bật đạt 56K–101K lượt xem; video “Coming Soon” có Thông làm host đạt 274K lượt xem, video countdown khai trương đạt 74K.</p></div>
+                <a class="text-link" href="https://www.facebook.com/reel/1311036094475687" target="_blank" rel="noopener noreferrer">Xem video 274K trên Facebook ↗</a>
               </div>
-            </div>
-            <figure class="cntl-hero__visual">
-              <img src="images/cntl/cntl-food-hero.webp" alt="Bữa cơm Việt tại Cơm Niêu Thiên Lý" width="1110" height="595" decoding="async">
-              <figcaption><strong>274K</strong><span>lượt xem cao nhất<br>ở video trực tiếp làm host</span></figcaption>
-            </figure>
-          </section>
-
-          <div class="case-metrics" aria-label="Các chỉ số chính">
-            <div><strong>34</strong><span>chi nhánh trong phạm vi phụ trách</span></div>
-            <div><strong>22.354</strong><span>đơn toàn hệ thống · 05/2026</span></div>
-            <div><strong>5,25 tỷ</strong><span>GMV toàn hệ thống · 05/2026</span></div>
-            <div><strong>48,6%</strong><span>Gross Margin tổng · 05/2026</span></div>
+            </details>
           </div>
+        </article>
 
-          <div class="case-layout">
-            <aside class="case-facts">
-              <p class="case-label">Project snapshot</p>
-              <dl>
-                <div><dt>Chức danh</dt><dd>Marketing &amp; E-commerce Intern</dd></div>
-                <div><dt>Thời gian</dt><dd>04/2026 — nay</dd></div>
-                <div><dt>Phạm vi</dt><dd>Toàn hệ thống 34 chi nhánh</dd></div>
-                <div><dt>Nền tảng</dt><dd>GrabFood · ShopeeFood · XanhSM</dd></div>
-                <div><dt>Vận hành</dt><dd>SOP 10 bước · Checklist theo ca · Tổng hợp báo cáo</dd></div>
-                <div><dt>Content</dt><dd>12 food porn · 3 video trực tiếp làm host</dd></div>
-                <div><dt>Đóng góp</dt><dd>Vận hành · Tổng hợp dữ liệu · Ý tưởng · Hỗ trợ quay · On-camera host</dd></div>
-              </dl>
-            </aside>
-            <div class="case-story">
-              <section class="case-section">
-                <p class="case-label">01 · Bối cảnh</p>
-                <h4>Một thương hiệu F&amp;B, 34 chi nhánh và ba luồng công việc phải chạy cùng nhau.</h4>
-                <p>Cơm Niêu Thiên Lý vận hành đồng thời nhiều chi nhánh trên GrabFood, ShopeeFood và XanhSM. Bài toán không dừng ở việc nhận đơn: quy trình cần nhất quán giữa các điểm bán, dữ liệu cần được tổng hợp đủ rõ để theo dõi hiệu quả từng nền tảng, còn nội dung ngắn phải khiến món ăn đủ hấp dẫn ngay trong những giây đầu.</p>
-                <p>Trong vai trò Intern, tôi làm việc trên hai hướng song song: hỗ trợ vận hành E-commerce cho phạm vi toàn hệ thống và tham gia sản xuất các tuyến food porn, bắt trend và nội dung khai trương chi nhánh.</p>
-                <div class="cntl-photo-grid" aria-label="Hình ảnh nhận diện Cơm Niêu Thiên Lý">
-                  <figure class="cntl-photo-grid__wide">
-                    <img src="images/cntl/cntl-space-collage.webp" alt="Không gian, món ăn và trải nghiệm tại Cơm Niêu Thiên Lý" width="1800" height="810" loading="lazy" decoding="async">
-                    <figcaption>Không gian &amp; trải nghiệm thương hiệu · hình ảnh từ Brand Guideline CNTL</figcaption>
-                  </figure>
-                  <figure>
-                    <img src="images/cntl/cntl-storefront.webp" alt="Mặt tiền nhà hàng Cơm Niêu Thiên Lý" width="870" height="665" loading="lazy" decoding="async">
-                    <figcaption>Nhận diện tại điểm bán</figcaption>
-                  </figure>
-                </div>
-              </section>
-
-              <section class="case-section">
-                <p class="case-label">02 · Vai trò &amp; nguyên tắc trình bày</p>
-                <h4>Tôi phụ trách phạm vi vận hành; các chỉ số kinh doanh là kết quả toàn hệ thống.</h4>
-                <p>Tôi phụ trách phạm vi vận hành ba nền tảng cho 34 chi nhánh, xây SOP, checklist và tổng hợp dữ liệu đơn hàng, GMV, Gross Margin. Song song, tôi đóng góp ý tưởng, hỗ trợ quay 12 video food porn; tham gia ý tưởng, hỗ trợ quay và trực tiếp xuất hiện với vai trò host trong 3 video.</p>
-                <div class="cntl-guardrail">
-                  <span>Phạm vi dữ liệu</span>
-                  <p>22.354 đơn, GMV 5,25 tỷ và Gross Margin 48,6% là kết quả toàn hệ thống tháng 5/2026 do tôi tổng hợp — không được diễn giải như thành tích do một cá nhân tạo ra độc lập.</p>
-                </div>
-              </section>
-
-              <section class="case-section">
-                <p class="case-label">03 · Bài toán</p>
-                <div class="cntl-brief-grid">
-                  <article><b>01</b><h5>Chuẩn hóa</h5><p>Giữ cách xử lý đơn nhất quán trên ba nền tảng cho toàn bộ 34 chi nhánh.</p></article>
-                  <article><b>02</b><h5>Minh bạch dữ liệu</h5><p>Biến dữ liệu phân tán thành báo cáo có thể đọc và so sánh theo nền tảng.</p></article>
-                  <article><b>03</b><h5>Kích thích vị giác</h5><p>Chuyển lợi thế hình ảnh món ăn thành video ngắn đủ sức giữ người xem.</p></article>
-                  <article><b>04</b><h5>Thêm tính con người</h5><p>Đưa host và xu hướng mạng xã hội vào nội dung mà vẫn đúng bối cảnh thương hiệu.</p></article>
-                </div>
-              </section>
-
-              <section class="case-section">
-                <p class="case-label">04 · Cách triển khai vận hành</p>
-                <h4>Từ quy trình theo ca đến một lát cắt dữ liệu toàn hệ thống.</h4>
-                <div class="case-workflow case-workflow--two">
-                  <div><b>01</b><h5>SOP xử lý đơn 10 bước</h5><p>Chuẩn hóa luồng từ tiếp nhận đến xử lý đơn trên GrabFood, ShopeeFood và XanhSM.</p></div>
-                  <div><b>02</b><h5>Checklist theo ca</h5><p>Chuyển SOP thành danh sách thao tác ngắn, giúp theo dõi công việc theo từng ca vận hành.</p></div>
-                  <div><b>03</b><h5>Tổng hợp báo cáo</h5><p>Gom đơn hàng, GMV và Gross Margin về cùng lát cắt để theo dõi kết quả toàn hệ thống.</p></div>
-                  <div><b>04</b><h5>So sánh nền tảng</h5><p>Đặt dữ liệu ba nền tảng cạnh nhau để nhìn rõ khác biệt về Gross Margin.</p></div>
-                </div>
-              </section>
-
-              <section class="case-section">
-                <p class="case-label">05 · Kết quả vận hành · 05/2026</p>
-                <h4>22.354 đơn được đặt trong cùng một bức tranh doanh thu và lợi nhuận.</h4>
-                <p>Dữ liệu do tôi tổng hợp ghi nhận GMV toàn hệ thống 5,25 tỷ đồng và Gross Margin tổng 48,6%. Khi tách theo nền tảng, XanhSM có Gross Margin cao nhất trong kỳ ghi nhận, tiếp theo là ShopeeFood và GrabFood.</p>
-                <div class="platform-bars" aria-label="Gross Margin theo nền tảng">
-                  <div style="--score:45.9%"><span>GrabFood</span><i></i><b>45,9%</b></div>
-                  <div style="--score:51.9%"><span>ShopeeFood</span><i></i><b>51,9%</b></div>
-                  <div style="--score:56.6%"><span>XanhSM</span><i></i><b>56,6%</b></div>
-                </div>
-                <p class="case-disclaimer">Các tỷ lệ trên là dữ liệu của kỳ báo cáo tháng 5/2026, dùng để mô tả kết quả hệ thống trong kỳ; không tự suy diễn quan hệ nhân quả.</p>
-              </section>
-
-              <section class="case-section">
-                <p class="case-label">06 · Chiến lược nội dung</p>
-                <h4>Hai tuyến video, hai cách kéo người xem đến gần thương hiệu.</h4>
-                <div class="cntl-content-tracks">
-                  <article>
-                    <span>12 videos</span><h5>Food porn</h5>
-                    <p>Tập trung cận cảnh món ăn, chuyển động khi chế biến và khoảnh khắc hoàn thiện món để tạo cảm giác ngon miệng ngay từ đầu video.</p>
-                    <small>Vai trò: đóng góp ý tưởng · hỗ trợ quay</small>
-                  </article>
-                  <article>
-                    <span>03 videos</span><h5>Host &amp; khai trương</h5>
-                    <p>Dùng yếu tố con người, nhịp bắt trend và thông tin điểm bán mới để tạo kết nối nhanh hơn format chỉ quay món ăn.</p>
-                    <small>Vai trò: ý tưởng · hỗ trợ quay · trực tiếp làm host</small>
-                  </article>
-                </div>
-              </section>
-              <section class="case-section case-section--videos">
-                <p class="case-label">07 · Video tiêu biểu</p>
-                <h4>Xem trực tiếp 5 Reel và số liệu của từng nội dung.</h4>
-                <p>Các video dưới đây được nhúng trực tiếp từ Facebook. Nếu trình phát bị hạn chế bởi trình duyệt, nút “Xem reel” bên dưới vẫn dẫn đến đúng video gốc.</p>
-                <div class="proof-grid" role="list" aria-label="5 video tiêu biểu của Cơm Niêu Thiên Lý">
-                  <article class="proof-card" role="listitem">
-                    <div class="proof-card__media">
-                      <span class="proof-card__loading" aria-hidden="true"><i></i><b>Đang tải video</b></span>
-                      <iframe src="about:blank" data-src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1311036094475687&amp;show_text=false&amp;width=267&amp;t=0" title="Video Host Coming Soon · 274K views" width="267" height="476" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    <footer class="proof-card__details"><span>Host</span><h5>Coming Soon — Chi nhánh mới tại Quận 1</h5><strong>274K <small>lượt xem</small></strong><p>Ý tưởng · Hỗ trợ quay · Trực tiếp làm host</p><a href="https://www.facebook.com/reel/1311036094475687" target="_blank" rel="noopener noreferrer">Mở trên Facebook <i>↗</i></a></footer>
-                  </article>
-                  <article class="proof-card" role="listitem">
-                    <div class="proof-card__media">
-                      <span class="proof-card__loading" aria-hidden="true"><i></i><b>Đang tải video</b></span>
-                      <iframe src="about:blank" data-src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1015452274187072&amp;show_text=false&amp;width=267&amp;t=0" title="Video Host khai trương chi nhánh 36 · 74K views" width="267" height="476" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    <footer class="proof-card__details"><span>Host</span><h5>Đếm ngược khai trương chi nhánh thứ 36</h5><strong>74K <small>lượt xem</small></strong><p>Ý tưởng · Hỗ trợ quay · Trực tiếp làm host</p><a href="https://www.facebook.com/reel/1015452274187072" target="_blank" rel="noopener noreferrer">Mở trên Facebook <i>↗</i></a></footer>
-                  </article>
-                  <article class="proof-card" role="listitem">
-                    <div class="proof-card__media">
-                      <span class="proof-card__loading" aria-hidden="true"><i></i><b>Đang tải video</b></span>
-                      <iframe src="about:blank" data-src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1641033200343477&amp;show_text=false&amp;width=267&amp;t=0" title="Video food porn cá heo đồng kho lạt · 138K views" width="267" height="476" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    <footer class="proof-card__details"><span>Food porn</span><h5>Cá heo đồng kho lạt</h5><strong>138K <small>lượt xem</small></strong><p>Ý tưởng · Hỗ trợ quay</p><a href="https://www.facebook.com/reel/1641033200343477" target="_blank" rel="noopener noreferrer">Mở trên Facebook <i>↗</i></a></footer>
-                  </article>
-                  <article class="proof-card" role="listitem">
-                    <div class="proof-card__media">
-                      <span class="proof-card__loading" aria-hidden="true"><i></i><b>Đang tải video</b></span>
-                      <iframe src="about:blank" data-src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1667555107829911&amp;show_text=false&amp;width=267&amp;t=0" title="Video food porn cơm chiên tôm phủ trứng · 101K views" width="267" height="476" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    <footer class="proof-card__details"><span>Food porn</span><h5>Cơm chiên tôm phủ trứng</h5><strong>101K <small>lượt xem</small></strong><p>Ý tưởng · Hỗ trợ quay</p><a href="https://www.facebook.com/reel/1667555107829911" target="_blank" rel="noopener noreferrer">Mở trên Facebook <i>↗</i></a></footer>
-                  </article>
-                  <article class="proof-card" role="listitem">
-                    <div class="proof-card__media">
-                      <span class="proof-card__loading" aria-hidden="true"><i></i><b>Đang tải video</b></span>
-                      <iframe src="about:blank" data-src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1497281601861961&amp;show_text=false&amp;width=267&amp;t=0" title="Video food porn kho quẹt và rau củ luộc · 87K views" width="267" height="476" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    <footer class="proof-card__details"><span>Food porn</span><h5>Kho quẹt và rau củ luộc</h5><strong>87K <small>lượt xem</small></strong><p>Ý tưởng · Hỗ trợ quay</p><a href="https://www.facebook.com/reel/1497281601861961" target="_blank" rel="noopener noreferrer">Mở trên Facebook <i>↗</i></a></footer>
-                  </article>
-                </div>
-                <p class="case-disclaimer">Lượt xem công khai được kiểm tra ngày 06/08/2026 và có thể tiếp tục thay đổi. Views gồm organic và paid distribution; không được diễn giải là organic-only.</p>
-              </section>
-              <section class="case-section">
-                <p class="case-label">08 · Kết quả &amp; giá trị của case</p>
-                <div class="cntl-result-list">
-                  <div><strong>34 chi nhánh</strong><p>Phạm vi vận hành trên GrabFood, ShopeeFood và XanhSM.</p></div>
-                  <div><strong>15 video</strong><p>12 food porn và 3 video có tôi trực tiếp làm host.</p></div>
-                  <div><strong>274K views</strong><p>Video host nổi bật nhất trong nhóm nội dung đã xác minh.</p></div>
-                  <div><strong>56K–138K views</strong><p>Khoảng lượt xem của các video food porn nổi bật.</p></div>
-                </div>
-              </section>
-              <section class="case-takeaway"><span>Điều tôi học được</span><p>Một case F&amp;B tốt phải nối được ba lớp: quy trình vận hành, dữ liệu kinh doanh và cách thương hiệu xuất hiện trước khách hàng — đồng thời luôn nói đúng phạm vi đóng góp của mình.</p></section>
-            </div>
+        <article class="case-card reveal" data-categories="influencer social">
+          <div class="case-card__media">
+            <img src="images/cntl/cntl-food-hero.webp" alt="Món ăn Cơm Niêu Thiên Lý" width="1110" height="665" loading="lazy">
+            <span class="case-card__number">02</span>
+            <span class="case-card__metric">50+ creators</span>
           </div>
-        </div>
-      </div>
-    </dialog>
-
-    <!-- CASE 02 — AI TIKTOK STUDIO -->
-    <dialog class="project-case project-case--tiktok" id="project-ai-tiktok" aria-labelledby="project-tiktok-title">
-      <div class="case-modal__shell">
-        <div class="case-motion" aria-hidden="true"><span class="case-motion__scan"></span><span class="case-motion__beam"></span><span class="case-motion__count">02</span><span class="case-motion__word">CREATE</span></div>
-        <header class="case-modal__topbar"><span>CASE 02 / 03 · AI CONTENT SYSTEM</span><span class="case-modal__progress"><i></i></span><button class="case-modal__close" type="button" data-project-close aria-label="Đóng dự án AI TikTok Studio">Đóng <i>×</i></button></header>
-        <div class="case-modal__scroll" tabindex="-1">
-          <section class="case-hero case-hero--tiktok">
-            <div class="case-hero__copy">
-              <p class="case-overline">Generative AI · TikTok Content · Affiliate · Remotion</p>
-              <h3 id="project-tiktok-title">AI TikTok<br><em>Studio</em></h3>
-              <p class="case-hero__lede">Một studio thử nghiệm nội dung AI-first: từ nhân vật faceless và affiliate đến logo animation được dựng bằng React + Remotion.</p>
-              <div class="tiktok-hero__links">
-                <a href="https://www.tiktok.com/@odaycododepcungleo?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer">AI Fashion ↗</a>
-                <a href="https://www.tiktok.com/@leotnt?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer">AI Motion ↗</a>
-                <a href="https://www.tiktok.com/@leotaplamcontent" target="_blank" rel="noopener noreferrer">Affiliate Sprint ↗</a>
+          <div class="case-card__summary">
+            <div class="case-card__meta"><span>Influencer Marketing</span><span>2026</span></div>
+            <h3>KOC/KOL Operations:<br>From Brief to Published Content</h3>
+            <p>Điều phối hơn 50 KOC/KOL cho hoạt động truyền thông nhà hàng, bảo đảm thông tin, lịch trình và nội dung được kết nối xuyên suốt.</p>
+            <ul class="tag-list"><li>Sourcing</li><li>Briefing</li><li>Coordination</li></ul>
+            <details class="case-detail">
+              <summary>Xem case study <span>+</span></summary>
+              <div class="case-detail__body">
+                <div><span>Bài toán</span><p>Quản lý nhiều creator và chi nhánh trong cùng giai đoạn mà vẫn giữ đúng thông tin thương hiệu, trải nghiệm và tiến độ đăng bài.</p></div>
+                <div><span>Vai trò của Thông</span><p>Tìm kiếm, sàng lọc, liên hệ creator; gửi brief, xác nhận lịch, phối hợp chi nhánh và cập nhật trạng thái nội dung.</p></div>
+                <div><span>Quy trình</span><p>Creator shortlist → outreach → brief → booking → visit/production → review → publishing → tracking.</p></div>
+                <div><span>Kết quả</span><p>Hơn 50 KOC/KOL được phối hợp trong thời gian thực tập, tạo nền tảng nội dung đa góc nhìn cho thương hiệu.</p></div>
               </div>
-            </div>
-            <div class="tiktok-hero__visual" aria-label="Ba video đại diện từ các kênh của AI TikTok Studio">
-              <span class="tiktok-hero__orbit" aria-hidden="true"></span>
-              <a class="tiktok-hero__post" href="https://www.tiktok.com/@odaycododepcungleo/video/7667945443321498888" target="_blank" rel="noopener noreferrer" aria-label="Mở video AI Fashion 01 trên TikTok">
-                <img src="images/tiktok/fashion-01.webp" alt="Khung hình video AI Fashion trên kênh @odaycododepcungleo" width="576" height="1024" decoding="async">
-                <span><i>01 · @odaycododepcungleo</i><b>AI FASHION</b><small>379 views · Xem video ↗</small></span>
-              </a>
-              <a class="tiktok-hero__post" href="https://www.tiktok.com/@odaycododepcungleo/video/7667585758185671943" target="_blank" rel="noopener noreferrer" aria-label="Mở video AI Fashion 02 trên TikTok">
-                <img src="images/tiktok/fashion-02.webp" alt="Khung hình video thời trang nam trên kênh @odaycododepcungleo" width="576" height="1024" decoding="async">
-                <span><i>02 · @odaycododepcungleo</i><b>CONTENT SYSTEM</b><small>422 views · Xem video ↗</small></span>
-              </a>
-              <a class="tiktok-hero__post" href="https://www.tiktok.com/@leotnt/video/7668963068902149384" target="_blank" rel="noopener noreferrer" aria-label="Mở video AI Motion trên TikTok">
-                <img src="images/tiktok/motion-02.webp" alt="Khung hình TikTok logo motion trên kênh @leotnt" width="576" height="1024" decoding="async">
-                <span><i>03 · @leotnt</i><b>REMOTION</b><small>337 views · Xem video ↗</small></span>
-              </a>
-            </div>
-          </section>
-          <div class="case-metrics"><div><strong>17</strong><span>video · sprint 8 ngày</span></div><div><strong>21.240</strong><span>tổng lượt xem sprint</span></div><div><strong>2.364</strong><span>followers · 2 kênh sáng tạo</span></div><div><strong>01</strong><span>đơn affiliate đầu tiên</span></div></div>
-          <div class="case-layout"><aside class="case-facts"><p class="case-label">Project snapshot</p><dl><div><dt>Vai trò</dt><dd>Creator · AI Workflow Designer · Content Operator</dd></div><div><dt>Phạm vi</dt><dd>AI Fashion · AI Motion · TikTok Shop Affiliate</dd></div><div><dt>Workflow</dt><dd>Research · Prompting · Generation · Remotion · CapCut · Analytics</dd></div><div><dt>Sprint xác minh</dt><dd>@leotaplamcontent · 03–10/07/2026</dd></div><div><dt>Mô hình</dt><dd>Human-in-the-loop — AI tạo sinh, con người kiểm soát</dd></div><div><dt>Lưu ý</dt><dd>Ba lát cắt kênh được trình bày riêng, không cộng gộp kết quả</dd></div></dl></aside>
-            <div class="case-story">
-              <section class="case-section"><p class="case-label">01 · Bối cảnh &amp; giả thuyết</p><h4>Có thể xây một dây chuyền nội dung ngắn mà không cần model hay studio quay truyền thống?</h4><p>Sản xuất TikTok thường tốn nguồn lực cho nhân vật, bối cảnh, quay dựng và thử nghiệm format. Tôi xây AI TikTok Studio để kiểm chứng một hướng khác: dùng AI tăng tốc phần tạo sinh, dùng Remotion hệ thống hóa chuyển động bằng code, nhưng giữ con người ở toàn bộ điểm quyết định sáng tạo và thương mại.</p><p>Dự án không chỉ đo lượt xem. Mục tiêu là tạo một workflow chạy được từ đầu đến cuối, giữ hình ảnh nhất quán qua nhiều video và kiểm tra xem content có thể tạo tín hiệu kinh doanh qua TikTok Shop Affiliate hay không.</p></section>
-
-              <section class="case-section"><p class="case-label">02 · Hệ sinh thái kênh</p><div class="tiktok-channel-directory">
-                <article><a class="tiktok-channel__preview" href="https://www.tiktok.com/@odaycododepcungleo/video/7667056362903424274" target="_blank" rel="noopener noreferrer" aria-label="Mở video đại diện của @odaycododepcungleo"><img src="images/tiktok/fashion-03.webp" alt="Video đại diện của kênh AI Fashion @odaycododepcungleo" width="576" height="1024" loading="lazy" decoding="async"><span>PLAY</span></a><div><span>AI Fashion</span><h5>@odaycododepcungleo</h5><p>1.295 followers · 2.679 lượt thích · video cao nhất 7.655 views.</p></div><a href="https://www.tiktok.com/@odaycododepcungleo?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="Mở kênh @odaycododepcungleo">↗</a></article>
-                <article><a class="tiktok-channel__preview" href="https://www.tiktok.com/@leotnt/video/7669405084509375762" target="_blank" rel="noopener noreferrer" aria-label="Mở video đại diện của @leotnt"><img src="images/tiktok/motion-01.webp" alt="Video logo motion đại diện của kênh @leotnt" width="576" height="1024" loading="lazy" decoding="async"><span>PLAY</span></a><div><span>AI Motion · Remotion</span><h5>@leotnt</h5><p>1.069 followers · 6 logo motion studies bằng React và Remotion.</p></div><a href="https://www.tiktok.com/@leotnt?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="Mở kênh @leotnt">↗</a></article>
-                <article><a class="tiktok-channel__preview tiktok-channel__preview--sprint" href="https://www.tiktok.com/@leotaplamcontent" target="_blank" rel="noopener noreferrer" aria-label="Mở kênh affiliate sprint @leotaplamcontent"><strong>17</strong><small>VIDEOS<br>08 DAYS</small></a><div><span>Affiliate Sprint</span><h5>@leotaplamcontent</h5><p>Khoảng 1.300 followers · 17 video trong lát cắt 8 ngày được xác minh.</p></div><a href="https://www.tiktok.com/@leotaplamcontent" target="_blank" rel="noopener noreferrer" aria-label="Mở kênh @leotaplamcontent">↗</a></article>
-              </div></section>
-
-              <section class="case-section case-section--channel-wall">
-                <p class="case-label">03 · Kênh &amp; video thật</p>
-                <h4>Sáu video đại diện — nhấp vào video hoặc nút bên dưới để mở đúng bài đăng TikTok.</h4>
-                <p>Video và ảnh kênh được tải bằng TikTok Embed chính thức. Lượt xem dưới mỗi video là ảnh chụp số liệu từ Creator Embed ngày 08/08/2026; số trên TikTok có thể tiếp tục tăng.</p>
-
-                <section class="tiktok-video-channel" aria-labelledby="fashion-channel-title">
-                  <header class="tiktok-video-channel__head">
-                    <div><span>01 · AI FASHION</span><h5 id="fashion-channel-title">@odaycododepcungleo</h5></div>
-                    <a href="https://www.tiktok.com/@odaycododepcungleo?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer">Mở kênh ↗</a>
-                  </header>
-                  <div class="tiktok-video-grid">
-                    <article class="tiktok-video-card">
-                      <blockquote class="tiktok-embed tiktok-poster--fashion-01" cite="https://www.tiktok.com/@odaycododepcungleo/video/7667945443321498888" data-video-id="7667945443321498888"><section><a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@odaycododepcungleo/video/7667945443321498888">Xem video AI Fashion 01 trên TikTok</a></section></blockquote>
-                      <footer><span>379 lượt xem</span><a href="https://www.tiktok.com/@odaycododepcungleo/video/7667945443321498888" target="_blank" rel="noopener noreferrer" aria-label="Mở video AI Fashion 01 trên TikTok">Mở video ↗</a></footer>
-                    </article>
-                    <article class="tiktok-video-card">
-                      <blockquote class="tiktok-embed tiktok-poster--fashion-02" cite="https://www.tiktok.com/@odaycododepcungleo/video/7667585758185671943" data-video-id="7667585758185671943"><section><a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@odaycododepcungleo/video/7667585758185671943">Xem video AI Fashion 02 trên TikTok</a></section></blockquote>
-                      <footer><span>422 lượt xem</span><a href="https://www.tiktok.com/@odaycododepcungleo/video/7667585758185671943" target="_blank" rel="noopener noreferrer" aria-label="Mở video AI Fashion 02 trên TikTok">Mở video ↗</a></footer>
-                    </article>
-                    <article class="tiktok-video-card">
-                      <blockquote class="tiktok-embed tiktok-poster--fashion-03" cite="https://www.tiktok.com/@odaycododepcungleo/video/7667056362903424274" data-video-id="7667056362903424274"><section><a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@odaycododepcungleo/video/7667056362903424274">Xem video AI Fashion 03 trên TikTok</a></section></blockquote>
-                      <footer><span>409 lượt xem</span><a href="https://www.tiktok.com/@odaycododepcungleo/video/7667056362903424274" target="_blank" rel="noopener noreferrer" aria-label="Mở video AI Fashion 03 trên TikTok">Mở video ↗</a></footer>
-                    </article>
-                  </div>
-                </section>
-
-                <section class="tiktok-video-channel" aria-labelledby="motion-channel-title">
-                  <header class="tiktok-video-channel__head">
-                    <div><span>02 · AI MOTION / REMOTION</span><h5 id="motion-channel-title">@leotnt</h5></div>
-                    <a href="https://www.tiktok.com/@leotnt?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer">Mở kênh ↗</a>
-                  </header>
-                  <div class="tiktok-video-grid">
-                    <article class="tiktok-video-card">
-                      <blockquote class="tiktok-embed tiktok-poster--motion-01" cite="https://www.tiktok.com/@leotnt/video/7669405084509375762" data-video-id="7669405084509375762"><section><a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@leotnt/video/7669405084509375762">Xem video AI Motion 01 trên TikTok</a></section></blockquote>
-                      <footer><span>373 lượt xem</span><a href="https://www.tiktok.com/@leotnt/video/7669405084509375762" target="_blank" rel="noopener noreferrer" aria-label="Mở video AI Motion 01 trên TikTok">Mở video ↗</a></footer>
-                    </article>
-                    <article class="tiktok-video-card">
-                      <blockquote class="tiktok-embed tiktok-poster--motion-02" cite="https://www.tiktok.com/@leotnt/video/7668963068902149384" data-video-id="7668963068902149384"><section><a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@leotnt/video/7668963068902149384">Xem video AI Motion 02 trên TikTok</a></section></blockquote>
-                      <footer><span>337 lượt xem</span><a href="https://www.tiktok.com/@leotnt/video/7668963068902149384" target="_blank" rel="noopener noreferrer" aria-label="Mở video AI Motion 02 trên TikTok">Mở video ↗</a></footer>
-                    </article>
-                    <article class="tiktok-video-card">
-                      <blockquote class="tiktok-embed tiktok-poster--motion-03" cite="https://www.tiktok.com/@leotnt/video/7668300120705764615" data-video-id="7668300120705764615"><section><a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@leotnt/video/7668300120705764615">Xem video AI Motion 03 trên TikTok</a></section></blockquote>
-                      <footer><span>205 lượt xem</span><a href="https://www.tiktok.com/@leotnt/video/7668300120705764615" target="_blank" rel="noopener noreferrer" aria-label="Mở video AI Motion 03 trên TikTok">Mở video ↗</a></footer>
-                    </article>
-                  </div>
-                </section>
-              </section>
-
-              <section class="case-section"><p class="case-label">04 · Bài toán cần giải</p><div class="tiktok-brief-grid"><article><b>01</b><h5>Tốc độ</h5><p>Tạo đủ nguyên liệu để thử nhiều góc nội dung trong một sprint ngắn.</p></article><article><b>02</b><h5>Nhất quán</h5><p>Giữ nhân vật faceless, màu sắc và phong cách kênh qua nhiều video.</p></article><article><b>03</b><h5>Chuyển động</h5><p>Biến ảnh và logo tĩnh thành video có nhịp, timing và nhận diện rõ.</p></article><article><b>04</b><h5>Thương mại</h5><p>Đưa sản phẩm vào video và đo tín hiệu từ content đến đơn hàng.</p></article></div></section>
-
-              <section class="case-section"><p class="case-label">05 · Workflow sản xuất</p><ol class="step-track"><li><b>01</b><span>Nghiên cứu sản phẩm &amp; format</span></li><li><b>02</b><span>Xây nhân vật faceless &amp; style frame</span></li><li><b>03</b><span>Tạo ảnh, bối cảnh và asset</span></li><li><b>04</b><span>Image-to-video hoặc Remotion</span></li><li><b>05</b><span>CapCut: nhịp, chữ, nhạc, caption</span></li><li><b>06</b><span>Đăng, gắn sản phẩm &amp; đo lường</span></li></ol><div class="tiktok-responsibility"><article><span>AI hỗ trợ</span><p>Tạo biến thể nhân vật, hình ảnh, bối cảnh, chuyển động đầu vào và tăng tốc vòng thử nghiệm.</p></article><article><span>Tôi kiểm soát</span><p>Chọn sản phẩm, viết prompt, kiểm lỗi, chọn output, dựng nhịp, chọn nhạc, gắn sản phẩm và quyết định video được đăng.</p></article></div></section>
-
-              <section class="case-section"><p class="case-label">06 · Remotion nằm ở đâu trong Studio?</p><div class="tiktok-remotion-module"><div><span>CREATIVE CODING MODULE</span><h4>Motion design là một công đoạn của AI TikTok Studio — không phải dự án tách rời.</h4><p>Với tuyến @leotnt, tôi dùng React + Remotion để mô tả timing, easing, màu sắc và transition bằng code. Sáu logo Meta, TikTok, Shopee, Grab, Puma và Canva được dùng như motion studies tự luyện; đây không phải sản phẩm đặt hàng của các thương hiệu.</p><a class="case-cta" href="https://www.tiktok.com/@leotnt?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer">Xem toàn bộ kênh @leotnt <span>↗</span></a></div><div class="tiktok-remotion-gallery" aria-label="Ba video motion thật trên kênh @leotnt"><a href="https://www.tiktok.com/@leotnt/video/7669405084509375762" target="_blank" rel="noopener noreferrer"><img src="images/tiktok/motion-01.webp" alt="Video motion logo Meta trên kênh @leotnt" width="576" height="1024" loading="lazy" decoding="async"><span><b>Meta</b><small>373 views</small></span><i>↗</i></a><a href="https://www.tiktok.com/@leotnt/video/7668963068902149384" target="_blank" rel="noopener noreferrer"><img src="images/tiktok/motion-02.webp" alt="Video motion logo TikTok trên kênh @leotnt" width="576" height="1024" loading="lazy" decoding="async"><span><b>TikTok</b><small>337 views</small></span><i>↗</i></a><a href="https://www.tiktok.com/@leotnt/video/7668300120705764615" target="_blank" rel="noopener noreferrer"><img src="images/tiktok/motion-03.webp" alt="Video motion logo Canva trên kênh @leotnt" width="576" height="1024" loading="lazy" decoding="async"><span><b>Canva</b><small>205 views</small></span><i>↗</i></a></div></div><div class="case-workflow case-workflow--three"><div><b>01</b><h5>Decode</h5><p>Phân tích hình học và tính cách chuyển động của từng logo.</p></div><div><b>02</b><h5>Compose</h5><p>Dựng component, timing, easing và transition trong Remotion.</p></div><div><b>03</b><h5>Refine</h5><p>Render, xem lại nhịp và tinh chỉnh trước khi đưa vào kênh.</p></div></div></section>
-
-              <section class="case-section"><p class="case-label">07 · Kết quả sprint xác minh · 03–10/07/2026</p><div class="tiktok-result-grid"><article><span>Output</span><strong>17 video</strong><p>Được sản xuất và đăng trong 8 ngày.</p></article><article><span>Reach</span><strong>21.240 views</strong><p>465 likes · 7 bình luận · 61 lượt chia sẻ.</p></article><article><span>Intent</span><strong>144 profile views</strong><p>Hai video gắn sản phẩm đạt 421 views.</p></article><article><span>Commerce</span><strong>01 đơn</strong><p>88.000đ GMV · khoảng 10.600đ hoa hồng · creator reward ước tính $0,41.</p></article></div><a class="case-cta" href="https://www.tiktok.com/@leotaplamcontent" target="_blank" rel="noopener noreferrer">Mở kênh affiliate sprint <span>↗</span></a></section>
-
-              <section class="case-section"><p class="case-label">08 · Cách tôi diễn giải kết quả</p><h4>Giá trị lớn nhất là workflow đã chạy trọn vòng — không phải một con số view đứng riêng.</h4><p>Sprint chỉ kéo dài 8 ngày, chưa có nhóm đối chứng và chưa đủ dữ liệu để khẳng định AI là nguyên nhân trực tiếp tạo ra đơn hàng. Kết quả cho thấy quy trình có thể tạo sản lượng nội dung thật, giữ con người trong vòng kiểm soát và bước đầu nối content với TikTok Shop Affiliate.</p><p class="case-disclaimer">Số liệu 2.364 followers thuộc hai kênh sáng tạo @odaycododepcungleo và @leotnt, kiểm tra ngày 08/08/2026; số liệu 17 video, 21.240 views và GMV 88.000đ thuộc lát cắt riêng của @leotaplamcontent. Các nhóm chỉ số không được cộng gộp.</p></section>
-
-              <section class="case-takeaway"><span>Điều tôi học được</span><p>AI và code giúp tăng tốc sản xuất; lợi thế thực sự vẫn nằm ở khả năng chọn ý tưởng, kiểm soát chất lượng, đọc dữ liệu và cải thiện vòng thử nghiệm tiếp theo.</p></section>
-            </div>
+            </details>
           </div>
-        </div>
-      </div>
-    </dialog>
+        </article>
 
-    <!-- CASE 03 — CHULI STUDIO -->
-    <dialog class="project-case project-case--chuli" id="project-chuli" aria-labelledby="project-chuli-title">
-      <div class="case-modal__shell">
-        <div class="case-motion" aria-hidden="true"><span class="case-motion__scan"></span><span class="case-motion__beam"></span><span class="case-motion__count">03</span><span class="case-motion__word">GROW</span></div>
-        <header class="case-modal__topbar"><span>CASE 03 / 03</span><span class="case-modal__progress"><i></i></span><button class="case-modal__close" type="button" data-project-close aria-label="Đóng dự án Chuli Studio">Đóng <i>×</i></button></header>
-        <div class="case-modal__scroll" tabindex="-1">
-          <section class="case-hero"><div class="case-hero__copy"><p class="case-overline">Shopee · E-commerce Business Development · 2026</p><h3 id="project-chuli-title">Chuli<br><em>Studio</em></h3><p class="case-hero__lede">Từ kế hoạch học phần đến một gian hàng thời trang nữ được triển khai thật và tiếp tục hoạt động trên Shopee.</p></div><div class="case-hero__signal"><span class="case-signal__ring"></span><b>9/10</b><small>academic project score</small></div></section>
-          <div class="case-metrics"><div><strong>01</strong><span>thương hiệu thời trang</span></div><div><strong>04</strong><span>trụ cột kinh doanh</span></div><div><strong>9/10</strong><span>điểm học phần</span></div><div><strong>Live</strong><span>shop tiếp tục hoạt động</span></div></div>
-          <div class="case-layout"><aside class="case-facts"><p class="case-label">Phạm vi dự án</p><dl><div><dt>Kênh</dt><dd>Shopee</dd></div><div><dt>Ngành hàng</dt><dd>Thời trang nữ</dd></div><div><dt>Hình thức</dt><dd>Dự án học phần triển khai thực tế</dd></div><div><dt>Phạm vi</dt><dd>Market research · Product &amp; pricing · Store operations · Content</dd></div></dl></aside>
-            <div class="case-story">
-              <section class="case-section"><p class="case-label">01 · Bài toán</p><h4>Xây một kênh bán có cấu trúc, không chỉ đưa sản phẩm lên sàn.</h4><p>Chuli Studio cần kết nối nghiên cứu thị trường, chiến lược sản phẩm, giá bán, hình ảnh gian hàng và hoạt động kéo traffic thành một kế hoạch kinh doanh online thống nhất.</p></section>
-              <section class="case-section"><p class="case-label">02 · Bốn trụ cột triển khai</p><div class="case-workflow case-workflow--two"><div><b>01</b><h5>Thị trường</h5><p>Phân tích tệp khách hàng, đối thủ và bối cảnh ngành hàng thời trang nữ.</p></div><div><b>02</b><h5>Sản phẩm &amp; giá</h5><p>Xây logic danh mục, định vị sản phẩm và chiến lược giá bán.</p></div><div><b>03</b><h5>Gian hàng</h5><p>Tổ chức nội dung và trải nghiệm mua hàng trên Shopee.</p></div><div><b>04</b><h5>Traffic</h5><p>Phát triển hướng nội dung hỗ trợ tiếp cận và chuyển đổi.</p></div></div></section>
-              <section class="case-section"><p class="case-label">03 · Kết quả</p><div class="split-results"><div><span>Đánh giá</span><strong>9/10</strong><p>Dự án đạt điểm cao trong học phần Kinh doanh online.</p></div><div><span>Ứng dụng</span><strong>Shop đang chạy</strong><p>Kế hoạch không dừng ở slide; gian hàng đã được triển khai thực tế.</p></div></div><p class="case-disclaimer">Case study chưa công bố doanh thu, đơn hàng hoặc tỷ lệ chuyển đổi nên không dùng các số liệu ước tính. Phạm vi được trình bày đúng theo dữ kiện đã xác nhận.</p></section>
-              <section class="case-takeaway"><span>Điều tôi học được</span><p>Vận hành Shopee là bài toán liên kết: sản phẩm, nội dung, giá, khuyến mãi và trải nghiệm mua phải cùng hướng đến một mục tiêu kinh doanh.</p></section>
-            </div>
+        <article class="case-card reveal" data-categories="ecommerce">
+          <div class="case-card__media">
+            <img src="images/cntl/cntl-storefront.webp" alt="Mặt tiền Cơm Niêu Thiên Lý" width="870" height="665" loading="lazy">
+            <span class="case-card__number">03</span>
+            <span class="case-card__metric">5,25 tỷ GMV</span>
           </div>
-        </div>
-      </div>
-    </dialog>
+          <div class="case-card__summary">
+            <div class="case-card__meta"><span>E-commerce · Analytics</span><span>05/2026</span></div>
+            <h3>Multi-platform Operations<br>&amp; Business Performance</h3>
+            <p>Hỗ trợ vận hành hệ sinh thái bán hàng online của 34 chi nhánh, theo dõi 71 món và chuyển dữ liệu tháng thành bức tranh hiệu quả kinh doanh.</p>
+            <ul class="tag-list"><li>Operations</li><li>GMV</li><li>Gross Margin</li></ul>
+            <details class="case-detail">
+              <summary>Xem case study <span>+</span></summary>
+              <div class="case-detail__body">
+                <div><span>Phạm vi</span><p>GrabFood, ShopeeFood, Xanh SM; menu, hình ảnh, giá bán, khuyến mãi và tình trạng gian hàng của 34 chi nhánh.</p></div>
+                <div><span>Vai trò của Thông</span><p>Kiểm tra dữ liệu, chuẩn hóa báo cáo, theo dõi chỉ số và hỗ trợ xử lý các yêu cầu vận hành đa nền tảng.</p></div>
+                <div><span>Kết quả tháng 05/2026</span><p>22.354 đơn hàng, GMV 5,25 tỷ đồng và Gross Margin 48,6% trên kỳ báo cáo được phân tích.</p></div>
+                <div><span>Giá trị</span><p>Dữ liệu được tổ chức thành các lớp doanh thu, chi phí và biên lợi nhuận để hỗ trợ đội ngũ nhìn nhanh tình hình vận hành.</p></div>
+                <p class="disclaimer">Số liệu mô tả kết quả toàn hệ thống trong kỳ báo cáo, không quy toàn bộ kết quả cho một cá nhân.</p>
+              </div>
+            </details>
+          </div>
+        </article>
 
-    <!-- ═══════════ QUOTE — dark block ═══════════ -->
-    <section class="quote reveal">
-      <div class="container">
-        <span class="mascot-icon mascot-icon--surprised quote__icon" aria-hidden="true"></span>
-        <span class="quote__mark chrome" aria-hidden="true">"</span>
-        <blockquote>
-          <p>Tôi không tin vào ý tưởng không đo được. Mỗi thứ tôi làm đều bắt đầu từ một
-          con số đang có vấn đề — rồi mới tìm cách <em class="script script--inline">kể nó cho hay</em>.</p>
-          <cite>— Cách tôi làm việc</cite>
-        </blockquote>
-      </div>
-    </section>
+        <article class="case-card case-card--accent reveal" data-categories="social ecommerce campaign">
+          <div class="case-card__graphic">
+            <span class="case-card__number">04</span>
+            <p>0 → 1.000+</p>
+            <strong>FOLLOWERS</strong>
+            <small>trong 01 tuần</small>
+          </div>
+          <div class="case-card__summary">
+            <div class="case-card__meta"><span>TikTok · S-commerce</span><span>12/2025–02/2026</span></div>
+            <h3>Join the TikTok<br>UniCamp S-Commerce</h3>
+            <p>Xây kênh TikTok từ con số 0, phát triển nội dung review và đưa sản phẩm TikTok Shop Affiliate vào hành trình nội dung.</p>
+            <ul class="tag-list"><li>Channel Growth</li><li>Affiliate</li><li>Livestream</li></ul>
+            <details class="case-detail">
+              <summary>Xem case study <span>+</span></summary>
+              <div class="case-detail__body">
+                <div><span>Mục tiêu</span><p>Đạt điều kiện TikTok Shop Affiliate và kiểm chứng khả năng phát triển kênh trong thời gian ngắn.</p></div>
+                <div><span>Thực thi</span><p>Nghiên cứu thị trường, lên ý tưởng, viết kịch bản, quay dựng review, gắn sản phẩm và tham gia livestream bán hàng.</p></div>
+                <div><span>Kết quả</span><p>Kênh tăng từ 0 lên hơn 1.000 followers trong một tuần; nhiều video vượt 10K lượt xem; đạt Top 1 hiệu suất vận hành kênh và nhận đánh giá 5/5 từ mentor.</p></div>
+                <div><span>Bài học</span><p>Tăng trưởng nhanh cần đi cùng sự nhất quán về ngách nội dung, tần suất thử nghiệm và khả năng đọc tín hiệu từ khán giả.</p></div>
+              </div>
+            </details>
+          </div>
+        </article>
 
-    <!-- ═══════════ VỀ TÔI ═══════════ -->
-    <section class="about container" id="vetoi">
-      <div class="about__portrait reveal">
-        <div class="portrait-card" data-tilt>
-          <img src="images/chan-dung.jpg" alt="Trần Ngọc Thông" class="portrait-card__img">
-          <span class="portrait-card__spark" aria-hidden="true">✦</span>
-          <span class="portrait-card__monogram chrome">NT</span>
-          <span class="portrait-card__caption">Trần Ngọc Thông<br>E-commerce &amp; Marketing</span>
-        </div>
-        <div class="portrait-mini" aria-hidden="true">
-          <img src="images/hoang-hon.jpg" alt="">
-        </div>
-        <div class="portrait-mini portrait-mini--2" aria-hidden="true">
-          <img src="images/ao-trang.jpg" alt="">
-        </div>
-      </div>
-      <div class="about__content">
-        <p class="section-eyebrow reveal"><span class="mascot-icon mascot-icon--wink" aria-hidden="true"></span><span class="chip">Về tôi</span></p>
-        <h2 class="chrome chrome--section reveal" data-letters aria-label="About Me">About Me</h2>
-        <h3 class="about__lede reveal">Số liệu trước, <em class="script script--inline">ý tưởng</em> sau.</h3>
-        <p class="about__text reveal">
-          Tôi là sinh viên năm cuối ngành Thương mại điện tử tại UEF. Công việc thực tế đầu tiên
-          của tôi không phải viết content mà là ngồi với file doanh thu của 34 chi nhánh —
-          và đó là lý do tôi quen nhìn mọi thứ qua con số trước.
-          Tôi dùng AI như một cộng sự thật sự: để đọc dữ liệu, dựng video, viết web —
-          làm được nhiều hơn những gì một người mới ra trường thường làm được một mình.
-        </p>
-        <div class="about__skills reveal">
-          <div class="skill-group">
-            <h4>Chuyên môn</h4>
-            <ul>
-              <li>Vận hành gian hàng TMĐT &amp; F&amp;B app</li>
-              <li>Phân tích Gross Margin &amp; doanh thu</li>
-              <li>Xây dựng SOP &amp; quy trình vận hành</li>
-              <li>Content TikTok &amp; booking KOC/KOL</li>
-            </ul>
+        <article class="case-card case-card--visual reveal" data-categories="social technology">
+          <div class="case-card__media case-card__media--triptych">
+            <img src="images/tiktok/fashion-01.webp" alt="Video thời trang AI số 1" width="576" height="1024" loading="lazy">
+            <img src="images/tiktok/fashion-02.webp" alt="Video thời trang AI số 2" width="576" height="1024" loading="lazy">
+            <img src="images/tiktok/fashion-03.webp" alt="Video thời trang AI số 3" width="576" height="1024" loading="lazy">
+            <span class="case-card__number">05</span>
+            <span class="case-card__metric">2.380 followers</span>
           </div>
-          <div class="skill-group">
-            <h4>Thành tích</h4>
-            <ul>
-              <li>Top 1 vận hành kênh — Creative Point (5/5)</li>
-              <li>9.3/10 — Marketing Proposal, Fuchs Silkolene</li>
-              <li>9/10 — Kinh doanh online, Chuli Studio</li>
-              <li>Gemini Certified Faculty — Google for Education</li>
-            </ul>
+          <div class="case-card__summary">
+            <div class="case-card__meta"><span>Creator Lab · TikTok</span><span>10/2025–nay</span></div>
+            <h3>Personal TikTok Channels:<br>Learning by Publishing</h3>
+            <p>Hai kênh cá nhân là phòng thí nghiệm để Thông liên tục thử format, hình ảnh, nhịp dựng và cách kết nối nội dung với sản phẩm.</p>
+            <ul class="tag-list"><li>Creator</li><li>AI Visual</li><li>Short-form</li></ul>
+            <details class="case-detail">
+              <summary>Xem case study <span>+</span></summary>
+              <div class="case-detail__body">
+                <div><span>Phạm vi</span><p>Nội dung review thời trang, AI visual, motion và thử nghiệm TikTok Shop Affiliate.</p></div>
+                <div><span>Vai trò của Thông</span><p>Tự nghiên cứu chủ đề, xây format, tạo asset, dựng video, đăng tải và theo dõi phản hồi người xem.</p></div>
+                <div><span>Kết quả</span><p>Hai kênh đạt tổng khoảng 2.380 followers; tạo được thư viện thử nghiệm thực tế thay vì chỉ dừng ở ý tưởng trên giấy.</p></div>
+                <div class="case-detail__links">
+                  <a class="text-link" href="https://www.tiktok.com/@odaycododepcungleo" target="_blank" rel="noopener noreferrer">Kênh AI Fashion ↗</a>
+                  <a class="text-link" href="https://www.tiktok.com/@leotnt" target="_blank" rel="noopener noreferrer">Kênh Motion ↗</a>
+                </div>
+              </div>
+            </details>
           </div>
-        </div>
+        </article>
+
+        <article class="case-card case-card--strategy reveal" data-categories="campaign ecommerce">
+          <div class="case-card__graphic case-card__graphic--strategy">
+            <span class="case-card__number">06</span>
+            <p>INSIGHT / IDEA / CHANNEL</p>
+            <strong>BRAND<br>STRATEGY</strong>
+            <small>Fuchs Silkolene × Chuli Studio</small>
+          </div>
+          <div class="case-card__summary">
+            <div class="case-card__meta"><span>Campaign · Brand · Academic</span><span>2025–2026</span></div>
+            <h3>Campaign &amp; Brand Strategy:<br>From Insight to Market Plan</h3>
+            <p>Hai dự án học phần thể hiện khả năng chuyển research thành chiến lược Marketing và kế hoạch kinh doanh có cấu trúc.</p>
+            <ul class="tag-list"><li>Research</li><li>IMC</li><li>Shopee</li><li>Planning</li></ul>
+            <details class="case-detail">
+              <summary>Xem case study <span>+</span></summary>
+              <div class="case-detail__body">
+                <div><span>Fuchs Silkolene</span><p>Nghiên cứu thị trường và đối thủ, phát triển campaign concept, key message, KPI, ngân sách và ý tưởng gian hàng Shopee cho mùa xuân.</p></div>
+                <div><span>Chuli Studio</span><p>Xây kế hoạch kinh doanh thời trang nữ trên Shopee: khách hàng mục tiêu, danh mục, giá bán, gian hàng và hướng nội dung kéo traffic.</p></div>
+                <div><span>Kết quả</span><p>Fuchs Silkolene đạt 9,3/10; Chuli Studio đạt 9/10 và gian hàng được triển khai thực tế, tiếp tục vận hành sau học phần.</p></div>
+                <div><span>Giá trị</span><p>Hai case cho thấy tư duy Marketing được nối với bài toán kênh bán, ngân sách, KPI và khả năng triển khai.</p></div>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="case-card case-card--wide reveal" data-categories="technology social">
+          <div class="case-card__media case-card__media--triptych case-card__media--motion">
+            <img src="images/tiktok/motion-01.webp" alt="Motion logo Meta" width="576" height="1024" loading="lazy">
+            <img src="images/tiktok/motion-02.webp" alt="Motion logo TikTok" width="576" height="1024" loading="lazy">
+            <img src="images/tiktok/motion-03.webp" alt="Motion logo Canva" width="576" height="1024" loading="lazy">
+            <span class="case-card__number">07</span>
+            <span class="case-card__metric">AI × Creative Coding</span>
+          </div>
+          <div class="case-card__summary">
+            <div class="case-card__meta"><span>Marketing Technology</span><span>2026</span></div>
+            <h3>Creative Technology Lab:<br>AI Workflow &amp; Remotion</h3>
+            <p>Không gian thử nghiệm cách AI Agent và creative coding có thể rút ngắn vòng lặp nghiên cứu, sản xuất và trình bày nội dung Marketing.</p>
+            <ul class="tag-list"><li>AI Agent</li><li>Remotion</li><li>Automation</li><li>Portfolio</li></ul>
+            <details class="case-detail">
+              <summary>Xem case study <span>+</span></summary>
+              <div class="case-detail__body">
+                <div><span>Giả thuyết</span><p>Công nghệ có thể tăng tốc phần lặp lại để người làm Marketing dành nhiều thời gian hơn cho insight, ý tưởng và kiểm soát chất lượng.</p></div>
+                <div><span>Thực thi</span><p>Thiết kế workflow nghiên cứu và tạo asset bằng AI; dùng React + Remotion để kiểm soát timing, transition và render video bằng code.</p></div>
+                <div><span>Đầu ra</span><p>Chuỗi motion study, video TikTok, workflow AI có human-in-the-loop và chính website portfolio đang được sử dụng.</p></div>
+                <div><span>Nguyên tắc</span><p>AI hỗ trợ tốc độ; Thông vẫn chịu trách nhiệm ở các điểm quyết định: brief, lựa chọn output, kiểm lỗi, nhịp dựng và ngữ cảnh thương hiệu.</p></div>
+                <a class="text-link" href="https://www.tiktok.com/@leotnt" target="_blank" rel="noopener noreferrer">Xem Motion Lab trên TikTok ↗</a>
+              </div>
+            </details>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- ═══════════ KINH NGHIỆM ═══════════ -->
-    <section class="timeline container" id="kinhnghiem">
-      <div class="section-head reveal">
-        <p class="section-eyebrow"><span class="mascot-icon mascot-icon--determined" aria-hidden="true"></span><span class="chip">Hành trình <em class="script script--inline">nghề nghiệp</em></span></p>
-        <h2 class="chrome chrome--section" data-letters aria-label="Journey">Journey</h2>
+    <section class="experience section-shell" id="kinh-nghiem">
+      <div class="section-index reveal">
+        <span>04</span>
+        <p>Kinh nghiệm</p>
       </div>
-      <ol class="timeline__list">
-        <li class="timeline__item reveal">
-          <span class="timeline__year">4/2026 — nay</span>
-          <div>
-            <h3>Marketing &amp; E-commerce Intern</h3>
-            <p class="timeline__org">Cơm Niêu Thiên Lý · TP.HCM</p>
-            <p>Vận hành gian hàng 3 nền tảng giao đồ ăn cho 34 chi nhánh, xây SOP xử lý đơn, phân tích Gross Margin theo món, booking 50+ KOC/KOL và xây concept truyền thông "9 dịp cơm nhà".</p>
-          </div>
-        </li>
-        <li class="timeline__item reveal">
-          <span class="timeline__year">2026 — nay</span>
-          <div>
-            <h3>TikTok Content Creator (ứng dụng AI)</h3>
-            <p class="timeline__org">Hai kênh cá nhân · @odaycododepcungleo &amp; @leotnt</p>
-            <p>Tự xây và vận hành song song 2 kênh với định vị riêng, toàn bộ hình ảnh và video sản xuất bằng AI. Tổng 2.364 followers tại ngày 08/08/2026.</p>
-          </div>
-        </li>
-        <li class="timeline__item reveal">
-          <span class="timeline__year">10/2025 — nay</span>
-          <div>
-            <h3>TikTok &amp; Shopee Affiliate Content Creator</h3>
-            <p class="timeline__org">Kênh cá nhân · TikTok, Shopee</p>
-            <p>Kênh review thời trang nam đạt 1.500+ followers, video 10.000+ lượt xem; gắn link TikTok Shop và Shopee Affiliate, triển khai TikTok Ads để tăng traffic.</p>
-          </div>
-        </li>
-        <li class="timeline__item reveal">
-          <span class="timeline__year">2022 — nay</span>
-          <div>
-            <h3>Cử nhân Thương mại điện tử</h3>
-            <p class="timeline__org">Trường Đại học Kinh tế - Tài chính TP.HCM (UEF)</p>
-            <p>Ba dự án học phần triển khai với doanh nghiệp thật: Creative Point (Top 1, 5/5), Fuchs Silkolene (9.3/10), Chuli Studio (9/10 — shop vẫn đang hoạt động).</p>
-          </div>
-        </li>
-      </ol>
+      <div class="experience__layout">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Experience &amp; education</p>
+          <h2>Học từ dự án thật,<br><em>lớn lên bằng dữ liệu thật.</em></h2>
+        </div>
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <div class="timeline__date">04/2026—07/2026</div>
+            <div>
+              <p class="timeline__type">Internship</p>
+              <h3>Marketing &amp; E-commerce Intern</h3>
+              <strong>Cơm Niêu Thiên Lý · TP.HCM</strong>
+              <p>Hỗ trợ Social Content, KOC/KOL operations, vận hành đa nền tảng và phân tích hiệu quả kinh doanh cho hệ thống nhà hàng.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <div class="timeline__date">10/2025—NAY</div>
+            <div>
+              <p class="timeline__type">Independent practice</p>
+              <h3>TikTok Content Creator</h3>
+              <strong>Kênh cá nhân · TikTok Shop Affiliate</strong>
+              <p>Nghiên cứu ngách, xây kênh, sản xuất short-form video và thử nghiệm mối liên hệ giữa nội dung, tăng trưởng và chuyển đổi.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <div class="timeline__date">12/2025—02/2026</div>
+            <div>
+              <p class="timeline__type">Project-based</p>
+              <h3>Marketing &amp; E-commerce Projects</h3>
+              <strong>TikTok UniCamp · Fuchs Silkolene · Chuli Studio</strong>
+              <p>Triển khai các bài toán S-commerce, campaign proposal và business development trong môi trường học tập gắn với thực hành.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <div class="timeline__date">2022—2026</div>
+            <div>
+              <p class="timeline__type">Education</p>
+              <h3>Cử nhân Thương mại điện tử</h3>
+              <strong>Trường Đại học Kinh tế – Tài chính TP.HCM (UEF)</strong>
+              <p>Nền tảng về Marketing, kinh doanh số, sàn thương mại điện tử, dữ liệu và hành vi người tiêu dùng.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <!-- ═══════════ LIÊN HỆ — dark block ═══════════ -->
-    <section class="contact" id="lienhe">
-      <div class="container">
-        <p class="section-eyebrow section-eyebrow--light reveal"><span class="mascot-icon mascot-icon--love" aria-hidden="true"></span><span class="chip">Liên hệ</span></p>
-        <h2 class="chrome chrome--big reveal" data-letters aria-label="Thank You!">Thank You!</h2>
-        <span class="spark spark--c1" aria-hidden="true">✦</span>
-        <span class="spark spark--c2" aria-hidden="true">✦</span>
-        <p class="contact__sub reveal">Sẵn sàng cho <em class="script script--inline">cơ hội</em> tiếp theo.</p>
-        <a href="mailto:ngocthong280804@gmail.com" class="contact__email reveal" data-hover data-magnetic>
-          ngocthong280804@gmail.com <span class="arrow">→</span>
-        </a>
-        <div class="contact__socials reveal">
-          <a href="https://www.linkedin.com/in/thongtranngoc/" target="_blank" rel="noopener" data-hover>LinkedIn</a>
-          <a href="https://www.tiktok.com/@leotnt?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener" data-hover>TikTok · Leo AI</a>
-          <a href="https://www.tiktok.com/@odaycododepcungleo?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener" data-hover>TikTok · Leo tập phối đồ</a>
-          <a href="tel:0335665042" data-hover>0335 665 042</a>
+    <section class="toolbox section-shell" id="cong-cu">
+      <div class="section-index reveal">
+        <span>05</span>
+        <p>Công cụ &amp; ghi nhận</p>
+      </div>
+      <div class="toolbox__layout">
+        <div class="toolbox__tools reveal">
+          <p class="eyebrow">Working toolkit</p>
+          <h2>Công cụ phục vụ<br><em>một quy trình hoàn chỉnh.</em></h2>
+          <div class="tool-cloud">
+            <span>Canva</span><span>CapCut</span><span>TikTok Shop</span><span>TikTok Ads</span>
+            <span>Meta Business Suite</span><span>Google Sheets</span><span>Grab Merchant</span>
+            <span>Shopee</span><span>ShopeeFood</span><span>Xanh SM</span><span>AI Agent</span>
+            <span>Remotion</span><span>HTML/CSS/JS</span>
+          </div>
+        </div>
+        <div class="recognition reveal">
+          <p class="eyebrow">Selected recognition</p>
+          <article><span>01</span><div><strong>Top 1 · TikTok UniCamp</strong><p>Hiệu suất vận hành kênh · Mentor rating 5/5</p></div></article>
+          <article><span>02</span><div><strong>9,3/10 · Fuchs Silkolene</strong><p>Marketing proposal project</p></div></article>
+          <article><span>03</span><div><strong>9/10 · Chuli Studio</strong><p>E-commerce business development</p></div></article>
         </div>
       </div>
     </section>
 
+    <section class="contact section-shell" id="lien-he">
+      <div class="contact__mascot" aria-hidden="true">
+        <img src="images/linh-vat.png" alt="" width="1024" height="1536" loading="lazy">
+      </div>
+      <p class="eyebrow reveal">Let’s make something meaningful</p>
+      <h2 class="reveal">Có một dự án thú vị?<br><em>Hãy cùng Thông biến ý tưởng<br>thành kết quả.</em></h2>
+      <a class="contact__email reveal" href="mailto:ngocthong280804@gmail.com">ngocthong280804@gmail.com <span>↗</span></a>
+      <div class="contact__details reveal">
+        <div><span>Điện thoại</span><a href="tel:+84335665042">0335 665 042</a></div>
+        <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/thongtranngoc" target="_blank" rel="noopener noreferrer">thongtranngoc ↗</a></div>
+        <div><span>Địa điểm</span><p>TP. Hồ Chí Minh, Việt Nam</p></div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer container">
-    <span class="footer__left"><span class="mascot-icon mascot-icon--sad mascot-icon--sm" aria-hidden="true"></span>© 2026 Trần Ngọc Thông</span>
-    <span>Thiết kế &amp; xây dựng với ♥ tại Sài Gòn</span>
+  <footer class="site-footer">
+    <p>© 2026 Trần Ngọc Thông</p>
+    <p>Marketing &amp; E-commerce Portfolio</p>
+    <a href="#dau-trang">Về đầu trang ↑</a>
   </footer>
 
-  <script type="module" src="js/main.js?v=ai-tiktok-studio-v1"></script>
+  <script src="js/main.js?v=marketing-portfolio-2026"></script>
 </body>
 </html>
