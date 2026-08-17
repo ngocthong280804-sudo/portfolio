@@ -3760,6 +3760,39 @@ body.case-open { overflow: hidden; }
   font-size: clamp(1.4rem, 2.8vw, 2rem);
   margin: 1.4rem 0 1.2rem;
 }
+.about__positioning {
+  position: relative;
+  max-width: 56ch;
+  margin: 1.15rem 0 1.4rem;
+  padding: .15rem 0 .15rem 1.15rem;
+  border-left: 2px solid rgba(77, 225, 255, .78);
+}
+.about__positioning::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 2px;
+  height: 42%;
+  background: #fff;
+  box-shadow: 0 0 14px rgba(77, 225, 255, .9);
+}
+.about__positioning strong {
+  display: block;
+  margin-bottom: .45rem;
+  color: var(--aqua);
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.about__positioning p {
+  margin: 0;
+  color: rgba(230, 239, 255, .72);
+  font-size: .88rem;
+  line-height: 1.7;
+}
 .about__text { color: var(--muted); max-width: 56ch; margin-bottom: 2.8rem; }
 
 .about__skills { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -5301,30 +5334,13 @@ a:focus-visible, button:focus-visible {
   position: relative;
   z-index: 7;
   width: min(880px, 88vw);
-  margin: clamp(-1.2rem, -1.5vh, -.35rem) auto 0;
+  margin: clamp(.35rem, 1.2vh, .85rem) auto 0;
   padding: 0;
   border: 0;
   background: none;
   box-shadow: none;
   backdrop-filter: none;
   pointer-events: auto;
-}
-.hero__positioning > strong {
-  display: block;
-  color: var(--aqua);
-  font-family: var(--font-mono);
-  font-size: .7rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  text-shadow: 0 0 18px rgba(77, 225, 255, .46);
-}
-.hero__positioning > p {
-  max-width: 680px;
-  margin: .55rem auto .95rem;
-  color: rgba(238, 246, 255, .78);
-  font-size: clamp(.78rem, 1.2vw, .9rem);
-  line-height: 1.65;
-  text-shadow: 0 4px 20px rgba(1, 8, 27, .9);
 }
 .hero__quick-actions {
   display: grid;
@@ -5593,7 +5609,6 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 700px) {
   .hero__center { width: 100%; }
   .hero__positioning { width: 94vw; margin-top: .35rem; }
-  .hero__positioning > p { font-size: .72rem; }
   .hero__quick-actions { width: 92vw; gap: .4rem; }
   .hero-action { min-height: 61px; padding: .62rem 2rem .58rem .62rem; border-radius: 13px 4px 13px 4px; }
   .hero-action__meta { font-size: .35rem; }
@@ -5613,7 +5628,6 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 520px) {
   .wordmark { margin-top: -10vh; }
   .hero__positioning { margin-top: -.4rem; }
-  .hero__positioning > strong { font-size: .55rem; letter-spacing: .13em; }
   .toolkit__grid { grid-template-columns: 1fr; }
   .toolkit-card { min-height: 150px; }
   .toolkit-card h3 { margin-top: 1.4rem; }
