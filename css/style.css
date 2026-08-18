@@ -3941,7 +3941,10 @@ body.case-open { overflow: hidden; }
 .experience-brand__logo--thienly {
   width: clamp(142px, 15vw, 190px);
   padding: .72rem 1rem;
-  background: linear-gradient(135deg, #551f1c, #8b3527);
+  background: linear-gradient(135deg, #fffdf7, #f6e6c5);
+  box-shadow:
+    inset 0 0 0 1px rgba(127, 47, 33, .12),
+    0 14px 36px -20px rgba(var(--experience-rgb), .9);
 }
 .experience-brand__logo--tiktok { padding: 1rem; }
 .experience-card__eyebrow {
