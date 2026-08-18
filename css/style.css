@@ -6319,6 +6319,183 @@ a:focus-visible, button:focus-visible {
 }
 .contact__qr img { width: 100%; border-radius: 13px; background: #fff; }
 
+/* ═══════════ CONTACT — branded channel cards ═══════════ */
+.contact__panel { min-width: 0; }
+.contact__email {
+  width: 100%;
+  min-height: 92px;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 24px 7px 24px 7px;
+  background:
+    radial-gradient(circle at 8% 20%, rgba(234, 67, 53, .16), transparent 30%),
+    radial-gradient(circle at 88% 80%, rgba(66, 133, 244, .19), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,.12), rgba(5,15,43,.78));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 24px 48px -34px rgba(77,225,255,.8);
+  color: #fff;
+  text-align: left;
+  transition: transform .35s var(--ease-out), border-color .35s, box-shadow .35s;
+}
+.contact__email:hover,
+.contact__email:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(126, 206, 255, .7);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 28px 56px -30px rgba(77,225,255,.82);
+  color: #fff;
+}
+.contact__email-logo,
+.contact-card__logo {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 13px 26px -18px rgba(0,0,0,.95);
+}
+.contact__email-logo {
+  width: 58px;
+  height: 58px;
+  padding: 13px;
+  border-radius: 18px 6px 18px 6px;
+}
+.contact__email-logo img,
+.contact-card__logo img { width: 100%; height: 100%; object-fit: contain; }
+.contact__email-copy,
+.contact-card__copy { min-width: 0; display: grid; gap: .3rem; }
+.contact__email-copy small,
+.contact-card__copy small {
+  color: rgba(209, 225, 255, .7);
+  font: 600 .59rem/1.3 var(--font-mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.contact__email-copy strong {
+  overflow-wrap: anywhere;
+  color: #fff;
+  font: 700 clamp(1.05rem, 2vw, 1.55rem)/1.15 var(--font-display);
+  letter-spacing: -.025em;
+}
+.contact__email-arrow {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 50%;
+  color: #8beaff;
+  font-size: 1.1rem;
+}
+.contact__socials {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+  margin-top: 1rem;
+}
+.contact__socials .contact-card {
+  --contact-rgb: 77, 225, 255;
+  position: relative;
+  min-width: 0;
+  min-height: 88px;
+  display: grid;
+  grid-template-columns: 45px minmax(0, 1fr) 26px;
+  align-items: center;
+  gap: .78rem;
+  padding: .82rem;
+  overflow: hidden;
+  border: 1px solid rgba(var(--contact-rgb), .34);
+  border-radius: 18px 5px 18px 5px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(var(--contact-rgb), .14), transparent 48%),
+    linear-gradient(145deg, rgba(14,31,69,.9), rgba(3,10,29,.88));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
+  color: #fff;
+  text-align: left;
+  text-transform: none;
+  transition: transform .32s var(--ease-out), border-color .32s, box-shadow .32s;
+}
+.contact__socials a.contact-card:hover,
+.contact__socials a.contact-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(var(--contact-rgb), .72);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 23px 42px -30px rgba(var(--contact-rgb), .95);
+  color: #fff;
+}
+.contact-card--linkedin { --contact-rgb: 10, 102, 194; }
+.contact-card--tiktok {
+  --contact-rgb: 37, 244, 238;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(254, 44, 85, .18), transparent 46%),
+    radial-gradient(circle at 0% 100%, rgba(37, 244, 238, .15), transparent 45%),
+    linear-gradient(145deg, #111318, #030405);
+}
+.contact-card--phone { --contact-rgb: 111, 231, 255; }
+.contact-card--documents {
+  --contact-rgb: 158, 124, 255;
+  grid-column: 1 / -1;
+  grid-template-columns: 45px minmax(0, 1fr) auto;
+}
+.contact-card__logo {
+  width: 45px;
+  height: 45px;
+  padding: 9px;
+  border-radius: 14px 5px 14px 5px;
+}
+.contact-card__copy strong {
+  overflow-wrap: anywhere;
+  color: #fff;
+  font: 700 .82rem/1.28 var(--font-display);
+  letter-spacing: -.01em;
+  text-transform: none;
+}
+.contact-card__arrow {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(var(--contact-rgb), .42);
+  border-radius: 50%;
+  color: rgb(var(--contact-rgb));
+  font-size: .7rem;
+}
+.contact__socials .contact-card--pending {
+  color: #fff;
+  cursor: not-allowed;
+  opacity: .78;
+}
+.contact-card__status {
+  padding: .48rem .68rem;
+  border: 1px solid rgba(183, 157, 255, .36);
+  border-radius: 999px;
+  background: rgba(145, 110, 255, .12);
+  color: #cbb9ff;
+  font: 600 .5rem/1 var(--font-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .contact__email { grid-template-columns: 50px minmax(0, 1fr) 36px; min-height: 80px; padding: .82rem; }
+  .contact__email-logo { width: 50px; height: 50px; padding: 11px; }
+  .contact__email-copy strong { font-size: clamp(.82rem, 3.7vw, 1.1rem); }
+  .contact__socials { grid-template-columns: 1fr; }
+  .contact-card--documents { grid-column: auto; }
+}
+
+@media (max-width: 420px) {
+  .contact__email { grid-template-columns: 44px minmax(0, 1fr); }
+  .contact__email-logo { width: 44px; height: 44px; padding: 9px; }
+  .contact__email-arrow { display: none; }
+  .contact__socials .contact-card { grid-template-columns: 42px minmax(0, 1fr) 24px; }
+  .contact-card__logo { width: 42px; height: 42px; }
+  .contact-card--documents { grid-template-columns: 42px minmax(0, 1fr); }
+  .contact-card__status { grid-column: 1 / -1; justify-self: start; margin-left: 50px; }
+}
+
 /* ═══════════ BRAND SKIN — FUCHS × CHULI ═══════════
    Chuli giữ hệ đơn sắc từ wordmark người dùng cung cấp; Fuchs được giữ như
    một điểm nhấn đỏ riêng để hai thương hiệu không bị hòa lẫn nhận diện. */
