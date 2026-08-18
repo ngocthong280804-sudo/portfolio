@@ -1,4 +1,4 @@
-// PROJECT CASE REDESIGN v21 — navigation, labels and recruiter-first scan flow
+// PROJECT CASE REDESIGN v22 — premium scan flow, navigation and recruiter-first hierarchy
 (() => {
   const CASES = [
     { id: 'project-cntl-social', short: 'CNTL Social' },
@@ -9,6 +9,15 @@
     { id: 'project-strategy-lab', short: 'Strategy' }
   ];
 
+  const ensurePolishStyles = () => {
+    if (document.querySelector('link[data-project-v22]')) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'css/project-v22.css?v=22';
+    link.dataset.projectV22 = 'true';
+    document.head.appendChild(link);
+  };
+
   const textReplace = (root, from, to) => {
     root.querySelectorAll('*').forEach((el) => {
       if (el.children.length === 0 && el.textContent && el.textContent.includes(from)) {
@@ -18,15 +27,20 @@
   };
 
   const cleanPublicCopy = () => {
-    const projectSection = document.querySelector('#duan');
-    if (!projectSection) return;
-
-    // Copy requested in the 18/08 redesign pass.
-    textReplace(projectSection, '05 Facebook Reels đã gắn link minh chứng trực tiếp', '05 Facebook Reels');
-    textReplace(projectSection, '06 video từ 02 kênh TikTok đã gắn link trực tiếp', '06 TikTok Videos');
-    textReplace(projectSection, 'video proof', 'TikTok Videos');
-    textReplace(projectSection, 'minh chứng', 'video');
-    textReplace(projectSection, 'Minh chứng', 'Video');
+    const root = document.body;
+    if (!root) return;
+    const replacements = [
+      ['05 Facebook Reels đã gắn link minh chứng trực tiếp', '05 Facebook Reels'],
+      ['05 Facebook Reels đã gắn link video trực tiếp', '05 Facebook Reels'],
+      ['06 video từ 02 kênh TikTok đã gắn link trực tiếp', '06 TikTok Videos'],
+      ['video proof', 'TikTok Videos'],
+      ['Video proof', 'TikTok Videos'],
+      ['minh chứng trực tiếp', 'video trực tiếp'],
+      ['Minh chứng trực tiếp', 'Video trực tiếp'],
+      ['minh chứng', 'video'],
+      ['Minh chứng', 'Video']
+    ];
+    replacements.forEach(([from, to]) => textReplace(root, from, to));
   };
 
   const getSectionLabel = (section, index) => {
@@ -50,9 +64,56 @@
     return found ? found[1] : normalized.split('·')[0].trim().slice(0, 18);
   };
 
+  const classifySections = (dialog) => {
+    const hero = dialog.querySelector('.case-hero');
+    const caseIndex = CASES.findIndex((item) => item.id === dialog.id) + 1;
+    if (hero) hero.dataset.caseNumber = String(caseIndex).padStart(2, '0');
+
+    const sections = [...dialog.querySelectorAll('.case-story > .case-section')];
+    sections.forEach((section, index) => {
+      const label = getSectionLabel(section, index).toLowerCase();
+      const raw = section.querySelector('.case-label')?.textContent?.toLowerCase() || '';
+      const add = (name) => section.classList.add(`case-v22-section--${name}`);
+
+      if (label.includes('overview')) add('overview');
+      if (label.includes('challenge')) add('challenge');
+      if (label.includes('objectives')) add('objectives');
+      if (label.includes('role')) add('role');
+      if (label.includes('execution') || raw.includes('triển khai') || raw.includes('strategy')) add('execution');
+      if (label.includes('results') || raw.includes('kết quả') || raw.includes('performance')) add('results');
+      if (label.includes('videos') || raw.includes('video')) add('videos');
+      if (label.includes('gallery') || raw.includes('gallery') || raw.includes('work sample')) add('gallery');
+    });
+  };
+
+  const syncActiveNav = (dialog, links) => {
+    const scroller = dialog.querySelector('.case-modal__scroll');
+    if (!scroller || !links.length) return;
+
+    const items = links.map((link) => ({
+      link,
+      section: dialog.querySelector(link.getAttribute('href'))
+    })).filter((item) => item.section);
+
+    const sync = () => {
+      const anchor = scroller.scrollTop + 170;
+      let active = items[0];
+      items.forEach((item) => {
+        if (item.section.offsetTop <= anchor) active = item;
+      });
+      items.forEach((item) => item.link.classList.toggle('is-active', item === active));
+    };
+
+    scroller.addEventListener('scroll', sync, { passive: true });
+    sync();
+  };
+
   const buildCaseNav = (dialog) => {
     const scroll = dialog.querySelector('.case-modal__scroll');
-    if (!scroll || scroll.querySelector('.case-v21-nav')) return;
+    if (!scroll) return;
+
+    const existing = scroll.querySelector('.case-v21-nav');
+    if (existing) existing.remove();
 
     const sections = [...scroll.querySelectorAll('.case-story > .case-section, .case-story > .case-takeaway')];
     if (!sections.length) return;
@@ -63,12 +124,11 @@
 
     const priority = [];
     sections.forEach((section, index) => {
-      const id = `${dialog.id}-v21-${index + 1}`;
-      section.id ||= id;
+      section.id ||= `${dialog.id}-v22-${index + 1}`;
       section.classList.add('case-v21-anchor');
       const label = getSectionLabel(section, index);
       const lower = label.toLowerCase();
-      if (['overview','challenge','role','execution','results','videos','gallery','learnings'].some(k => lower.includes(k))) {
+      if (['overview','challenge','objectives','role','execution','results','videos','gallery','learnings'].some((key) => lower.includes(key))) {
         priority.push({ section, label });
       }
     });
@@ -88,7 +148,10 @@
       link.textContent = label;
       link.addEventListener('click', (event) => {
         event.preventDefault();
-        section.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+        section.scrollIntoView({
+          behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+          block: 'start'
+        });
       });
       nav.appendChild(link);
     });
@@ -96,6 +159,8 @@
     const topbar = scroll.querySelector('.case-modal__topbar');
     if (topbar?.nextSibling) topbar.parentNode.insertBefore(nav, topbar.nextSibling);
     else scroll.prepend(nav);
+
+    syncActiveNav(dialog, [...nav.querySelectorAll('a')]);
   };
 
   const normalizeTopbars = () => {
@@ -104,15 +169,26 @@
       if (!dialog) return;
       const label = dialog.querySelector('.case-modal__topbar > span:first-child');
       if (label) label.textContent = `CASE ${String(index + 1).padStart(2, '0')} / 06 · ${entry.short.toUpperCase()}`;
+      classifySections(dialog);
       buildCaseNav(dialog);
     });
   };
 
   const enhanceProjectCards = () => {
     document.querySelectorAll('#duan .project-tab').forEach((tab, index) => {
-      tab.dataset.projectIndex = String(index + 1).padStart(2, '0');
+      const number = String(index + 1).padStart(2, '0');
+      tab.dataset.projectIndex = number;
       const identityNumber = tab.querySelector('.project-tab__identity > small');
-      if (identityNumber) identityNumber.textContent = String(index + 1).padStart(2, '0');
+      if (identityNumber) identityNumber.textContent = number;
+
+      let watermark = tab.querySelector('.project-v22-watermark');
+      if (!watermark) {
+        watermark = document.createElement('span');
+        watermark.className = 'project-v22-watermark';
+        watermark.setAttribute('aria-hidden', 'true');
+        tab.appendChild(watermark);
+      }
+      watermark.textContent = number;
     });
   };
 
@@ -127,10 +203,17 @@
       bar.style.transform = `scaleX(${progress})`;
     };
     scroller.addEventListener('scroll', sync, { passive: true });
+    dialog.addEventListener('toggle', () => {
+      if (dialog.open) {
+        scroller.scrollTop = 0;
+        requestAnimationFrame(sync);
+      }
+    });
     sync();
   };
 
   const boot = () => {
+    ensurePolishStyles();
     cleanPublicCopy();
     normalizeTopbars();
     enhanceProjectCards();
@@ -138,7 +221,7 @@
       const dialog = document.getElementById(id);
       if (dialog) updateCaseProgress(dialog);
     });
-    document.documentElement.dataset.projectUi = 'v21';
+    document.documentElement.dataset.projectUi = 'v22';
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, { once: true });
