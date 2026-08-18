@@ -6539,6 +6539,40 @@ a:focus-visible, button:focus-visible {
   .creator-workflow i { display: none; }
 }
 
+/* ═══════════ PORTFOLIO WORKFLOW — About → Skills → Experience → Impact → Work ═══════════ */
+.nav__links {
+  gap: clamp(.85rem, 1.65vw, 1.65rem);
+}
+.nav__links a {
+  font-size: clamp(.64rem, .74vw, .76rem);
+  letter-spacing: .1em;
+}
+.toolkit--skills {
+  padding-top: 4.2rem;
+  border-top: 1px solid rgba(111, 155, 255, .18);
+}
+.impact__intro {
+  max-width: 720px;
+  margin-top: .75rem;
+  color: var(--muted);
+  font-size: .86rem;
+  line-height: 1.75;
+}
+#vetoi,
+#kynang,
+#kinhnghiem,
+#solieu,
+#duan,
+#lienhe {
+  scroll-margin-top: 88px;
+}
+
+@media (max-width: 1120px) {
+  .nav__links { gap: .8rem; }
+  .nav__links a { font-size: .61rem; letter-spacing: .07em; }
+  .nav__cta { padding-inline: 1.05em; }
+}
+
 /* ═══════════ CREATOR + TECHNOLOGY — merged project ═══════════ */
 .project-tab--creator-tech {
   min-height: 124px;
