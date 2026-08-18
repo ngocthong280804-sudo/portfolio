@@ -13,11 +13,12 @@
 
   const ensureStyle = (href, marker) => {
     if ([...document.styleSheets].some((sheet) => sheet.href?.includes(href.split('?')[0]))) return;
-    if (document.querySelector(`link[data-${marker}]`)) return;
+    const attr = `data-${marker.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}`;
+    if (document.querySelector(`link[${attr}]`)) return;
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = href;
-    link.dataset[marker] = 'true';
+    link.setAttribute(attr, 'true');
     document.head.appendChild(link);
   };
 
@@ -46,13 +47,20 @@
       ['05 Facebook Reels minh chứng', '05 Facebook Reels'],
       ['06 video từ 02 kênh TikTok đã gắn link trực tiếp', '06 TikTok Videos'],
       ['06 TikTok videos minh chứng', '06 TikTok Videos'],
-      ['video proof', 'TikTok Videos'],
-      ['Video proof', 'TikTok Videos'],
-      ['minh chứng trực tiếp', 'video trực tiếp'],
-      ['Minh chứng trực tiếp', 'Video trực tiếp'],
-      ['minh chứng', 'video'],
-      ['Minh chứng', 'Video']
+      ['Video proof · Direct links', 'Facebook Reels · Direct links'],
+      ['Video proof · 02 personal channels', 'TikTok Videos · 02 personal channels'],
+      ['Khám phá minh chứng ↗', 'Xem 05 Reels ↗'],
+      ['minh chứng trực tiếp', 'mẫu nội dung trực tiếp'],
+      ['Minh chứng trực tiếp', 'Mẫu nội dung trực tiếp'],
+      ['minh chứng', 'mẫu nội dung'],
+      ['Minh chứng', 'Mẫu nội dung']
     ].forEach(([from, to]) => replaceText(document.body, from, to));
+
+    const projects = document.querySelector('#duan');
+    if (projects) {
+      replaceText(projects, 'video proof', 'TikTok Videos');
+      replaceText(projects, 'Video proof', 'TikTok Videos');
+    }
   };
 
   const getSectionLabel = (section, index) => {
