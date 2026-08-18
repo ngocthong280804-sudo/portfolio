@@ -220,7 +220,7 @@ const pctObserver = new IntersectionObserver(entries => {
 document.querySelectorAll(".bar__pct").forEach(el => pctObserver.observe(el));
 
 /* ── Đếm số liệu ── */
-/* định dạng kiểu Việt Nam: 22354 → 22.354 ; 5.25 → 5,25 */
+/* định dạng số theo kiểu Việt Nam */
 function formatVN(value, decimals) {
   const [intPart, decPart] = value.toFixed(decimals).split(".");
   const grouped = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
