@@ -27,6 +27,15 @@
     ensureStyle('css/project-v23.css?v=23', 'projectV23');
   };
 
+  const loadProjectFilterV24 = () => {
+    if (document.querySelector('script[data-project-filter-v24]')) return;
+    const script = document.createElement('script');
+    script.src = 'js/project-filter-v24.js?v=24';
+    script.async = false;
+    script.dataset.projectFilterV24 = 'true';
+    document.head.appendChild(script);
+  };
+
   const replaceText = (root, from, to) => {
     root.querySelectorAll('*').forEach((el) => {
       if (el.children.length === 0 && el.textContent?.includes(from)) {
@@ -294,7 +303,8 @@
       const dialog = document.getElementById(id);
       if (dialog) updateCaseProgress(dialog);
     });
-    document.documentElement.dataset.projectUi = 'v23';
+    loadProjectFilterV24();
+    document.documentElement.dataset.projectUi = 'v24';
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, { once: true });
