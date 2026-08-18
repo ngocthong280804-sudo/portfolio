@@ -1,0 +1,52 @@
+name: Bootstrap project redesign v21
+
+on:
+  push:
+    branches:
+      - agent/project-case-redesign-v21
+
+permissions:
+  contents: write
+
+jobs:
+  patch-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/project-case-redesign-v21
+          fetch-depth: 0
+
+      - name: Inject v21 assets
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          css_tag = '  <link rel="stylesheet" href="css/project-v21.css?v=21">\n'
+          js_tag = '  <script defer src="js/project-v21.js?v=21"></script>\n'
+
+          if 'css/project-v21.css?v=21' not in text:
+              anchor = '  <link rel="stylesheet" href="css/style.css?v=project-video-evidence-v20">\n'
+              text = text.replace(anchor, anchor + css_tag)
+
+          if 'js/project-v21.js?v=21' not in text:
+              anchor = '  <script type="module" src="js/main.js?v=original-concept-content-v2"></script>\n'
+              text = text.replace(anchor, js_tag + anchor)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+
+          rm -f .github/workflows/project-v21-bootstrap.yml
+
+      - name: Commit patched entrypoint
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/workflows/project-v21-bootstrap.yml
+          git diff --cached --quiet && exit 0
+          git commit -m "Load project case redesign v21"
+          git push origin HEAD:agent/project-case-redesign-v21
