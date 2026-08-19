@@ -1,0 +1,12 @@
+/* ABOUT v26.1 — clean official UEF identity override */
+#vetoi .about-academic-hero__mark--logo {
+  background-color: #fff;
+  background-image: url("https://user-cdn.uef.edu.vn/newsimg/files/logo%20nhan%20dien%20TH/3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 88% auto;
+}
+#vetoi .about-academic-hero__mark--logo img {
+  opacity: 0;
+  pointer-events: none;
+}
