@@ -1,0 +1,307 @@
+/* ABOUT v27 — clean editorial-tech layout, no overlaps */
+
+#vetoi.about.about-v25 {
+  --about27-bg: #071126;
+  --about27-panel: #0b1732;
+  --about27-panel-2: #0d1630;
+  --about27-line: rgba(118, 178, 255, .22);
+  --about27-cyan: #75e9ff;
+  --about27-violet: #b29aff;
+  --about27-text: #f6f9ff;
+  --about27-muted: #93a6c7;
+  row-gap: clamp(1.25rem, 2.3vw, 2rem);
+}
+
+/* Do not let the portrait float behind the lower information area. */
+#vetoi.about.about-v25 .about__portrait {
+  position: relative !important;
+  top: auto !important;
+  align-self: start;
+}
+
+/* Full-width information band below the main About two-column area. */
+#vetoi.about.about-v25 .about__profile-grid--wide {
+  grid-column: 1 / -1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  gap: clamp(.9rem, 1.5vw, 1.15rem);
+  margin-top: clamp(.8rem, 2vw, 1.4rem);
+  padding: 0;
+  isolation: isolate;
+}
+
+#vetoi.about.about-v25 .about-info-card--academic-v25,
+#vetoi.about.about-v25 .about-info-card--credentials-v25 {
+  min-width: 0;
+  min-height: 0 !important;
+  padding: clamp(1.15rem, 2vw, 1.45rem) !important;
+  overflow: hidden;
+  border: 1px solid var(--about27-line) !important;
+  border-radius: 24px 8px 24px 8px !important;
+  background: linear-gradient(145deg, rgba(13,29,60,.98), rgba(5,11,27,.99)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.055),
+    0 24px 54px -44px rgba(70,170,255,.55) !important;
+}
+
+#vetoi.about.about-v25 .about-info-card--credentials-v25 {
+  background: linear-gradient(145deg, rgba(20,20,48,.985), rgba(7,9,24,.995)) !important;
+  border-color: rgba(178,154,255,.23) !important;
+}
+
+/* Remove oversized decorative circles / labels from previous versions. */
+#vetoi.about.about-v25 .about-info-card--academic-v25::before,
+#vetoi.about.about-v25 .about-info-card--academic-v25::after,
+#vetoi.about.about-v25 .about-info-card--credentials-v25::before,
+#vetoi.about.about-v25 .about-info-card--credentials-v25::after,
+#vetoi.about.about-v25 .about-academic-hero--v25::before,
+#vetoi.about.about-v25 .about-academic-hero--v25::after {
+  content: none !important;
+  display: none !important;
+}
+
+#vetoi.about.about-v25 .about-info-card__head {
+  display: flex;
+  align-items: center;
+  gap: .72rem;
+  min-height: 48px;
+  margin: 0 0 1.05rem !important;
+  padding-bottom: .95rem;
+  border-bottom: 1px solid rgba(133,184,255,.14);
+}
+
+#vetoi.about.about-v25 .about-info-card__icon {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: 13px 5px 13px 5px;
+  background: rgba(255,255,255,.055);
+}
+
+#vetoi.about.about-v25 .about-info-card__head small {
+  margin-bottom: .2rem;
+  font-size: .48rem;
+  letter-spacing: .13em;
+}
+
+#vetoi.about.about-v25 .about-info-card__head strong {
+  color: var(--about27-text);
+  font-size: clamp(.96rem, 1.35vw, 1.12rem);
+  line-height: 1.2;
+}
+
+/* EDUCATION: compact logo + generous copy. */
+#vetoi.about.about-v25 .about-academic-hero--v25 {
+  position: relative;
+  display: grid !important;
+  grid-template-columns: 132px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: clamp(1.25rem, 2.6vw, 2rem) !important;
+  min-height: 205px !important;
+  padding: clamp(1.2rem, 2.2vw, 1.65rem) !important;
+  border: 1px solid rgba(117,233,255,.16) !important;
+  border-radius: 18px 6px 18px 6px !important;
+  background:
+    linear-gradient(90deg, rgba(117,233,255,.045), transparent 42%),
+    rgba(3,10,27,.52) !important;
+  box-shadow: none !important;
+}
+
+#vetoi.about.about-v25 .about-academic-hero__mark--logo {
+  position: relative !important;
+  inset: auto !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 132px !important;
+  height: 104px !important;
+  min-width: 132px !important;
+  padding: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255,255,255,.75) !important;
+  border-radius: 16px !important;
+  background-color: #fff !important;
+  background-image: url("https://user-cdn.uef.edu.vn/newsimg/files/logo%20nhan%20dien%20TH/3.jpg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 92% auto !important;
+  box-shadow: 0 16px 34px -26px rgba(117,233,255,.8) !important;
+}
+
+#vetoi.about.about-v25 .about-academic-hero__mark--logo img {
+  display: none !important;
+}
+
+#vetoi.about.about-v25 .about-academic-hero__copy {
+  min-width: 0;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: .75rem;
+  padding: 0 !important;
+}
+
+#vetoi.about.about-v25 .about-academic-hero__copy strong {
+  display: block;
+  width: 100%;
+  max-width: 18ch !important;
+  margin: 0 !important;
+  color: #fff !important;
+  font-family: "Inter Tight", var(--font-display) !important;
+  font-size: clamp(1.75rem, 3vw, 2.65rem) !important;
+  font-weight: 760 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.045em !important;
+  text-wrap: balance;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+#vetoi.about.about-v25 .about-academic-hero__copy small {
+  display: inline-flex !important;
+  align-items: center;
+  gap: .5rem;
+  width: auto !important;
+  margin: 0 !important;
+  padding: .52rem .78rem !important;
+  border: 1px solid rgba(117,233,255,.22) !important;
+  border-radius: 999px;
+  background: rgba(117,233,255,.055) !important;
+  color: #aebddd !important;
+  font: 650 .62rem/1 var(--font-mono) !important;
+  letter-spacing: .015em;
+}
+
+#vetoi.about.about-v25 .about-academic-hero__copy small::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--about27-cyan);
+  box-shadow: 0 0 10px rgba(117,233,255,.9);
+}
+
+/* CREDENTIALS: dense rows instead of tall empty boxes. */
+#vetoi.about.about-v25 .about-certificate-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: .55rem !important;
+  margin: 0 !important;
+}
+
+#vetoi.about.about-v25 .about-certificate-grid > span {
+  display: grid !important;
+  grid-template-columns: 42px minmax(0,1fr) 26px !important;
+  align-items: center !important;
+  gap: .72rem !important;
+  min-height: 64px !important;
+  padding: .62rem .7rem !important;
+  border: 1px solid rgba(178,154,255,.15) !important;
+  border-radius: 13px 5px 13px 5px !important;
+  background: rgba(255,255,255,.026) !important;
+}
+
+#vetoi.about.about-v25 .about-certificate-grid > span::after {
+  content: "✓";
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(178,154,255,.22);
+  border-radius: 50%;
+  color: #c8b9ff;
+  font: 700 .55rem/1 var(--font-mono);
+}
+
+#vetoi.about.about-v25 .about-certificate-grid i {
+  width: 42px !important;
+  height: 42px !important;
+  margin: 0 !important;
+  border-radius: 11px !important;
+}
+
+#vetoi.about.about-v25 .about-certificate-grid img {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+#vetoi.about.about-v25 .about-certificate-grid strong {
+  min-width: 0;
+  color: #edf2ff !important;
+  font-size: .67rem !important;
+  line-height: 1.3 !important;
+}
+
+#vetoi.about.about-v25 .about-direction {
+  margin-top: .65rem !important;
+  padding: .8rem .9rem !important;
+  border: 1px solid rgba(178,154,255,.17) !important;
+  border-radius: 13px 5px 13px 5px !important;
+  background: linear-gradient(110deg, rgba(178,154,255,.08), rgba(117,233,255,.025)) !important;
+}
+
+#vetoi.about.about-v25 .about-direction small { font-size: .43rem !important; }
+#vetoi.about.about-v25 .about-direction strong {
+  margin: .28rem 0 .15rem !important;
+  font-size: .72rem !important;
+  line-height: 1.25 !important;
+}
+#vetoi.about.about-v25 .about-direction span { font-size: .5rem !important; }
+
+/* Keep the main About content above the lower band and prevent bleed-through. */
+#vetoi.about.about-v25 .about__content,
+#vetoi.about.about-v25 .about__portrait,
+#vetoi.about.about-v25 .about__profile-grid--wide {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1180px) {
+  #vetoi.about.about-v25 .about__profile-grid--wide {
+    grid-template-columns: 1fr 1fr;
+  }
+  #vetoi.about.about-v25 .about-academic-hero--v25 {
+    grid-template-columns: 112px minmax(0,1fr) !important;
+    gap: 1rem !important;
+  }
+  #vetoi.about.about-v25 .about-academic-hero__mark--logo {
+    width: 112px !important;
+    min-width: 112px !important;
+    height: 90px !important;
+  }
+  #vetoi.about.about-v25 .about-academic-hero__copy strong {
+    font-size: clamp(1.5rem, 2.7vw, 2.15rem) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  #vetoi.about.about-v25 .about__profile-grid--wide {
+    grid-template-columns: 1fr !important;
+  }
+  #vetoi.about.about-v25 .about-academic-hero--v25 {
+    min-height: 0 !important;
+  }
+}
+
+@media (max-width: 560px) {
+  #vetoi.about.about-v25 .about-info-card--academic-v25,
+  #vetoi.about.about-v25 .about-info-card--credentials-v25 {
+    padding: .9rem !important;
+    border-radius: 18px 6px 18px 6px !important;
+  }
+  #vetoi.about.about-v25 .about-academic-hero--v25 {
+    grid-template-columns: 1fr !important;
+    gap: .9rem !important;
+    padding: 1rem !important;
+  }
+  #vetoi.about.about-v25 .about-academic-hero__mark--logo {
+    width: 118px !important;
+    min-width: 118px !important;
+    height: 92px !important;
+  }
+  #vetoi.about.about-v25 .about-academic-hero__copy strong {
+    max-width: 16ch !important;
+    font-size: clamp(1.65rem, 9vw, 2.25rem) !important;
+  }
+}
