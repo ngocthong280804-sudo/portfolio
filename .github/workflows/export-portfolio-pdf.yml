@@ -14,7 +14,7 @@ permissions:
 jobs:
   export:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 12
     steps:
       - name: Checkout exact current portfolio
         uses: actions/checkout@v4
@@ -24,11 +24,11 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install Playwright Chromium
+      - name: Install lightweight browser controller
         run: |
           npm init -y >/dev/null 2>&1
-          npm install playwright@1.55.0
-          npx playwright install --with-deps chromium
+          npm install puppeteer-core@24.16.0
+          command -v google-chrome || command -v google-chrome-stable || command -v chromium || command -v chromium-browser
 
       - name: Start portfolio locally
         run: |
@@ -42,18 +42,33 @@ jobs:
           cat /tmp/portfolio-http.log
           exit 1
 
-      - name: Render exact website and all project cases to one PDF
-        run: node scripts/export-portfolio-pdf.mjs
+      - name: Render exact website and all project cases
+        run: |
+          set +e
+          node scripts/export-portfolio-pdf.mjs 2>&1 | tee portfolio-pdf-export.log
+          echo "${PIPESTATUS[0]}" > portfolio-pdf-export.exit
+          exit 0
 
-      - name: Save generated PDF in repository
+      - name: Persist PDF and export diagnostics
         run: |
           mkdir -p exports
-          cp Tran-Ngoc-Thong-Portfolio-GitHub.pdf exports/Tran-Ngoc-Thong-Portfolio-GitHub.pdf
+          cp portfolio-pdf-export.log exports/portfolio-pdf-export.log
+          cp portfolio-pdf-export.exit exports/portfolio-pdf-export.exit
+          if [ -f portfolio-pdf-export-report.json ]; then
+            cp portfolio-pdf-export-report.json exports/portfolio-pdf-export-report.json
+          fi
+          if [ -f Tran-Ngoc-Thong-Portfolio-GitHub.pdf ]; then
+            cp Tran-Ngoc-Thong-Portfolio-GitHub.pdf exports/Tran-Ngoc-Thong-Portfolio-GitHub.pdf
+          fi
+
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add exports/Tran-Ngoc-Thong-Portfolio-GitHub.pdf
-          git commit -m 'Generate exact portfolio PDF' || exit 0
+          git add exports/
+          git commit -m 'Generate exact portfolio PDF' || true
           git push
+
+          test "$(cat portfolio-pdf-export.exit)" = "0"
+          test -f Tran-Ngoc-Thong-Portfolio-GitHub.pdf
 
       - name: Upload downloadable artifact
         uses: actions/upload-artifact@v4
