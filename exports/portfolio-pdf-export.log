@@ -1,0 +1,40 @@
+{
+  "executablePath": "/usr/bin/google-chrome",
+  "exportInfo": {
+    "projectCount": 6,
+    "projectIds": [
+      "project-cntl-social",
+      "project-cntl-influencer",
+      "project-ecommerce-performance",
+      "project-unicamp",
+      "project-creator-lab",
+      "project-strategy-lab"
+    ]
+  },
+  "dims": {
+    "width": 2267,
+    "height": 31225
+  },
+  "scale": 0.5534027221777421,
+  "pageWidthIn": 13.068374699759806,
+  "pageHeightIn": 179.99999999999997
+}
+file:///home/runner/work/portfolio/portfolio/node_modules/puppeteer-core/lib/esm/puppeteer/common/util.js:228
+            throw new TimeoutError(`Timed out after waiting ${ms}ms`, { cause });
+                  ^
+
+TimeoutError: Timed out after waiting 30000ms
+    at file:///home/runner/work/portfolio/portfolio/node_modules/puppeteer-core/lib/esm/puppeteer/common/util.js:228:19
+    at file:///home/runner/work/portfolio/portfolio/node_modules/puppeteer-core/lib/esm/third_party/rxjs/rxjs.js:1944:31
+    at OperatorSubscriber2._this._next (file:///home/runner/work/portfolio/portfolio/node_modules/puppeteer-core/lib/esm/third_party/rxjs/rxjs.js:1001:9)
+    at Subscriber2.next (file:///home/runner/work/portfolio/portfolio/node_modules/puppeteer-core/lib/esm/third_party/rxjs/rxjs.js:704:12)
+    at AsyncAction2.<anonymous> (file:///home/runner/work/portfolio/portfolio/node_modules/puppeteer-core/lib/esm/third_party/rxjs/rxjs.js:2288:20)
+    at AsyncAction2._execute (file:///home/runner/work/portfolio/portfolio/node_modules/puppeteer-core/lib/esm/third_party/rxjs/rxjs.js:1368:12)
+    at AsyncAction2.execute (file:///home/runner/work/portfolio/portfolio/node_modules/puppeteer-core/lib/esm/third_party/rxjs/rxjs.js:1357:22)
+    at AsyncScheduler2.flush (file:///home/runner/work/portfolio/portfolio/node_modules/puppeteer-core/lib/esm/third_party/rxjs/rxjs.js:1435:26)
+    at listOnTimeout (node:internal/timers:585:17)
+    at process.processTimers (node:internal/timers:521:7) {
+  [cause]: undefined
+}
+
+Node.js v22.23.2
