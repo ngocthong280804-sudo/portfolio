@@ -9,7 +9,7 @@ on:
       - 'scripts/export-portfolio-pdf.mjs'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   export:
@@ -58,3 +58,13 @@ jobs:
           path: Tran-Ngoc-Thong-Portfolio-GitHub.pdf
           if-no-files-found: error
           retention-days: 7
+
+      - name: Save generated PDF on export branch
+        run: |
+          mkdir -p exports
+          cp Tran-Ngoc-Thong-Portfolio-GitHub.pdf exports/Tran-Ngoc-Thong-Portfolio-GitHub.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add exports/Tran-Ngoc-Thong-Portfolio-GitHub.pdf
+          git commit -m "Generate portfolio PDF from exact site" || exit 0
+          git push origin HEAD:agent/export-portfolio-pdf
