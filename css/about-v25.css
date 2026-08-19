@@ -9,3 +9,71 @@
   row-gap: 0;
   padding-bottom: clamp(4rem, 7vw, 6rem);
 }
+
+/* PROJECT v29 — remove the redundant Fuchs Silkolene × Chuli Studio case */
+#duan [data-project-open="project-strategy-lab"],
+#project-strategy-lab {
+  display: none !important;
+}
+
+/* Campaign filter only belonged to the removed strategy case. */
+#duan [data-project-filter="campaign"] {
+  display: none !important;
+}
+
+/* Keep the five-project navigation coherent after removing case 06. */
+#project-cntl-social .case-v23-switcher > button:first-child,
+#project-creator-lab .case-v23-switcher > button:last-child {
+  display: none !important;
+}
+
+.case-v23-switcher__index small {
+  font-size: 0 !important;
+}
+.case-v23-switcher__index small::after {
+  content: "/ 05 PROJECTS";
+  font-size: .5rem;
+}
+
+/* The filter denominator was generated before this visual removal; hide it to avoid stale 6/6 text. */
+.project-filter-status [data-project-filter-status-count] {
+  display: none !important;
+}
+
+/* All Projects badge: 5 remaining cases. */
+#duan [data-project-filter="all"] .project-filter__count {
+  font-size: 0 !important;
+}
+#duan [data-project-filter="all"] .project-filter__count::after {
+  content: "05";
+  font-size: .58rem;
+}
+
+/* Replace remaining modal labels so they no longer say / 06. */
+#project-cntl-social .case-modal__topbar > span:first-child,
+#project-cntl-influencer .case-modal__topbar > span:first-child,
+#project-ecommerce-performance .case-modal__topbar > span:first-child,
+#project-unicamp .case-modal__topbar > span:first-child,
+#project-creator-lab .case-modal__topbar > span:first-child {
+  font-size: 0 !important;
+}
+#project-cntl-social .case-modal__topbar > span:first-child::after {
+  content: "CASE 01 / 05 · CNTL SOCIAL";
+  font-size: .56rem;
+}
+#project-cntl-influencer .case-modal__topbar > span:first-child::after {
+  content: "CASE 02 / 05 · KOC/KOL";
+  font-size: .56rem;
+}
+#project-ecommerce-performance .case-modal__topbar > span:first-child::after {
+  content: "CASE 03 / 05 · E-COMMERCE";
+  font-size: .56rem;
+}
+#project-unicamp .case-modal__topbar > span:first-child::after {
+  content: "CASE 04 / 05 · UNICAMP";
+  font-size: .56rem;
+}
+#project-creator-lab .case-modal__topbar > span:first-child::after {
+  content: "CASE 05 / 05 · CREATOR LAB";
+  font-size: .56rem;
+}
