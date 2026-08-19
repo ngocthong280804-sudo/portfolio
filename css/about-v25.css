@@ -77,3 +77,107 @@
   content: "CASE 05 / 05 · CREATOR LAB";
   font-size: .56rem;
 }
+
+/* PROJECT v30 — remove the Case 03 system-data disclaimer requested by the portfolio owner. */
+#project-ecommerce-performance .case-disclaimer {
+  display: none !important;
+}
+
+/* PROJECT v30 — unified, readable closing / Key Learnings cards for all five live cases. */
+#project-cntl-social .case-takeaway { --takeaway-rgb: 248, 193, 20; --takeaway-accent: #f8c114; }
+#project-cntl-influencer .case-takeaway { --takeaway-rgb: 255, 151, 72; --takeaway-accent: #ff9748; }
+#project-ecommerce-performance .case-takeaway { --takeaway-rgb: 69, 216, 255; --takeaway-accent: #45d8ff; }
+#project-unicamp .case-takeaway { --takeaway-rgb: 37, 244, 238; --takeaway-accent: #25f4ee; }
+#project-creator-lab .case-takeaway { --takeaway-rgb: 176, 118, 255; --takeaway-accent: #b076ff; }
+
+.project-case .case-takeaway {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 0;
+  padding: clamp(1.35rem, 3vw, 2.15rem) clamp(1.35rem, 3.4vw, 2.5rem) !important;
+  border: 1px solid rgba(var(--takeaway-rgb, 111, 231, 255), .34) !important;
+  border-radius: 20px 7px 20px 7px !important;
+  background:
+    radial-gradient(circle at 88% 14%, rgba(var(--takeaway-rgb, 111, 231, 255), .16), transparent 31%),
+    linear-gradient(135deg, rgba(var(--takeaway-rgb, 111, 231, 255), .075), transparent 46%),
+    linear-gradient(145deg, #0b142a 0%, #050b19 70%, #030713 100%) !important;
+  color: #f8fbff !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.065),
+    0 22px 52px -42px rgba(var(--takeaway-rgb, 111, 231, 255), .82) !important;
+}
+
+.project-case .case-takeaway::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: clamp(1.35rem, 3.4vw, 2.5rem);
+  width: min(180px, 28%);
+  height: 2px;
+  background: linear-gradient(90deg, var(--takeaway-accent, #6fe7ff), transparent);
+  box-shadow: 0 0 18px rgba(var(--takeaway-rgb, 111, 231, 255), .65);
+}
+
+.project-case .case-takeaway::after {
+  content: "" !important;
+  position: absolute;
+  z-index: 0;
+  right: -42px;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(var(--takeaway-rgb, 111, 231, 255), .13);
+  border-radius: 50%;
+  background: transparent !important;
+  color: transparent !important;
+  transform: translateY(-50%) !important;
+  box-shadow: inset 0 0 0 24px rgba(var(--takeaway-rgb, 111, 231, 255), .025);
+  pointer-events: none;
+}
+
+.project-case .case-takeaway > span {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  margin: 0 0 .8rem;
+  padding: .44rem .68rem;
+  border: 1px solid rgba(var(--takeaway-rgb, 111, 231, 255), .24);
+  border-radius: 999px;
+  background: rgba(var(--takeaway-rgb, 111, 231, 255), .07);
+  color: var(--takeaway-accent, #6fe7ff) !important;
+  font: 800 .58rem/1 var(--font-mono) !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.project-case .case-takeaway > p {
+  position: relative;
+  z-index: 1;
+  max-width: 74ch !important;
+  margin: 0 !important;
+  color: #f6f9ff !important;
+  font-family: var(--font-display) !important;
+  font-size: clamp(1.08rem, 2vw, 1.5rem) !important;
+  font-weight: 680 !important;
+  line-height: 1.46 !important;
+  letter-spacing: -.018em;
+  text-shadow: none !important;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .project-case .case-takeaway {
+    padding: 1.2rem !important;
+    border-radius: 16px 5px 16px 5px !important;
+  }
+  .project-case .case-takeaway::before { left: 1.2rem; }
+  .project-case .case-takeaway::after { right: -72px; width: 130px; height: 130px; }
+  .project-case .case-takeaway > p {
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+  }
+}
