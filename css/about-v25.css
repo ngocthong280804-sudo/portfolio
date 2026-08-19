@@ -1,0 +1,328 @@
+/* ABOUT REDESIGN v25 — balanced recruiter-first profile + academic card */
+
+#vetoi.about.about-v25 {
+  --about-v25-cyan: #73f4ff;
+  --about-v25-blue: #6f9bff;
+  --about-v25-violet: #b9a4ff;
+  --about-v25-line: rgba(115, 244, 255, .18);
+  --about-v25-panel: rgba(7, 15, 36, .9);
+  row-gap: clamp(1.4rem, 3vw, 2.2rem);
+  padding-bottom: clamp(5rem, 8vw, 7rem);
+}
+
+/* Move the lower profile system across the complete About width so the
+   portrait column no longer ends in a large empty zone. */
+#vetoi .about__profile-grid--wide {
+  grid-column: 1 / -1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(360px, .82fr);
+  gap: clamp(.9rem, 1.8vw, 1.25rem);
+  margin-top: clamp(.3rem, 1vw, .8rem);
+}
+
+#vetoi .about-info-card--academic-v25,
+#vetoi .about-info-card--credentials-v25 {
+  min-height: 100%;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  border-radius: 28px 9px 28px 9px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.065),
+    0 30px 70px -52px rgba(76, 201, 255, .62);
+}
+
+#vetoi .about-info-card--academic-v25 {
+  --info-accent: var(--about-v25-cyan);
+  background:
+    radial-gradient(circle at 16% 32%, rgba(115,244,255,.11), transparent 28%),
+    radial-gradient(circle at 96% 4%, rgba(111,155,255,.18), transparent 34%),
+    linear-gradient(145deg, rgba(10,28,61,.98), rgba(4,9,25,.98));
+}
+
+#vetoi .about-info-card--academic-v25::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 38%;
+  top: 50%;
+  width: 52%;
+  height: 1px;
+  opacity: .55;
+  background: linear-gradient(90deg, transparent, rgba(115,244,255,.75), transparent);
+  box-shadow: 0 0 20px rgba(115,244,255,.28);
+}
+
+#vetoi .about-info-card--credentials-v25 {
+  --info-accent: var(--about-v25-violet);
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 95% 0%, rgba(185,164,255,.18), transparent 34%),
+    radial-gradient(circle at 4% 100%, rgba(115,244,255,.07), transparent 35%),
+    linear-gradient(145deg, rgba(18,22,55,.96), rgba(5,9,25,.98));
+}
+
+#vetoi .about-info-card--academic-v25 .about-info-card__head,
+#vetoi .about-info-card--credentials-v25 .about-info-card__head {
+  margin-bottom: clamp(.9rem, 1.5vw, 1.15rem);
+}
+
+#vetoi .about-info-card--academic-v25 .about-info-card__icon,
+#vetoi .about-info-card--credentials-v25 .about-info-card__icon {
+  flex-basis: 48px;
+  height: 48px;
+  border-radius: 15px 5px 15px 5px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,.16), transparent 44%),
+    rgba(255,255,255,.055);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 0 24px -16px var(--info-accent);
+}
+
+#vetoi .about-info-card--academic-v25 .about-info-card__icon img,
+#vetoi .about-info-card--credentials-v25 .about-info-card__icon img {
+  width: 28px;
+  height: 28px;
+}
+
+#vetoi .about-info-card--academic-v25 .about-info-card__head small,
+#vetoi .about-info-card--credentials-v25 .about-info-card__head small {
+  font-size: .48rem;
+}
+
+#vetoi .about-info-card--academic-v25 .about-info-card__head strong,
+#vetoi .about-info-card--credentials-v25 .about-info-card__head strong {
+  font-size: clamp(.95rem, 1.45vw, 1.15rem);
+}
+
+/* Academic centerpiece */
+#vetoi .about-academic-hero--v25 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(138px, .34fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1rem, 2.4vw, 1.8rem);
+  min-height: clamp(230px, 24vw, 300px);
+  padding: clamp(1.15rem, 2.8vw, 1.9rem);
+  border: 1px solid rgba(115,244,255,.25);
+  border-radius: 24px 7px 24px 7px;
+  background:
+    linear-gradient(100deg, rgba(115,244,255,.075), transparent 35%),
+    radial-gradient(circle at 88% 12%, rgba(125,103,255,.15), transparent 32%),
+    rgba(3, 10, 27, .58);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.055);
+}
+
+#vetoi .about-academic-hero--v25::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: clamp(36px, 7vw, 84px);
+  top: 50%;
+  width: clamp(160px, 22vw, 280px);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border: 1px solid rgba(115,244,255,.09);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 24px rgba(115,244,255,.018),
+    inset 0 0 0 52px rgba(111,155,255,.012),
+    0 0 60px rgba(115,244,255,.035);
+}
+
+#vetoi .about-academic-hero--v25::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -72px;
+  bottom: -88px;
+  width: 220px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(185,164,255,.12);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 30px rgba(185,164,255,.02);
+}
+
+#vetoi .about-academic-hero__mark--logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(128px, 14vw, 170px);
+  height: clamp(118px, 13vw, 154px);
+  padding: clamp(1rem, 2vw, 1.35rem);
+  border: 1px solid rgba(255,255,255,.78);
+  border-radius: 30px 10px 30px 10px;
+  background: linear-gradient(145deg, #ffffff, #eef5ff);
+  box-shadow:
+    0 26px 50px -34px rgba(115,244,255,.95),
+    0 0 0 6px rgba(115,244,255,.035),
+    0 0 45px -28px rgba(115,244,255,.85);
+}
+
+#vetoi .about-academic-hero__mark--logo::after {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border: 1px dashed rgba(115,244,255,.18);
+  border-radius: 36px 13px 36px 13px;
+  pointer-events: none;
+}
+
+#vetoi .about-academic-hero__mark--logo img {
+  display: block;
+  width: 100%;
+  max-width: 125px;
+  height: auto;
+  object-fit: contain;
+}
+
+#vetoi .about-academic-hero__copy {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+#vetoi .about-academic-hero--v25 .about-academic-hero__copy strong {
+  max-width: 18ch;
+  color: #fbfdff;
+  font: 780 clamp(1.45rem, 3.2vw, 2.45rem)/1.08 "Inter Tight", var(--font-display);
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+
+#vetoi .about-academic-hero--v25 .about-academic-hero__copy small {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  margin-top: clamp(.75rem, 1.6vw, 1rem);
+  padding: .48rem .75rem;
+  border: 1px solid rgba(115,244,255,.2);
+  border-radius: 999px;
+  background: rgba(115,244,255,.055);
+  color: #a9bddc;
+  font: 650 clamp(.66rem, 1.05vw, .82rem)/1.2 var(--font-mono);
+  letter-spacing: .035em;
+}
+
+#vetoi .about-academic-hero--v25 .about-academic-hero__copy small::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  margin-right: .5rem;
+  border-radius: 50%;
+  background: var(--about-v25-cyan);
+  box-shadow: 0 0 12px rgba(115,244,255,.8);
+}
+
+/* Remove the old language sub-cards completely. */
+#vetoi .about-language-list { display: none !important; }
+
+/* Give the certificate card a stronger visual rhythm so it balances the
+   larger academic centerpiece. */
+#vetoi .about-info-card--credentials-v25 .about-certificate-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .55rem;
+  flex: 1;
+}
+
+#vetoi .about-info-card--credentials-v25 .about-certificate-grid > span {
+  min-height: 116px;
+  padding: .72rem;
+  border-color: rgba(185,164,255,.2);
+  border-radius: 16px 5px 16px 5px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(185,164,255,.1), transparent 40%),
+    rgba(255,255,255,.035);
+  transition: transform .28s var(--ease-out), border-color .28s ease, background .28s ease;
+}
+
+#vetoi .about-info-card--credentials-v25 .about-certificate-grid > span:hover {
+  transform: translateY(-3px);
+  border-color: rgba(185,164,255,.42);
+  background: rgba(185,164,255,.07);
+}
+
+#vetoi .about-info-card--credentials-v25 .about-certificate-grid i {
+  width: 38px;
+  height: 38px;
+  margin-bottom: .62rem;
+  border-radius: 11px;
+}
+
+#vetoi .about-info-card--credentials-v25 .about-certificate-grid strong {
+  font-size: .58rem;
+  line-height: 1.42;
+}
+
+#vetoi .about-info-card--credentials-v25 .about-direction {
+  margin-top: .72rem;
+  padding: .9rem;
+  border-radius: 16px 5px 16px 5px;
+  background:
+    linear-gradient(110deg, rgba(185,164,255,.12), rgba(115,244,255,.05)),
+    rgba(255,255,255,.02);
+}
+
+#vetoi .about-info-card--credentials-v25 .about-direction strong {
+  font-size: clamp(.72rem, 1.15vw, .86rem);
+}
+
+@media (max-width: 1040px) {
+  #vetoi .about__profile-grid--wide {
+    grid-template-columns: 1fr;
+  }
+  #vetoi .about-info-card--credentials-v25 .about-certificate-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  #vetoi.about.about-v25 {
+    row-gap: 1.2rem;
+  }
+  #vetoi .about__profile-grid--wide {
+    margin-top: .2rem;
+  }
+  #vetoi .about-academic-hero--v25 {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    min-height: 0;
+    padding: 1.15rem;
+  }
+  #vetoi .about-academic-hero__mark--logo {
+    width: 132px;
+    height: 112px;
+    border-radius: 24px 8px 24px 8px;
+  }
+  #vetoi .about-academic-hero--v25 .about-academic-hero__copy strong {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+  }
+  #vetoi .about-info-card--credentials-v25 .about-certificate-grid {
+    grid-template-columns: 1fr;
+  }
+  #vetoi .about-info-card--credentials-v25 .about-certificate-grid > span {
+    grid-template-columns: 40px minmax(0, 1fr);
+    align-items: center;
+    gap: .65rem;
+    min-height: 0;
+  }
+  #vetoi .about-info-card--credentials-v25 .about-certificate-grid i {
+    margin: 0;
+  }
+}
+
+@media (max-width: 440px) {
+  #vetoi .about-info-card--academic-v25,
+  #vetoi .about-info-card--credentials-v25 {
+    padding: .85rem;
+    border-radius: 21px 7px 21px 7px;
+  }
+  #vetoi .about-academic-hero__mark--logo {
+    width: 118px;
+    height: 100px;
+  }
+  #vetoi .about-academic-hero--v25 .about-academic-hero__copy small {
+    font-size: .6rem;
+  }
+}
