@@ -181,3 +181,79 @@
     line-height: 1.55 !important;
   }
 }
+
+/* FOOTER v31 — replace credits with a recruiter-facing closing note. */
+.footer.container {
+  position: relative;
+  isolation: isolate;
+  width: min(1120px, 90vw);
+  min-height: clamp(260px, 34vw, 420px);
+  margin-top: clamp(3.5rem, 7vw, 7rem);
+  padding: clamp(4.5rem, 8vw, 7.5rem) clamp(1.25rem, 4vw, 3rem);
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.15rem;
+  text-align: center;
+  overflow: hidden;
+  border-top: 1px solid rgba(77, 225, 255, .16);
+}
+
+.footer.container > span {
+  display: none !important;
+}
+
+.footer.container::before {
+  content: "Portfolio kết thúc ở đây, nhưng câu chuyện nghề nghiệp của Thông thì vẫn đang tiếp tục.";
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: 920px;
+  color: #f7fbff;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4.2vw, 3.8rem);
+  font-weight: 760;
+  line-height: 1.08;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+  text-shadow: 0 0 34px rgba(77, 225, 255, .08);
+}
+
+.footer.container::after {
+  content: "Cảm ơn Anh/Chị đã dành thời gian xem đến cuối. Nếu có cơ hội đồng hành, Thông mong được mang sự tò mò, tinh thần chủ động và cách làm việc có trách nhiệm này vào những bài toán thật — để cùng đội ngũ tạo ra giá trị tốt hơn mỗi ngày.";
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: 760px;
+  color: rgba(220, 234, 255, .68);
+  font-family: var(--font-body);
+  font-size: clamp(.9rem, 1.35vw, 1.04rem);
+  font-weight: 400;
+  line-height: 1.82;
+  letter-spacing: .005em;
+}
+
+.footer.container {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(77, 225, 255, .085), transparent 34%),
+    radial-gradient(circle at 18% 85%, rgba(46, 123, 255, .08), transparent 30%);
+}
+
+@media (max-width: 640px) {
+  .footer.container {
+    width: min(92vw, 1120px);
+    min-height: 340px;
+    margin-top: 3rem;
+    padding: 4rem 1rem 4.5rem;
+  }
+  .footer.container::before {
+    font-size: clamp(1.65rem, 8.5vw, 2.35rem);
+    line-height: 1.13;
+    letter-spacing: -.035em;
+  }
+  .footer.container::after {
+    font-size: .88rem;
+    line-height: 1.7;
+  }
+}
