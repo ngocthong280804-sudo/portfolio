@@ -1,2 +1,11 @@
-/* ABOUT loader — v27 rebuilt layout */
-@import url("./about-v27.css?v=27.0");
+/* ABOUT v28 — remove Academic Profile / Credentials block entirely */
+#vetoi .about__profile-grid,
+#vetoi .about__profile-grid--wide {
+  display: none !important;
+}
+
+/* Keep the remaining About content clean after the lower profile block is removed. */
+#vetoi.about.about-v25 {
+  row-gap: 0;
+  padding-bottom: clamp(4rem, 7vw, 6rem);
+}
