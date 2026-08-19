@@ -13,6 +13,7 @@ if (!executablePath) throw new Error('No Chrome/Chromium executable found on run
 const browser = await puppeteer.launch({
   headless: true,
   executablePath,
+  protocolTimeout: 240000,
   args: ['--no-sandbox', '--disable-dev-shm-usage', '--font-render-hinting=none']
 });
 
@@ -195,7 +196,8 @@ await page.pdf({
   margin: { top: '0in', right: '0in', bottom: '0in', left: '0in' },
   displayHeaderFooter: false,
   tagged: true,
-  outline: true
+  outline: true,
+  timeout: 180000
 });
 
 await browser.close();
